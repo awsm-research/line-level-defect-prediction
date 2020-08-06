@@ -1,0 +1,154 @@
+File,Line_number,SRC
+src/org/jruby/evaluator/ASTInterpreter.java,823,if (result instanceof RubyModule) {
+src/org/jruby/evaluator/ASTInterpreter.java,824,return ((RubyModule) result).fastGetConstantFrom(iVisited.getName());
+src/org/jruby/evaluator/ASTInterpreter.java,1959,} else {
+src/org/jruby/evaluator/ASTInterpreter.java,826,"return result.callMethod(context, iVisited.getName(), IRubyObject.NULL_ARRAY, aBlock);"
+src/org/jruby/util/ZlibDeflate.java,115,byte[] outp = new byte[1024];
+src/org/jruby/util/ZlibInflate.java,89,byte[] outp = new byte[1024];
+src/org/jruby/RubySymbol.java,263,return length > 1 && isSpecialGlobalName(s.substring(1));
+src/org/jruby/Ruby.java,827,bootstrap();
+src/org/jruby/runtime/Constants.java,59,"properties.load(Constants.class.getResourceAsStream(""/jruby.properties""));"
+src/org/jruby/RubyFileStat.java,365,return getRuntime().newBoolean(getRuntime().getPosix().lstat(file.getAbsolutePath()).isSymlink());
+src/org/jruby/RubyFile.java,584,int owner = (int) arg1.convertToInteger().getLongValue();
+src/org/jruby/RubyFile.java,585,int group = (int) arg2.convertToInteger().getLongValue();
+src/org/jruby/RubyFile.java,617,int owner = (int) arg1.convertToInteger().getLongValue();
+src/org/jruby/RubyFile.java,618,int group = (int) arg2.convertToInteger().getLongValue();
+src/org/jruby/RubyFile.java,794,RubyInteger owner = args[0].convertToInteger();
+src/org/jruby/RubyFile.java,795,RubyInteger group = args[1].convertToInteger();
+src/org/jruby/RubyFile.java,803,"boolean result = 0 == runtime.getPosix().chown(filename.toString(), (int)owner.getLongValue(), (int)group.getLongValue());"
+src/org/jruby/RubyFile.java,1311,RubyInteger owner = args[0].convertToInteger();
+src/org/jruby/RubyFile.java,1312,RubyInteger group = args[1].convertToInteger();
+src/org/jruby/RubyFile.java,1320,"boolean result = 0 == runtime.getPosix().lchown(filename.toString(), (int)owner.getLongValue(), (int)group.getLongValue());"
+src/org/jruby/RubyKernel.java,543,recv.getRuntime().secure(4);
+src/org/jruby/RubyKernel.java,555,throw recv.getRuntime().newSystemExit(status);
+src/org/jruby/RubyKernel.java,558,"@JRubyMethod(name = ""exit!"", optional = 1, module = true, visibility = Visibility.PRIVATE)"
+src/org/jruby/RubyKernel.java,559,"public static IRubyObject exit_bang(IRubyObject recv, IRubyObject[] args) {"
+src/org/jruby/RubyKernel.java,561,"return exit(recv, args);"
+src/org/jruby/RubyIO.java,814,"modes = getIOModes(getRuntime(), (args[1].convertToString().toString()));"
+src/org/jruby/RubyIO.java,2177,if (length > 0) {
+src/org/jruby/RubyIO.java,2179,throw getRuntime().newEOFError();
+src/org/jruby/RubyIO.java,187,"public RubyIO(Ruby runtime, Process process, ModeFlags modes) {"
+src/org/jruby/RubyIO.java,197,InputStream pipeIn = process.getInputStream();
+src/org/jruby/RubyIO.java,198,if (pipeIn instanceof FilterInputStream) {
+src/org/jruby/RubyIO.java,2689,try {
+src/org/jruby/RubyIO.java,200,pipeIn = (InputStream)
+src/org/jruby/RubyIO.java,201,"FieldAccess.getProtectedFieldValue(FilterInputStream.class,"
+src/org/jruby/RubyIO.java,202,"""in"", pipeIn);"
+src/org/jruby/RubyIO.java,203,} catch (Exception e) {
+src/org/jruby/RubyIO.java,207,"Channels.newChannel(pipeIn),"
+src/org/jruby/RubyIO.java,217,OutputStream pipeOut = process.getOutputStream();
+src/org/jruby/RubyIO.java,218,if (pipeOut instanceof FilterOutputStream) {
+src/org/jruby/RubyIO.java,219,try {
+src/org/jruby/RubyIO.java,220,pipeOut = (OutputStream)
+src/org/jruby/RubyIO.java,221,"FieldAccess.getProtectedFieldValue(FilterOutputStream.class,"
+src/org/jruby/RubyIO.java,222,"""out"", pipeOut);"
+src/org/jruby/RubyIO.java,223,} catch (Exception e) {
+src/org/jruby/RubyIO.java,227,"Channels.newChannel(pipeOut),"
+src/org/jruby/RubyIO.java,2685,"Process process = ShellLauncher.popen(runtime, cmdObj, modes);"
+src/org/jruby/RubyStringIO.java,87,private boolean append = false;
+src/org/jruby/RubyStringIO.java,90,"public IRubyObject initialize(IRubyObject[] args, Block block) {"
+src/org/jruby/RubyStringIO.java,91,if (args.length > 0) {
+src/org/jruby/RubyStringIO.java,93,internal = args[0].convertToString();
+src/org/jruby/RubyStringIO.java,94,if (args.length > 1) {
+src/org/jruby/RubyStringIO.java,100,String modes = args[1].convertToString().toString();
+src/org/jruby/RubyStringIO.java,102,setupModes(modes);
+src/org/jruby/RubyStringIO.java,104,} else {
+src/org/jruby/RubyStringIO.java,105,"internal = getRuntime().newString("""");"
+src/org/jruby/RubyStringIO.java,118,if (append) {
+src/org/jruby/RubyStringIO.java,360,if (append) {
+src/org/jruby/RubyStringIO.java,561,setupModes(args[1].convertToString().toString());
+src/org/jruby/RubyStringIO.java,599,} else {
+src/org/jruby/RubyStringIO.java,564,"setupModes("""");"
+src/org/jruby/RubyStringIO.java,567,if (internal.isFrozen() && (closedRead || append)) {
+src/org/jruby/RubyStringIO.java,571,if (closedRead) {
+src/org/jruby/RubyStringIO.java,689,"if (closedRead) throw getRuntime().newIOError(""not opened for reading"");"
+src/org/jruby/RubyStringIO.java,694,"if (closedWrite) throw getRuntime().newIOError(""not opened for writing"");"
+src/org/jruby/RubyStringIO.java,699,private void setupModes(String modes) {
+src/org/jruby/RubyStringIO.java,704,"if (modes.contains(""r"")) closedWrite = true;"
+src/org/jruby/RubyStringIO.java,705,"if (modes.contains(""w"")) closedRead = true;"
+src/org/jruby/RubyStringIO.java,706,"if (modes.contains(""a"")) append = true;"
+src/org/jruby/RubyZlib.java,557,"@JRubyMethod(name = ""wrap"", required = 2, frame = true, meta = true)"
+src/org/jruby/RubyZlib.java,558,"public static IRubyObject wrap(ThreadContext context, IRubyObject recv, IRubyObject io, IRubyObject proc, Block unusedBlock) throws IOException {"
+src/org/jruby/RubyZlib.java,559,"if (!(io instanceof RubyGzipFile)) throw recv.getRuntime().newTypeError(io, (RubyClass)recv);"
+src/org/jruby/RubyZlib.java,560,if (!proc.isNil()) {
+src/org/jruby/RubyZlib.java,562,"((RubyProc)proc).call(context, new IRubyObject[]{io});"
+src/org/jruby/RubyZlib.java,564,RubyGzipFile zipIO = (RubyGzipFile)io;
+src/org/jruby/RubyZlib.java,565,if (!zipIO.isClosed()) {
+src/org/jruby/RubyZlib.java,566,zipIO.close();
+src/org/jruby/RubyZlib.java,693,"IRubyObject proc = block.isGiven() ? runtime.newProc(Block.Type.PROC, block) : runtime.getNil();"
+src/org/jruby/RubyZlib.java,694,"RubyGzipReader io = newInstance(recv,"
+src/org/jruby/RubyZlib.java,695,"new IRubyObject[]{ runtime.getFile().callMethod(context, ""open"","
+src/org/jruby/RubyZlib.java,696,"new IRubyObject[]{filename, runtime.newString(""rb"")})}, block);"
+src/org/jruby/RubyZlib.java,698,"return RubyGzipFile.wrap(context, recv, io, proc, null);"
+src/org/jruby/RubyZlib.java,946,"IRubyObject proc = block.isGiven() ? runtime.newProc(Block.Type.PROC, block) : runtime.getNil();"
+src/org/jruby/RubyZlib.java,947,RubyGzipWriter io = newGzipWriter(
+src/org/jruby/RubyZlib.java,948,"recv,"
+src/org/jruby/RubyZlib.java,949,new IRubyObject[]{ runtime.getFile().callMethod(
+src/org/jruby/RubyZlib.java,950,"context,"
+src/org/jruby/RubyZlib.java,951,"""open"","
+src/org/jruby/RubyZlib.java,952,"new IRubyObject[]{args[0],runtime.newString(""wb"")}),level,strategy},block);"
+src/org/jruby/RubyZlib.java,954,"return RubyGzipFile.wrap(context, recv, io, proc, null);"
+src/org/jruby/util/IOOutputStream.java,82,"closeAdapter.call(io.getRuntime().getCurrentContext(), io);"
+src/org/jruby/util/io/ModeFlags.java,127,return ((flags & RDWR) != 0) || isReadOnly() || ((flags & BINARY) != 0);
+src/org/jruby/util/io/NullChannel.java,49,buffer.position(buffer.position());
+src/org/jruby/ext/socket/RubyUDPSocket.java,62,try {
+src/org/jruby/ext/socket/RubyUDPSocket.java,63,"rb_cUDPSocket.includeModule(runtime.fastGetClass(""Socket"").fastGetConstant(""Constants""));"
+src/org/jruby/ext/socket/RubyUDPSocket.java,72,"runtime.getObject().fastSetConstant(""UDPsocket"", rb_cUDPSocket);"
+src/org/jruby/ext/socket/RubyUDPSocket.java,73,} catch (Throwable e) {
+src/org/jruby/ext/socket/RubyUDPSocket.java,74,e.printStackTrace();
+src/org/jruby/javasupport/JavaUtil.java,231,ex.printStackTrace();
+src/org/jruby/javasupport/proxy/JavaProxyClass.java,394,ite.getTargetException().printStackTrace();
+src/org/jruby/runtime/load/LoadService.java,213,e.printStackTrace();
+src/org/jruby/RubyGC.java,55,@JRubyMethod(meta = true)
+src/org/jruby/RubyGC.java,67,@JRubyMethod(meta = true)
+src/org/jruby/RubyGC.java,73,@JRubyMethod(meta = true)
+src/org/jruby/RubyYAML.java,468,"mep.put(self.getRuntime().newString(m.substring(1)), self.callMethod(context,""instance_variable_get"", self.getRuntime().newString(m)));"
+src/org/jruby/yaml/JRubyConstructor.java,106,ByteList sc = (ByteList)super.constructScalar(node);
+src/org/jruby/yaml/JRubyConstructor.java,107,if(sc.length() > 0 && sc.charAt(0) == ':' && ((org.jvyamlb.nodes.ScalarNode)node).getStyle() == 0) {
+src/org/jruby/yaml/JRubyConstructor.java,108,String ss = sc.toString();
+src/org/jruby/yaml/JRubyConstructor.java,109,"if(sc.charAt(1) != '""') {"
+src/org/jruby/yaml/JRubyConstructor.java,110,"ss = "":\"""" + ss.substring(1).replaceAll(""([^\\\\])\"""", ""\\1\\\\\"""") + ""\"""";"
+src/org/jruby/yaml/JRubyConstructor.java,115,"return RubyString.newString(runtime,(ByteList)super.constructScalar(node));"
+src/org/jruby/RubyDir.java,327,return recv.getRuntime().newString(recv.getRuntime().getCurrentDirectory());
+src/org/jruby/util/io/ChannelStream.java,610,if (read <= 0) {
+src/org/jruby/util/io/ChannelStream.java,598,if (result.length() == 0 && number != 0) throw new EOFException();
+src/org/jruby/util/ShellLauncher.java,228,"public static Process popen(Ruby runtime, IRubyObject string, ModeFlags modes) throws IOException {"
+src/org/jruby/util/ShellLauncher.java,230,Process aProcess = null;
+src/org/jruby/util/ShellLauncher.java,243,"aProcess = Runtime.getRuntime().exec(argArray, getCurrentEnv(runtime), pwd);"
+src/org/jruby/util/ShellLauncher.java,245,"aProcess = Runtime.getRuntime().exec(args, getCurrentEnv(runtime), pwd);"
+src/org/jruby/util/ShellLauncher.java,248,"aProcess = new POpenProcess(aProcess, runtime, modes);"
+src/org/jruby/util/ShellLauncher.java,260,private StreamPumper pumper;
+src/org/jruby/util/ShellLauncher.java,269,out = child.getOutputStream();
+src/org/jruby/util/ShellLauncher.java,272,try {
+src/org/jruby/util/ShellLauncher.java,273,child.getOutputStream().close();
+src/org/jruby/util/ShellLauncher.java,274,} catch (IOException ioe) {
+src/org/jruby/util/ShellLauncher.java,275,throw runtime.newIOErrorFromException(ioe);
+src/org/jruby/util/ShellLauncher.java,278,out = new OutputStream() {
+src/org/jruby/util/ShellLauncher.java,279,@Override
+src/org/jruby/util/ShellLauncher.java,280,public void write(int b) throws IOException {
+src/org/jruby/util/ShellLauncher.java,287,in = child.getInputStream();
+src/org/jruby/util/ShellLauncher.java,290,"pumper = new StreamPumper(child.getInputStream(), runtime.getOut(), false);"
+src/org/jruby/util/ShellLauncher.java,291,pumper.setDaemon(true);
+src/org/jruby/util/ShellLauncher.java,292,pumper.start();
+src/org/jruby/util/ShellLauncher.java,294,in = new InputStream() {
+src/org/jruby/util/ShellLauncher.java,295,@Override
+src/org/jruby/util/ShellLauncher.java,296,public int read() throws IOException {
+src/org/jruby/util/ShellLauncher.java,297,return -1;
+src/org/jruby/util/ShellLauncher.java,320,try {
+src/org/jruby/util/ShellLauncher.java,321,out.close();
+src/org/jruby/util/ShellLauncher.java,322,} catch (IOException ioe) {
+src/org/jruby/util/ShellLauncher.java,385,private static class StreamPumper extends Thread {
+src/org/jruby/util/ShellLauncher.java,391,"StreamPumper(InputStream in, OutputStream out, boolean avail) {"
+src/org/jruby/util/ShellLauncher.java,436,try { out.close(); } catch (IOException ioe) {}
+src/org/jruby/util/ShellLauncher.java,453,"StreamPumper t1 = new StreamPumper(pOut, out, false);"
+src/org/jruby/util/ShellLauncher.java,454,"StreamPumper t2 = new StreamPumper(pErr, err, false);"
+src/org/jruby/util/ShellLauncher.java,459,"StreamPumper t3 = new StreamPumper(in, pIn, true);"
+src/org/jruby/compiler/ASTCompiler.java,1044,"context.branchIfModule(receiverCallback, moduleCallback, notModuleCallback);"
+src/org/jruby/RubyString.java,3456,"return new String(value.bytes,value.begin,value.realSize, ""UTF8"");"
+src/org/jruby/ext/Readline.java,145,line = recv.getRuntime().newString(v);
+src/org/jruby/RubyFileTest.java,191,if (!file.exists()) noFileError(filename);
+src/org/jruby/RubyBigDecimal.java,265,"return new RubyBigDecimal(recv.getRuntime(), decimal);"
+src/org/jruby/RubyFloat.java,586,"RubyFloat result = RubyFloat.newFloat(input.getRuntime(), org.jruby.util.Convert.byteListToDouble(input.unmarshalString(),false));"
+src/org/jruby/RubyNumeric.java,341,"return new RubyFloat(runtime,Convert.byteListToDouble(arg.getByteList(),strict));"
+src/org/jruby/util/Convert.java,40,public class Convert {
+src/org/jruby/util/Convert.java,1092,"public static final double byteArrayToDouble(byte[] bytes, int begin, int buflen, boolean strict) {"

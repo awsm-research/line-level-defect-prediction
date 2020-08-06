@@ -1,0 +1,500 @@
+File,Line_number,SRC
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,27,import org.apache.lucene.analysis.BaseTokenStreamTestCase;
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,28,import org.apache.lucene.analysis.CachingTokenFilter;
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,29,import org.apache.lucene.analysis.Token;
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,30,import org.apache.lucene.analysis.TokenStream;
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,43,"super(name, new HashSet(Arrays.asList(new String[]{"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,44,"""testBehavingAsShingleFilter"", ""testMatrix"""
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,77,"assertNext(ts, ""please"", 0, 6);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,78,"assertNext(ts, ""please divide"", 0, 13);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,79,"assertNext(ts, ""divide"", 7, 13);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,80,"assertNext(ts, ""divide this"", 7, 18);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,81,"assertNext(ts, ""this"", 14, 18);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,82,"assertNext(ts, ""this sentence"", 14, 27);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,83,"assertNext(ts, ""sentence"", 19, 27);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,84,"assertNext(ts, ""sentence into"", 19, 32);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,85,"assertNext(ts, ""into"", 28, 32);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,86,"assertNext(ts, ""into shingles"", 28, 39);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,87,"assertNext(ts, ""shingles"", 33, 39);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/TestShingleMatrixFilter.java,90,assertFalse(ts.incrementToken());
+src/java/org/apache/lucene/search/Scorer.java,113,return doc == NO_MORE_DOCS;
+src/test/org/apache/lucene/search/TestBoolean2.java,162,"q1 = randBoolQuery(new Random(rnd.nextLong()), level, field, vals, null);"
+src/test/org/apache/lucene/search/TestBoolean2.java,200,"public static BooleanQuery randBoolQuery(Random rnd, int level, String field, String[] vals, Callback cb) {"
+src/test/org/apache/lucene/search/TestBoolean2.java,208,"if (qType < 7) q = new TermQuery(new Term(field, vals[rnd.nextInt(vals.length)]));"
+src/test/org/apache/lucene/search/TestBoolean2.java,209,"else q = randBoolQuery(rnd, level-1, field, vals, cb);"
+src/test/org/apache/lucene/search/TestBoolean2.java,213,if (r<2) occur=BooleanClause.Occur.MUST_NOT;
+src/test/org/apache/lucene/search/TestBoolean2.java,214,else if (r<5) occur=BooleanClause.Occur.MUST;
+src/test/org/apache/lucene/search/TestBoolean2.java,215,else occur=BooleanClause.Occur.SHOULD;
+src/test/org/apache/lucene/search/TestBoolean2.java,62,"Query q = (new QueryParser(field, new WhitespaceAnalyzer())).parse(queryText);"
+src/test/org/apache/lucene/search/TestBooleanMinShouldMatch.java,321,"BooleanQuery q1 = TestBoolean2.randBoolQuery(new Random(seed), lev, field, vals, null);"
+src/test/org/apache/lucene/search/TestBooleanMinShouldMatch.java,323,"BooleanQuery q2 = TestBoolean2.randBoolQuery(new Random(seed), lev, field, vals, null);"
+src/java/org/apache/lucene/index/DirectoryReader.java,797,return SegmentInfos.readCurrentVersion(directory) == segmentInfos.getVersion();
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,89,"private PayloadNearQuery newPhraseQuery (String fieldName, String phrase, boolean inOrder) {"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,90,int n;
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,91,"String[] words = phrase.split(""[\\s]+"");"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,92,SpanQuery clauses[] = new SpanQuery[words.length];
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,93,for (int i=0;i<clauses.length;i++) {
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,94,"clauses[i] = new PayloadTermQuery(new Term(fieldName, words[i]), new AveragePayloadFunction());"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,96,"return new PayloadNearQuery(clauses, 0, inOrder);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,99,protected void setUp() throws Exception {
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,100,super.setUp();
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,101,RAMDirectory directory = new RAMDirectory();
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,102,PayloadAnalyzer analyzer = new PayloadAnalyzer();
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,103,IndexWriter writer
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,104,"= new IndexWriter(directory, analyzer, true, IndexWriter.MaxFieldLength.LIMITED);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,105,writer.setSimilarity(similarity);
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,107,for (int i = 0; i < 1000; i++) {
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,108,Document doc = new Document();
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,109,"doc.add(new Field(""field"", English.intToEnglish(i), Field.Store.YES, Field.Index.ANALYZED));"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,110,writer.addDocument(doc);
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,112,writer.optimize();
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,113,writer.close();
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,115,"searcher = new IndexSearcher(directory, true);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,116,searcher.setSimilarity(similarity);
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,119,public void test() throws IOException {
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,120,PayloadNearQuery query;
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,121,TopDocs hits;
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,123,"query = newPhraseQuery(""field"", ""twenty two"", true);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,124,QueryUtils.check(query);
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,128,"hits = searcher.search(query, null, 100);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,129,"assertTrue(""hits is null and it shouldn't be"", hits != null);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,130,"assertTrue(""should be 10 hits"", hits.totalHits == 10);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,131,for (int j = 0; j < hits.scoreDocs.length; j++) {
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,132,ScoreDoc doc = hits.scoreDocs[j];
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,133,"assertTrue(doc.score + "" does not equal: "" + 3, doc.score == 3);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,135,for (int i=1;i<10;i++) {
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,136,"query = newPhraseQuery(""field"", English.intToEnglish(i)+"" hundred"", true);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,139,"hits = searcher.search(query, null, 100);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,140,"assertTrue(""hits is null and it shouldn't be"", hits != null);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,141,"assertTrue(""should be 100 hits"", hits.totalHits == 100);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,142,for (int j = 0; j < hits.scoreDocs.length; j++) {
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,143,ScoreDoc doc = hits.scoreDocs[j];
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,146,"assertTrue(doc.score + "" does not equal: "" + 3, doc.score == 3);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,151,public void testLongerSpan() throws IOException {
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,152,PayloadNearQuery query;
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,153,TopDocs hits;
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,154,"query = newPhraseQuery(""field"", ""nine hundred ninety nine"", true);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,155,"hits = searcher.search(query, null, 100);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,156,ScoreDoc doc = hits.scoreDocs[0];
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,159,"assertTrue(""hits is null and it shouldn't be"", hits != null);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,160,"assertTrue(""there should only be one hit"", hits.totalHits == 1);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,162,"assertTrue(doc.score + "" does not equal: "" + 3, doc.score == 3);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,165,public void testComplexNested() throws IOException {
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,166,PayloadNearQuery query;
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,167,TopDocs hits;
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,171,"SpanQuery q1 = newPhraseQuery(""field"", ""nine hundred"", true);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,172,"SpanQuery q2 = newPhraseQuery(""field"", ""ninety nine"", true);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,173,"SpanQuery q3 = newPhraseQuery(""field"", ""nine ninety"", false);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,174,"SpanQuery q4 = newPhraseQuery(""field"", ""hundred nine"", false);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,175,"SpanQuery[]clauses = new SpanQuery[] {new PayloadNearQuery(new SpanQuery[] {q1,q2}, 0, true), new PayloadNearQuery(new SpanQuery[] {q3,q4}, 0, false)};"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,176,"query = new PayloadNearQuery(clauses, 0, false);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,177,"hits = searcher.search(query, null, 100);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,178,"assertTrue(""hits is null and it shouldn't be"", hits != null);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,180,"assertTrue(""should only be one hit"", hits.scoreDocs.length == 1);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,182,ScoreDoc doc = hits.scoreDocs[0];
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,185,"assertTrue(doc.score + "" does not equal: "" + 3, doc.score == 3);"
+src/test/org/apache/lucene/search/payloads/TestPayloadNearQuery.java,188,static class BoostingSimilarity extends DefaultSimilarity {
+src/java/org/apache/lucene/analysis/CharArraySet.java,36,public class CharArraySet extends AbstractSet {
+src/java/org/apache/lucene/analysis/CharArraySet.java,53,"public CharArraySet(Collection c, boolean ignoreCase) {"
+src/java/org/apache/lucene/analysis/CharArraySet.java,226,char[] text = (char[])o;
+src/java/org/apache/lucene/analysis/CharArraySet.java,261,public class CharArraySetIterator implements Iterator {
+src/java/org/apache/lucene/analysis/CharArraySet.java,287,public Object next() {
+src/java/org/apache/lucene/analysis/CharArraySet.java,297,public Iterator iterator() {
+src/java/org/apache/lucene/analysis/CharArraySet.java,319,public boolean addAll(Collection coll) {
+contrib/wordnet/src/java/org/apache/lucene/wordnet/Syns2Index.java,166,int q2 = line.indexOf('\'');
+contrib/wordnet/src/java/org/apache/lucene/wordnet/Syns2Index.java,167,"String word = line.substring(0, q2).toLowerCase();"
+src/java/org/apache/lucene/util/Constants.java,81,LUCENE_VERSION = v;
+contrib/highlighter/src/java/org/apache/lucene/search/highlight/WeightedSpanTermExtractor.java,111,Term[] phraseQueryTerms = ((PhraseQuery) query).getTerms();
+contrib/highlighter/src/java/org/apache/lucene/search/highlight/WeightedSpanTermExtractor.java,240,Spans spans = spanQuery.getSpans(reader);
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,102,"""wordx wordy wordz wordx wordy wordx worda wordb wordy wordc"", ""y z x y z a b"" };"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,115,"QueryParser qp = new QueryParser(FIELD_NAME, analyzer);"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,223,"QueryParser qp = new QueryParser(f1, analyzer);"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,923,"QueryParser parser = new QueryParser(""bookid"", analyzer);"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,1104,"QueryParser parser = new QueryParser(FIELD_NAME, analyzer);"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,1412,"query = new QueryParser(""text"", new WhitespaceAnalyzer()).parse(""foo"");"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,1417,"query = new QueryParser(""text"", new WhitespaceAnalyzer()).parse(""10"");"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,1422,"query = new QueryParser(""text"", new WhitespaceAnalyzer()).parse(""hi"");"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,1427,"query = new QueryParser(""text"", new WhitespaceAnalyzer()).parse(""speed"");"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,1432,"query = new QueryParser(""text"", new WhitespaceAnalyzer()).parse(""hispeed"");"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,1437,"query = new QueryParser(""text"", new WhitespaceAnalyzer()).parse(""hi speed"");"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,1444,"query = new QueryParser(""text"", new WhitespaceAnalyzer()).parse(""foo"");"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,1449,"query = new QueryParser(""text"", new WhitespaceAnalyzer()).parse(""10"");"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,1454,"query = new QueryParser(""text"", new WhitespaceAnalyzer()).parse(""hi"");"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,1459,"query = new QueryParser(""text"", new WhitespaceAnalyzer()).parse(""speed"");"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,1464,"query = new QueryParser(""text"", new WhitespaceAnalyzer()).parse(""hispeed"");"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,1469,"query = new QueryParser(""text"", new WhitespaceAnalyzer()).parse(""hi speed"");"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,1514,"QueryParser parser = new QueryParser( ""t_text1"", a );"
+contrib/highlighter/src/test/org/apache/lucene/search/highlight/HighlighterTest.java,1271,"QueryParser parser = new QueryParser(FIELD_NAME, analyzer);"
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/ar/ArabicAnalyzer.java,75,public ArabicAnalyzer() {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/ar/ArabicAnalyzer.java,105,public ArabicAnalyzer( File stopwords ) throws IOException {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/br/BrazilianAnalyzer.java,84,public BrazilianAnalyzer() {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/br/BrazilianAnalyzer.java,85,stoptable = StopFilter.makeStopSet( BRAZILIAN_STOP_WORDS );
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/br/BrazilianAnalyzer.java,98,public BrazilianAnalyzer( Map stopwords ) {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/br/BrazilianAnalyzer.java,99,stoptable = new HashSet(stopwords.keySet());
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/br/BrazilianAnalyzer.java,105,public BrazilianAnalyzer( File stopwords ) throws IOException {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/br/BrazilianAnalyzer.java,106,stoptable = WordlistLoader.getWordSet( stopwords );
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/br/BrazilianAnalyzer.java,139,TokenStream result = new StandardTokenizer( reader );
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/br/BrazilianAnalyzer.java,165,streams.source = new StandardTokenizer(reader);
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/cjk/CJKAnalyzer.java,65,public CJKAnalyzer() {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/cz/CzechAnalyzer.java,75,public CzechAnalyzer() {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/cz/CzechAnalyzer.java,76,stoptable = StopFilter.makeStopSet( CZECH_STOP_WORDS );
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/cz/CzechAnalyzer.java,86,public CzechAnalyzer( HashSet stopwords ) {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/cz/CzechAnalyzer.java,87,stoptable = stopwords;
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/cz/CzechAnalyzer.java,93,public CzechAnalyzer( File stopwords ) throws IOException {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/cz/CzechAnalyzer.java,94,stoptable = WordlistLoader.getWordSet( stopwords );
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/cz/CzechAnalyzer.java,138,TokenStream result = new StandardTokenizer( reader );
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/cz/CzechAnalyzer.java,162,streams.source = new StandardTokenizer(reader);
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/de/GermanAnalyzer.java,83,public GermanAnalyzer() {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/de/GermanAnalyzer.java,99,public GermanAnalyzer(Map stopwords) {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/de/GermanAnalyzer.java,107,public GermanAnalyzer(File stopwords) throws IOException {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/de/GermanAnalyzer.java,144,TokenStream result = new StandardTokenizer(reader);
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/de/GermanAnalyzer.java,176,streams.source = new StandardTokenizer(reader);
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/el/GreekAnalyzer.java,233,public GreekAnalyzer(Map stopwords)
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/el/GreekAnalyzer.java,247,TokenStream result = new StandardTokenizer(reader);
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/el/GreekAnalyzer.java,270,streams.source = new StandardTokenizer(reader);
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/fa/PersianAnalyzer.java,73,public PersianAnalyzer() {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/fa/PersianAnalyzer.java,90,public PersianAnalyzer(String[] stopwords) {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/fa/PersianAnalyzer.java,97,public PersianAnalyzer(Hashtable stopwords) {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/fa/PersianAnalyzer.java,105,public PersianAnalyzer(File stopwords) throws IOException {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/fr/FrenchAnalyzer.java,90,public FrenchAnalyzer() {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/fr/FrenchAnalyzer.java,105,public FrenchAnalyzer(File stopwords) throws IOException {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/fr/FrenchAnalyzer.java,147,TokenStream result = new StandardTokenizer(reader);
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/fr/FrenchAnalyzer.java,174,streams.source = new StandardTokenizer(reader);
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/nl/DutchAnalyzer.java,83,public DutchAnalyzer() {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/nl/DutchAnalyzer.java,107,public DutchAnalyzer(HashSet stopwords) {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/nl/DutchAnalyzer.java,117,public DutchAnalyzer(File stopwords) {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/nl/DutchAnalyzer.java,182,TokenStream result = new StandardTokenizer(reader);
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/nl/DutchAnalyzer.java,214,streams.source = new StandardTokenizer(reader);
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/query/QueryAutoStopWordAnalyzer.java,57,public QueryAutoStopWordAnalyzer(Analyzer delegate) {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/ru/RussianAnalyzer.java,269,public RussianAnalyzer(Map stopwords)
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/th/ThaiAnalyzer.java,35,public ThaiAnalyzer() {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/th/ThaiAnalyzer.java,40,TokenStream ts = new StandardTokenizer(reader);
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/th/ThaiAnalyzer.java,63,streams.source = new StandardTokenizer(reader);
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ar/TestArabicAnalyzer.java,35,new ArabicAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ar/TestArabicAnalyzer.java,42,ArabicAnalyzer a = new ArabicAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ar/TestArabicAnalyzer.java,63,ArabicAnalyzer a = new ArabicAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ar/TestArabicAnalyzer.java,72,"assertAnalyzesTo(new ArabicAnalyzer(), ""English text."", new String[] {"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/br/TestBrazilianStemmer.java,126,Analyzer a = new BrazilianAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/br/TestBrazilianStemmer.java,134,BrazilianAnalyzer a = new BrazilianAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/br/TestBrazilianStemmer.java,144,BrazilianAnalyzer a = new BrazilianAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/br/TestBrazilianStemmer.java,151,"checkOneTerm(new BrazilianAnalyzer(), input, expected);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cjk/TestCJKTokenizer.java,221,Analyzer analyzer = new CJKAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cjk/TestCJKTokenizer.java,232,Analyzer analyzer = new CJKAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cjk/TestCJKTokenizer.java,55,assertTrue(tokenizer.incrementToken());
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cjk/TestCJKTokenizer.java,56,"assertEquals(termAtt.term(), out_tokens[i].termText);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cjk/TestCJKTokenizer.java,57,"assertEquals(offsetAtt.startOffset(), out_tokens[i].start);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cjk/TestCJKTokenizer.java,58,"assertEquals(offsetAtt.endOffset(), out_tokens[i].end);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cjk/TestCJKTokenizer.java,59,"assertEquals(typeAtt.type(), out_tokens[i].type);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cjk/TestCJKTokenizer.java,61,assertFalse(tokenizer.incrementToken());
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cjk/TestCJKTokenizer.java,70,assertTrue(ts.incrementToken());
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cjk/TestCJKTokenizer.java,71,"assertEquals(termAtt.term(), out_tokens[i].termText);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cjk/TestCJKTokenizer.java,72,"assertEquals(offsetAtt.startOffset(), out_tokens[i].start);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cjk/TestCJKTokenizer.java,73,"assertEquals(offsetAtt.endOffset(), out_tokens[i].end);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cjk/TestCJKTokenizer.java,74,"assertEquals(typeAtt.type(), out_tokens[i].type);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cjk/TestCJKTokenizer.java,76,assertFalse(ts.incrementToken());
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cz/TestCzechAnalyzer.java,40,"assertAnalyzesTo(new CzechAnalyzer(), ""Pokud mluvime o volnem"", new String[] { ""mluvime"", ""volnem"" });"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cz/TestCzechAnalyzer.java,44,Analyzer analyzer = new CzechAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cz/TestCzechAnalyzer.java,64,CzechAnalyzer cz = new CzechAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/cz/TestCzechAnalyzer.java,75,CzechAnalyzer cz = new CzechAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/de/TestGermanStemFilter.java,64,Analyzer a = new GermanAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/de/TestGermanStemFilter.java,80,"checkReuse(new GermanSubclassAnalyzer(), ""Tischen"", ""Tischen"");"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/de/TestGermanStemFilter.java,88,GermanAnalyzer a = new GermanAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/de/TestGermanStemFilter.java,95,"checkOneTerm(new GermanAnalyzer(), input, expected);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/el/GreekAnalyzerTest.java,36,Analyzer a = new GreekAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/el/GreekAnalyzerTest.java,52,Analyzer a = new GreekAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/fa/TestPersianAnalyzer.java,36,new PersianAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/fa/TestPersianAnalyzer.java,47,Analyzer a = new PersianAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/fa/TestPersianAnalyzer.java,123,Analyzer a = new PersianAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/fa/TestPersianAnalyzer.java,194,Analyzer a = new PersianAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/fa/TestPersianAnalyzer.java,204,Analyzer a = new PersianAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/fa/TestPersianAnalyzer.java,212,Analyzer a = new PersianAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/fr/TestElision.java,40,Tokenizer tokenizer = new StandardTokenizer(new StringReader(test));
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/fr/TestFrenchAnalyzer.java,35,FrenchAnalyzer fa = new FrenchAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/fr/TestFrenchAnalyzer.java,137,FrenchAnalyzer fa = new FrenchAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/fr/TestFrenchAnalyzer.java,162,FrenchAnalyzer fa = new FrenchAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/nl/TestDutchStemmer.java,122,Analyzer a = new DutchAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/nl/TestDutchStemmer.java,139,Analyzer a = new DutchSubclassAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/nl/TestDutchStemmer.java,151,DutchAnalyzer a = new DutchAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/nl/TestDutchStemmer.java,162,DutchAnalyzer a = new DutchAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/nl/TestDutchStemmer.java,169,"checkOneTerm(new DutchAnalyzer(), input, expected);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/query/QueryAutoStopWordAnalyzerTest.java,66,protectedAnalyzer = new QueryAutoStopWordAnalyzer(appAnalyzer);
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/query/QueryAutoStopWordAnalyzerTest.java,76,"QueryParser qp = new QueryParser(""repetitiveField"", a);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/query/QueryAutoStopWordAnalyzerTest.java,153,public QueryAutoStopWordSubclassAnalyzer() {
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/query/QueryAutoStopWordAnalyzerTest.java,154,super(new WhitespaceAnalyzer());
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/query/QueryAutoStopWordAnalyzerTest.java,163,QueryAutoStopWordAnalyzer a = new QueryAutoStopWordSubclassAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/query/QueryAutoStopWordAnalyzerTest.java,184,QueryAutoStopWordAnalyzer a = new QueryAutoStopWordAnalyzer(new NonreusableAnalyzer());
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/query/QueryAutoStopWordAnalyzerTest.java,193,QueryAutoStopWordAnalyzer a = new QueryAutoStopWordAnalyzer(new WhitespaceAnalyzer());
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ru/TestRussianAnalyzer.java,63,RussianAnalyzer ra = new RussianAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ru/TestRussianAnalyzer.java,174,RussianAnalyzer ra = new RussianAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ru/TestRussianAnalyzer.java,192,Analyzer a = new RussianAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/shingle/ShingleAnalyzerWrapperTest.java,88,"QueryParser qp = new QueryParser(""content"", analyzer);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/th/TestThaiAnalyzer.java,71,ThaiAnalyzer analyzer = new ThaiAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/th/TestThaiAnalyzer.java,93,ThaiAnalyzer analyzer = new ThaiAnalyzer();
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/th/TestThaiAnalyzer.java,117,ThaiSubclassAnalyzer a = new ThaiSubclassAnalyzer();
+contrib/analyzers/smartcn/src/java/org/apache/lucene/analysis/cn/smart/SmartChineseAnalyzer.java,66,public SmartChineseAnalyzer() {
+contrib/analyzers/smartcn/src/java/org/apache/lucene/analysis/cn/smart/SmartChineseAnalyzer.java,67,this(true);
+contrib/analyzers/smartcn/src/java/org/apache/lucene/analysis/cn/smart/SmartChineseAnalyzer.java,81,public SmartChineseAnalyzer(boolean useDefaultStopWords) {
+contrib/analyzers/smartcn/src/java/org/apache/lucene/analysis/cn/smart/SmartChineseAnalyzer.java,105,public SmartChineseAnalyzer(Set stopWords) {
+contrib/analyzers/smartcn/src/test/org/apache/lucene/analysis/cn/smart/TestSmartChineseAnalyzer.java,32,Analyzer ca = new SmartChineseAnalyzer(); /* will load stopwords */
+contrib/analyzers/smartcn/src/test/org/apache/lucene/analysis/cn/smart/TestSmartChineseAnalyzer.java,43,Analyzer ca = new SmartChineseAnalyzer(); /* will load stopwords */
+contrib/analyzers/smartcn/src/test/org/apache/lucene/analysis/cn/smart/TestSmartChineseAnalyzer.java,54,Analyzer ca = new SmartChineseAnalyzer(); /* will load stopwords */
+contrib/analyzers/smartcn/src/test/org/apache/lucene/analysis/cn/smart/TestSmartChineseAnalyzer.java,74,Analyzer ca = new SmartChineseAnalyzer(true);
+contrib/analyzers/smartcn/src/test/org/apache/lucene/analysis/cn/smart/TestSmartChineseAnalyzer.java,142,Analyzer a = new SmartChineseAnalyzer();
+contrib/ant/src/test/org/apache/lucene/ant/IndexTaskTest.java,77,"Query query = new QueryParser(""contents"",analyzer).parse(""test"");"
+contrib/benchmark/src/java/org/apache/lucene/benchmark/byTask/feeds/EnwikiQueryMaker.java,94,"QueryParser qp = new QueryParser(DocMaker.BODY_FIELD, a);"
+contrib/benchmark/src/java/org/apache/lucene/benchmark/byTask/feeds/FileBasedQueryMaker.java,50,"QueryParser qp = new QueryParser(defaultField, anlzr);"
+contrib/benchmark/src/java/org/apache/lucene/benchmark/byTask/feeds/ReutersQueryMaker.java,74,"QueryParser qp = new QueryParser(DocMaker.BODY_FIELD, a);"
+contrib/benchmark/src/java/org/apache/lucene/benchmark/byTask/feeds/SimpleQueryMaker.java,48,"QueryParser qp = new QueryParser(DocMaker.BODY_FIELD,anlzr);"
+contrib/collation/src/test/org/apache/lucene/collation/CollationTestBase.java,87,"AnalyzingQueryParser aqp = new AnalyzingQueryParser(""content"", analyzer);"
+contrib/fast-vector-highlighter/src/java/org/apache/lucene/search/vectorhighlight/FieldTermStack.java,53,"QueryParser parser = new QueryParser( ""f"", analyzer );"
+contrib/fast-vector-highlighter/src/test/org/apache/lucene/search/vectorhighlight/AbstractTestCase.java,81,"paW = new QueryParser( F, analyzerW );"
+contrib/fast-vector-highlighter/src/test/org/apache/lucene/search/vectorhighlight/AbstractTestCase.java,82,"paB = new QueryParser( F, analyzerB );"
+contrib/lucli/src/java/lucli/LuceneMethods.java,192,"MultiFieldQueryParser parser = new MultiFieldQueryParser(indexedArray, analyzer);"
+contrib/lucli/src/java/lucli/LuceneMethods.java,213,"MultiFieldQueryParser parser = new MultiFieldQueryParser(fieldsArray, analyzer);"
+contrib/memory/src/java/org/apache/lucene/index/memory/PatternAnalyzer.java,127,"NON_WORD_PATTERN, true, StopAnalyzer.ENGLISH_STOP_WORDS_SET);"
+contrib/memory/src/java/org/apache/lucene/index/memory/PatternAnalyzer.java,137,"NON_WORD_PATTERN, true, EXTENDED_ENGLISH_STOP_WORDS);"
+contrib/memory/src/java/org/apache/lucene/index/memory/PatternAnalyzer.java,161,"public PatternAnalyzer(Pattern pattern, boolean toLowerCase, Set stopWords) {"
+contrib/memory/src/java/org/apache/lucene/index/memory/PatternAnalyzer.java,200,"if (stopWords != null) stream = new StopFilter(false, stream, stopWords);"
+contrib/memory/src/test/org/apache/lucene/index/memory/MemoryIndexTest.java,469,"QueryParser parser = new QueryParser(FIELD_NAME, analyzer);"
+contrib/misc/src/java/org/apache/lucene/queryParser/analyzing/AnalyzingQueryParser.java,52,"public AnalyzingQueryParser(String field, Analyzer analyzer) {"
+contrib/misc/src/java/org/apache/lucene/queryParser/analyzing/AnalyzingQueryParser.java,53,"super(field, analyzer);"
+contrib/misc/src/java/org/apache/lucene/queryParser/complexPhrase/ComplexPhraseQueryParser.java,70,"public ComplexPhraseQueryParser(String f, Analyzer a) {"
+contrib/misc/src/java/org/apache/lucene/queryParser/complexPhrase/ComplexPhraseQueryParser.java,71,"super(f, a);"
+contrib/misc/src/test/org/apache/lucene/queryParser/analyzing/TestAnalyzingQueryParser.java,100,"AnalyzingQueryParser qp = new AnalyzingQueryParser(""field"", a);"
+contrib/misc/src/test/org/apache/lucene/queryParser/analyzing/TestAnalyzingQueryParser.java,112,TokenStream result = new StandardTokenizer(reader);
+contrib/misc/src/test/org/apache/lucene/queryParser/complexPhrase/TestComplexPhraseQuery.java,74,"QueryParser qp = new ComplexPhraseQueryParser(defaultFieldName, analyzer);"
+contrib/misc/src/test/org/apache/lucene/queryParser/complexPhrase/TestComplexPhraseQuery.java,87,"QueryParser qp = new ComplexPhraseQueryParser(defaultFieldName, analyzer);"
+contrib/queryparser/src/test/org/apache/lucene/queryParser/standard/TestMultiAnalyzerQPHelper.java,157,TokenStream result = new StandardTokenizer(reader);
+contrib/queryparser/src/test/org/apache/lucene/queryParser/standard/TestMultiAnalyzerQPHelper.java,267,TokenStream result = new StandardTokenizer(reader);
+contrib/queryparser/src/test/org/apache/lucene/queryParser/standard/TestMultiAnalyzerWrapper.java,151,TokenStream result = new StandardTokenizer(reader);
+contrib/queryparser/src/test/org/apache/lucene/queryParser/standard/TestMultiAnalyzerWrapper.java,261,TokenStream result = new StandardTokenizer(reader);
+contrib/snowball/src/java/org/apache/lucene/analysis/snowball/SnowballAnalyzer.java,39,public SnowballAnalyzer(String name) {
+contrib/snowball/src/java/org/apache/lucene/analysis/snowball/SnowballAnalyzer.java,45,"public SnowballAnalyzer(String name, String[] stopWords) {"
+contrib/snowball/src/java/org/apache/lucene/analysis/snowball/SnowballAnalyzer.java,46,this(name);
+contrib/snowball/src/java/org/apache/lucene/analysis/snowball/SnowballAnalyzer.java,54,TokenStream result = new StandardTokenizer(reader);
+contrib/snowball/src/java/org/apache/lucene/analysis/snowball/SnowballAnalyzer.java,83,streams.source = new StandardTokenizer(reader);
+contrib/snowball/src/test/org/apache/lucene/analysis/snowball/TestSnowball.java,38,"Analyzer a = new SnowballAnalyzer(""English"");"
+contrib/snowball/src/test/org/apache/lucene/analysis/snowball/TestSnowball.java,44,"Analyzer a = new SnowballAnalyzer(""English"");"
+contrib/snowball/src/test/org/apache/lucene/analysis/snowball/TestSnowball.java,56,super(name);
+contrib/swing/src/java/org/apache/lucene/swing/models/ListSearcher.java,164,"MultiFieldQueryParser parser = new MultiFieldQueryParser(fields, analyzer);"
+contrib/swing/src/java/org/apache/lucene/swing/models/TableSearcher.java,245,"MultiFieldQueryParser parser = new MultiFieldQueryParser(fields, analyzer);"
+contrib/xml-query-parser/src/java/org/apache/lucene/xmlparser/builders/UserInputQueryBuilder.java,91,"return new QueryParser(fieldName,analyzer);"
+src/demo/org/apache/lucene/demo/SearchFiles.java,130,"QueryParser parser = new QueryParser(field, analyzer);"
+src/java/org/apache/lucene/analysis/StopAnalyzer.java,95,this.enablePositionIncrements = enablePositionIncrements;
+src/java/org/apache/lucene/analysis/StopAnalyzer.java,155,this.enablePositionIncrements = enablePositionIncrements;
+src/java/org/apache/lucene/analysis/StopAnalyzer.java,77,this.enablePositionIncrements = enablePositionIncrements;
+src/java/org/apache/lucene/analysis/StopAnalyzer.java,134,this.enablePositionIncrements = enablePositionIncrements;
+src/java/org/apache/lucene/analysis/standard/StandardAnalyzer.java,267,"StandardTokenizer tokenStream = new StandardTokenizer(reader, replaceInvalidAcronym);"
+src/java/org/apache/lucene/analysis/standard/StandardAnalyzer.java,274,"result = new StopFilter(enableStopPositionIncrements, result, stopSet);"
+src/java/org/apache/lucene/analysis/standard/StandardAnalyzer.java,318,streams.tokenStream = new StandardTokenizer(reader);
+src/java/org/apache/lucene/analysis/standard/StandardAnalyzer.java,324,"streams.filteredTokenStream = new StopFilter(enableStopPositionIncrements, streams.filteredTokenStream, stopSet);"
+src/java/org/apache/lucene/analysis/standard/StandardTokenizer.java,124,"public StandardTokenizer(Reader input, boolean replaceInvalidAcronym) {"
+src/java/org/apache/lucene/analysis/standard/StandardTokenizer.java,127,"init(input, replaceInvalidAcronym);"
+src/java/org/apache/lucene/analysis/standard/StandardTokenizer.java,133,"public StandardTokenizer(AttributeSource source, Reader input, boolean replaceInvalidAcronym) {"
+src/java/org/apache/lucene/analysis/standard/StandardTokenizer.java,136,"init(input, replaceInvalidAcronym);"
+src/java/org/apache/lucene/analysis/standard/StandardTokenizer.java,142,"public StandardTokenizer(AttributeFactory factory, Reader input, boolean replaceInvalidAcronym) {"
+src/java/org/apache/lucene/analysis/standard/StandardTokenizer.java,145,"init(input, replaceInvalidAcronym);"
+src/java/org/apache/lucene/analysis/standard/StandardTokenizer.java,148,"private void init(Reader input, boolean replaceInvalidAcronym) {"
+src/java/org/apache/lucene/analysis/standard/StandardTokenizer.java,149,this.replaceInvalidAcronym = replaceInvalidAcronym;
+src/java/org/apache/lucene/queryParser/MultiFieldQueryParser.java,93,"public MultiFieldQueryParser(String[] fields, Analyzer analyzer) {"
+src/java/org/apache/lucene/queryParser/MultiFieldQueryParser.java,94,"super(null, analyzer);"
+src/java/org/apache/lucene/queryParser/MultiFieldQueryParser.java,206,"public static Query parse(String[] queries, String[] fields,"
+src/java/org/apache/lucene/queryParser/MultiFieldQueryParser.java,214,"QueryParser qp = new QueryParser(fields[i], analyzer);"
+src/java/org/apache/lucene/queryParser/MultiFieldQueryParser.java,254,"public static Query parse(String query, String[] fields,"
+src/java/org/apache/lucene/queryParser/MultiFieldQueryParser.java,260,"QueryParser qp = new QueryParser(fields[i], analyzer);"
+src/java/org/apache/lucene/queryParser/MultiFieldQueryParser.java,301,"public static Query parse(String[] queries, String[] fields, BooleanClause.Occur[] flags,"
+src/java/org/apache/lucene/queryParser/MultiFieldQueryParser.java,309,"QueryParser qp = new QueryParser(fields[i], analyzer);"
+src/java/org/apache/lucene/queryParser/QueryParser.java,128,boolean enablePositionIncrements = false;
+src/java/org/apache/lucene/queryParser/QueryParser.java,162,"public QueryParser(String f, Analyzer a) {"
+src/java/org/apache/lucene/queryParser/QueryParser.java,1158,"QueryParser qp = new QueryParser(""field"","
+src/java/org/apache/lucene/queryParser/QueryParser.java,1644,public QueryParser(CharStream stream) {
+src/java/org/apache/lucene/queryParser/QueryParser.java,1664,public QueryParser(QueryParserTokenManager tm) {
+src/test/org/apache/lucene/TestDemo.java,66,"QueryParser parser = new QueryParser(""fieldname"", analyzer);"
+src/test/org/apache/lucene/TestSearch.java,113,"QueryParser parser = new QueryParser(""contents"", analyzer);"
+src/test/org/apache/lucene/TestSearchForDuplicates.java,105,"QueryParser parser = new QueryParser(PRIORITY_FIELD, analyzer);"
+src/test/org/apache/lucene/TestSearchForDuplicates.java,120,"parser = new QueryParser(PRIORITY_FIELD, analyzer);"
+src/test/org/apache/lucene/analysis/TestKeywordAnalyzer.java,61,"QueryParser queryParser = new QueryParser(""description"", analyzer);"
+src/test/org/apache/lucene/analysis/TestStopAnalyzer.java,31,private StopAnalyzer stop = new StopAnalyzer(false);
+src/test/org/apache/lucene/analysis/TestStopAnalyzer.java,74,"assertEquals(1,posIncrAtt.getPositionIncrement()); // by default stop tokenizer does not apply increments."
+src/test/org/apache/lucene/analysis/TestTeeSinkTokenFilter.java,170,TeeSinkTokenFilter teeStream = new TeeSinkTokenFilter(new StandardFilter(new StandardTokenizer(new StringReader(buffer.toString()))));
+src/test/org/apache/lucene/analysis/TestTeeSinkTokenFilter.java,173,"TokenStream stream = new ModuloTokenFilter(new StandardFilter(new StandardTokenizer(new StringReader(buffer.toString()))), 100);"
+src/test/org/apache/lucene/analysis/TestTeeSinkTokenFilter.java,186,stream = new StandardFilter(new StandardTokenizer(new StringReader(buffer.toString())));
+src/test/org/apache/lucene/analysis/TestTeeSinkTokenFilter.java,191,"stream = new ModuloTokenFilter(new StandardFilter(new StandardTokenizer(new StringReader(buffer.toString()))), modCounts[j]);"
+src/test/org/apache/lucene/analysis/TestTeeSinkTokenFilter.java,203,teeStream = new TeeSinkTokenFilter(new StandardFilter(new StandardTokenizer(new StringReader(buffer.toString()))));
+src/test/org/apache/lucene/index/TestIndexWriter.java,1798,return new TokenFilter(new StandardTokenizer(reader)) {
+src/test/org/apache/lucene/queryParser/TestMultiAnalyzer.java,47,"QueryParser qp = new QueryParser("""", new MultiAnalyzer());"
+src/test/org/apache/lucene/queryParser/TestMultiAnalyzer.java,120,"QueryParser qp = new QueryParser("""", new PosIncrementAnalyzer());"
+src/test/org/apache/lucene/queryParser/TestMultiAnalyzer.java,137,TokenStream result = new StandardTokenizer(reader);
+src/test/org/apache/lucene/queryParser/TestMultiAnalyzer.java,203,TokenStream result = new StandardTokenizer(reader);
+src/test/org/apache/lucene/queryParser/TestMultiAnalyzer.java,241,"super(f, a);"
+src/test/org/apache/lucene/queryParser/TestMultiFieldQueryParser.java,62,"MultiFieldQueryParser mfqp = new MultiFieldQueryParser(fields, a);"
+src/test/org/apache/lucene/queryParser/TestMultiFieldQueryParser.java,67,"q = MultiFieldQueryParser.parse(qtxt, fields, occur, a);"
+src/test/org/apache/lucene/queryParser/TestMultiFieldQueryParser.java,189,"q = MultiFieldQueryParser.parse(queries6, fields, stopA);"
+src/test/org/apache/lucene/queryParser/TestMultiFieldQueryParser.java,193,"q = MultiFieldQueryParser.parse(queries7, fields, stopA);"
+src/test/org/apache/lucene/queryParser/TestMultiFieldQueryParser.java,272,"MultiFieldQueryParser parser = new MultiFieldQueryParser(fields, new AnalyzerReturningNull());"
+src/test/org/apache/lucene/queryParser/TestMultiFieldQueryParser.java,294,"new MultiFieldQueryParser(new String[] {""body""}, analyzer);"
+src/test/org/apache/lucene/queryParser/TestQueryParser.java,130,"super(f, a);"
+src/test/org/apache/lucene/queryParser/TestQueryParser.java,152,"QueryParser qp = new QueryParser(""field"", a);"
+src/test/org/apache/lucene/queryParser/TestQueryParser.java,222,"QueryParser qp = new QueryParser(""field"", a);"
+src/test/org/apache/lucene/queryParser/TestQueryParser.java,449,"QueryParser qp = new QueryParser(""field"", new SimpleAnalyzer());"
+src/test/org/apache/lucene/queryParser/TestQueryParser.java,475,"QueryParser qp = new QueryParser(""content"", new WhitespaceAnalyzer());"
+src/test/org/apache/lucene/queryParser/TestQueryParser.java,572,"QueryParser qp = new QueryParser(""field"", new SimpleAnalyzer());"
+src/test/org/apache/lucene/queryParser/TestQueryParser.java,855,"QueryParser qp = new QueryParser(""field"", new WhitespaceAnalyzer());"
+src/test/org/apache/lucene/queryParser/TestQueryParser.java,867,"QueryParser qp = new QueryParser(""field"", new WhitespaceAnalyzer());"
+src/test/org/apache/lucene/queryParser/TestQueryParser.java,891,"QueryParser qp = new QueryParser(""field"", new WhitespaceAnalyzer()) {"
+src/test/org/apache/lucene/queryParser/TestQueryParser.java,986,"QueryParser qp = new QueryParser(""field"", new WhitespaceAnalyzer());"
+src/test/org/apache/lucene/queryParser/TestQueryParser.java,995,"QueryParser qp = new QueryParser(""date"", new WhitespaceAnalyzer());"
+src/test/org/apache/lucene/search/TestDateSort.java,79,"QueryParser queryParser = new QueryParser(TEXT_FIELD, new WhitespaceAnalyzer());"
+src/test/org/apache/lucene/search/TestExplanations.java,54,"new QueryParser(FIELD, new WhitespaceAnalyzer());"
+src/test/org/apache/lucene/search/TestMatchAllDocsQuery.java,103,"QueryParser qp = new QueryParser(""key"", analyzer);"
+src/test/org/apache/lucene/search/TestNot.java,51,"QueryParser parser = new QueryParser(""field"", new SimpleAnalyzer());"
+src/test/org/apache/lucene/search/TestPositionIncrement.java,189,"QueryParser qp = new QueryParser(""field"","
+src/test/org/apache/lucene/search/TestPositionIncrement.java,213,"qp = new QueryParser(""field"","
+src/test/org/apache/lucene/search/TestTimeLimitingCollector.java,88,"QueryParser queryParser = new QueryParser(FIELD_NAME, new WhitespaceAnalyzer());"
+src/test/org/apache/lucene/search/TestWildcard.java,170,"QueryParser qp = new QueryParser(field, new WhitespaceAnalyzer());"
+src/test/org/apache/lucene/search/function/TestCustomScoreQuery.java,142,"QueryParser qp = new QueryParser(TEXT_FIELD,anlzr);"
+src/test/org/apache/lucene/search/spans/TestNearSpansOrdered.java,39,"new QueryParser(FIELD, new WhitespaceAnalyzer());"
+contrib/benchmark/src/java/org/apache/lucene/benchmark/byTask/feeds/DocMaker.java,164,final DocState ds = reuseFields ? getDocState() : localDocState;
+contrib/benchmark/src/java/org/apache/lucene/benchmark/byTask/feeds/DocMaker.java,248,"ds = new DocState(true, storeVal, indexVal, bodyIndexVal, termVecVal);"
+contrib/benchmark/src/java/org/apache/lucene/benchmark/byTask/feeds/DocMaker.java,292,DocData docData = source.getNextDocData(reuseFields ? getDocState().docData : localDocState.docData);
+contrib/benchmark/src/java/org/apache/lucene/benchmark/byTask/feeds/DocMaker.java,307,DocData docData = reuseFields ? getDocState().docData : localDocState.docData;
+contrib/benchmark/src/java/org/apache/lucene/benchmark/byTask/feeds/EnwikiContentSource.java,269,"public DocData getNextDocData(DocData docData) throws NoMoreDataException, IOException {"
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/DistanceFilter.java,39,"protected final WeakHashMap<String,Double> distanceLookupCache;"
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/CartesianShapeFilter.java,47,"CartesianShapeFilter(Shape shape, String fieldName){"
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/CartesianShapeFilter.java,53,public DocIdSet getDocIdSet(IndexReader reader) throws IOException {
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/CartesianShapeFilter.java,54,long start = System.currentTimeMillis();
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/CartesianShapeFilter.java,56,OpenBitSet bits = new OpenBitSet(reader.maxDoc());
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/CartesianShapeFilter.java,58,TermDocs termDocs = reader.termDocs();
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/CartesianShapeFilter.java,59,List<Double> area = shape.getArea();
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/CartesianShapeFilter.java,61,"log.fine(""Area size ""+ sz);"
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/CartesianShapeFilter.java,66,"termDocs.seek(new Term(fieldName,"
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/CartesianShapeFilter.java,67,NumericUtils.doubleToPrefixCoded(boxId)));
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/Shape.java,28,public class Shape {
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/Shape.java,31,private String tierId;
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/Shape.java,33,public Shape (String tierId){
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/Shape.java,45,public String getTierId(){
+src/java/org/apache/lucene/search/BooleanQuery.java,521,&& this.getMinimumNumberShouldMatch() == other.getMinimumNumberShouldMatch();
+src/java/org/apache/lucene/search/BooleanQuery.java,527,+ getMinimumNumberShouldMatch();
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndex.java,64,private Set<Integer> deletedDocuments;
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndex.java,179,if (sourceIndexReader.isDeleted(i)) {
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndex.java,180,deletedDocuments.add(i);
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndex.java,331,public Set<Integer> getDeletedDocuments() {
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,32,import org.apache.lucene.index.CorruptIndexException;
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,33,import org.apache.lucene.index.IndexReader;
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,34,import org.apache.lucene.index.IndexWriter;
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,35,import org.apache.lucene.index.Term;
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,36,import org.apache.lucene.index.TermDocs;
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,37,import org.apache.lucene.index.TermEnum;
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,38,import org.apache.lucene.index.TermFreqVector;
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,39,import org.apache.lucene.index.TermPositions;
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,40,import org.apache.lucene.index.TermVectorMapper;
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,104,private Set<InstantiatedDocument> deletedDocuments = new HashSet<InstantiatedDocument>();
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,105,private Set<Integer> deletedDocumentNumbers = new HashSet<Integer>();
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,106,"private Map<String,List<NormUpdate>> updatedNormsByFieldNameAndDocumentNumber = null;"
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,119,return getIndex().getDocumentsByNumber().length - index.getDeletedDocuments().size() - deletedDocuments.size();
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,126,public boolean isDeleted(int n) {
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,127,return getIndex().getDeletedDocuments().contains(n) || deletedDocumentNumbers.contains(n);
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,130,public boolean hasDeletions() {
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,131,return getIndex().getDeletedDocuments().size() > 0 || deletedDocumentNumbers.size() > 0;
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,135,if (!getIndex().getDeletedDocuments().contains(docNum)) {
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,136,if (deletedDocumentNumbers.add(docNum)) {
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,137,deletedDocuments.add(getIndex().getDocumentsByNumber()[docNum]);
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,143,deletedDocumentNumbers.clear();
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,144,deletedDocuments.clear();
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,153,if (updatedNormsByFieldNameAndDocumentNumber != null) {
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,154,"for (Map.Entry<String,List<NormUpdate>> e : updatedNormsByFieldNameAndDocumentNumber.entrySet()) {"
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,160,updatedNormsByFieldNameAndDocumentNumber = null;
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,166,if (deletedDocumentNumbers.size() > 0) {
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,167,for (Integer doc : deletedDocumentNumbers) {
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,168,getIndex().getDeletedDocuments().add(doc);
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,170,deletedDocumentNumbers.clear();
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,171,deletedDocuments.clear();
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,286,if (updatedNormsByFieldNameAndDocumentNumber != null) {
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,288,List<NormUpdate> updated = updatedNormsByFieldNameAndDocumentNumber.get(field);
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,307,if (updatedNormsByFieldNameAndDocumentNumber == null) {
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,308,"updatedNormsByFieldNameAndDocumentNumber = new HashMap<String,List<NormUpdate>>(getIndex().getNormsByFieldNameAndDocumentNumber().size());"
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,310,List<NormUpdate> list = updatedNormsByFieldNameAndDocumentNumber.get(field);
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedIndexReader.java,313,"updatedNormsByFieldNameAndDocumentNumber.put(field, list);"
+contrib/instantiated/src/java/org/apache/lucene/store/instantiated/InstantiatedTermDocs.java,63,if (reader.hasDeletions() && reader.isDeleted(currentDocumentInformation.getDocument().getDocumentNumber())) {
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,117,"private void testTermDocs(Directory aprioriIndex, InstantiatedIndex testIndex) throws Exception {"
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,122,"TermEnum aprioriTermEnum = aprioriReader.terms(new Term(""c"", ""danny""));"
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,124,TermDocs aprioriTermDocs = aprioriReader.termDocs(aprioriTermEnum.term());
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,125,TermDocs testTermDocs = testReader.termDocs(aprioriTermEnum.term());
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,127,"assertEquals(aprioriTermDocs.next(), testTermDocs.next());"
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,128,"assertEquals(aprioriTermDocs.doc(), testTermDocs.doc());"
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,130,"assertEquals(aprioriTermDocs.skipTo(100), testTermDocs.skipTo(100));"
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,131,"assertEquals(aprioriTermDocs.doc(), testTermDocs.doc());"
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,133,"assertEquals(aprioriTermDocs.next(), testTermDocs.next());"
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,134,"assertEquals(aprioriTermDocs.doc(), testTermDocs.doc());"
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,139,"assertEquals(aprioriTermDocs.skipTo(110), testTermDocs.skipTo(110));"
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,346,"assertEquals(aprioriTermDocs.doc(), testTermDocs.doc());"
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,142,"assertEquals(aprioriTermDocs.skipTo(10), testTermDocs.skipTo(10));"
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,143,"assertEquals(aprioriTermDocs.doc(), testTermDocs.doc());"
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,145,"assertEquals(aprioriTermDocs.skipTo(210), testTermDocs.skipTo(210));"
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,146,"assertEquals(aprioriTermDocs.doc(), testTermDocs.doc());"
+contrib/instantiated/src/test/org/apache/lucene/store/instantiated/TestIndicesEquals.java,149,aprioriReader.close();
+src/java/org/apache/lucene/index/AllTermDocs.java,23,class AllTermDocs implements TermDocs {
+src/java/org/apache/lucene/index/AllTermDocs.java,84,public void close() throws IOException {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/shingle/ShingleFilter.java,183,} else {
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/shingle/ShingleFilter.java,198,if ((! outputUnigrams) && shingleBufferPosition == 1) {
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/miscellaneous/TestPrefixAwareTokenFilter.java,39,"assertNext(ts, ""a"", 0, 1);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/miscellaneous/TestPrefixAwareTokenFilter.java,40,"assertNext(ts, ""b"", 1, 2);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/miscellaneous/TestPrefixAwareTokenFilter.java,41,assertFalse(ts.incrementToken());
+src/test/org/apache/lucene/analysis/BaseTokenStreamTestCase.java,91,"assertTrue(""has TermAttribute"", ts.hasAttribute(TermAttribute.class));"
+src/test/org/apache/lucene/analysis/BaseTokenStreamTestCase.java,96,"assertTrue(""has OffsetAttribute"", ts.hasAttribute(OffsetAttribute.class));"
+src/test/org/apache/lucene/analysis/BaseTokenStreamTestCase.java,102,"assertTrue(""has TypeAttribute"", ts.hasAttribute(TypeAttribute.class));"
+src/test/org/apache/lucene/analysis/BaseTokenStreamTestCase.java,108,"assertTrue(""has PositionIncrementAttribute"", ts.hasAttribute(PositionIncrementAttribute.class));"
+src/test/org/apache/lucene/analysis/BaseTokenStreamTestCase.java,114,"assertTrue(""token ""+i+"" exists"", ts.incrementToken());"
+src/test/org/apache/lucene/analysis/BaseTokenStreamTestCase.java,89,"public static void assertTokenStreamContents(TokenStream ts, String[] output, int startOffsets[], int endOffsets[], String types[], int posIncrements[]) throws IOException {"
+src/test/org/apache/lucene/analysis/BaseTokenStreamTestCase.java,95,if (startOffsets != null || endOffsets != null) {
+src/test/org/apache/lucene/analysis/BaseTokenStreamTestCase.java,130,"assertTokenStreamContents(ts, output, null, null, null, null);"
+src/test/org/apache/lucene/analysis/BaseTokenStreamTestCase.java,134,"assertTokenStreamContents(ts, output, null, null, types, null);"
+src/test/org/apache/lucene/analysis/BaseTokenStreamTestCase.java,138,"assertTokenStreamContents(ts, output, null, null, null, posIncrements);"
+src/test/org/apache/lucene/analysis/BaseTokenStreamTestCase.java,142,"assertTokenStreamContents(ts, output, startOffsets, endOffsets, null, null);"
+src/test/org/apache/lucene/analysis/BaseTokenStreamTestCase.java,146,"assertTokenStreamContents(ts, output, startOffsets, endOffsets, null, posIncrements);"
+src/test/org/apache/lucene/analysis/BaseTokenStreamTestCase.java,151,"assertTokenStreamContents(a.tokenStream(""dummy"", new StringReader(input)), output, startOffsets, endOffsets, types, posIncrements);"
+src/test/org/apache/lucene/analysis/BaseTokenStreamTestCase.java,176,"assertTokenStreamContents(a.reusableTokenStream(""dummy"", new StringReader(input)), output, startOffsets, endOffsets, types, posIncrements);"
+src/java/org/apache/lucene/util/OpenBitSet.java,802,long h = 0x98761234;  // something non-zero for length==0
+src/java/org/apache/lucene/util/OpenBitSet.java,803,for (int i = bits.length; --i>=0;) {
+src/java/org/apache/lucene/util/OpenBitSet.java,807,return (int)((h>>32) ^ h);  // fold leftmost bits into right
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/cjk/CJKTokenizer.java,302,final int finalOffset = offset;
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/cn/ChineseTokenizer.java,131,if (dataLen == -1) return flush();
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/cn/ChineseTokenizer.java,132,else
+contrib/analyzers/common/src/java/org/apache/lucene/analysis/cn/ChineseTokenizer.java,163,final int finalOffset = offset;
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ngram/EdgeNGramTokenizerTest.java,68,"assertTokenStreamContents(tokenizer, new String[]{""a""}, new int[]{0}, new int[]{1});"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ngram/EdgeNGramTokenizerTest.java,73,"assertTokenStreamContents(tokenizer, new String[]{""e""}, new int[]{4}, new int[]{5});"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ngram/EdgeNGramTokenizerTest.java,78,"assertTokenStreamContents(tokenizer, new String[0], new int[0], new int[0]);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ngram/EdgeNGramTokenizerTest.java,83,"assertTokenStreamContents(tokenizer, new String[]{""a"",""ab"",""abc""}, new int[]{0,0,0}, new int[]{1,2,3});"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ngram/EdgeNGramTokenizerTest.java,88,"assertTokenStreamContents(tokenizer, new String[]{""e"",""de"",""cde""}, new int[]{4,3,2}, new int[]{5,5,5});"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ngram/EdgeNGramTokenizerTest.java,93,"assertTokenStreamContents(tokenizer, new String[]{""a"",""ab"",""abc""}, new int[]{0,0,0}, new int[]{1,2,3});"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ngram/EdgeNGramTokenizerTest.java,95,"assertTokenStreamContents(tokenizer, new String[]{""a"",""ab"",""abc""}, new int[]{0,0,0}, new int[]{1,2,3});"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ngram/NGramTokenizerTest.java,60,"assertTokenStreamContents(tokenizer, new String[]{""a"",""b"",""c"",""d"",""e""}, new int[]{0,1,2,3,4}, new int[]{1,2,3,4,5});"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ngram/NGramTokenizerTest.java,65,"assertTokenStreamContents(tokenizer, new String[]{""ab"",""bc"",""cd"",""de""}, new int[]{0,1,2,3}, new int[]{2,3,4,5});"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ngram/NGramTokenizerTest.java,73,"new int[]{1,2,3,4,5, 2,3,4,5, 3,4,5}"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ngram/NGramTokenizerTest.java,79,"assertTokenStreamContents(tokenizer, new String[0], new int[0], new int[0]);"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ngram/NGramTokenizerTest.java,84,"assertTokenStreamContents(tokenizer, new String[]{""a"",""b"",""c"",""d"",""e""}, new int[]{0,1,2,3,4}, new int[]{1,2,3,4,5});"
+contrib/analyzers/common/src/test/org/apache/lucene/analysis/ngram/NGramTokenizerTest.java,86,"assertTokenStreamContents(tokenizer, new String[]{""a"",""b"",""c"",""d"",""e""}, new int[]{0,1,2,3,4}, new int[]{1,2,3,4,5});"
+src/java/org/apache/lucene/search/payloads/MaxPayloadFunction.java,29,"return Math.max(currentPayloadScore, currentScore);"
+contrib/fast-vector-highlighter/src/java/org/apache/lucene/search/vectorhighlight/BaseFragmentsBuilder.java,75,"String[] values = getFieldValues( reader, docId, fieldName );"
+contrib/fast-vector-highlighter/src/java/org/apache/lucene/search/vectorhighlight/BaseFragmentsBuilder.java,94,"String src = getFragmentSource( buffer, index, values, s, fragInfo.endOffset );"
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/CartesianPolyFilterBuilder.java,122,"return new CartesianShapeFilter(shape, shape.getTierId());"
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/projections/CartesianTierPlotter.java,136,public int bestFit(double miles){
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/projections/CartesianTierPlotter.java,139,int circ = 28892;
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/projections/CartesianTierPlotter.java,141,double r = miles / 2.0;
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/projections/CartesianTierPlotter.java,143,"double corner = r - Math.sqrt(Math.pow(r, 2) / 2.0d);"
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/projections/CartesianTierPlotter.java,144,double times = circ / corner;
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/projections/CartesianTierPlotter.java,145,int bestFit =  (int)Math.ceil(log2(times)) + 1;
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/projections/CartesianTierPlotter.java,160,public double log2(double value) {
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/projections/CartesianTierPlotter.java,162,return Math.log(value) / Math.log(2);
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/projections/CartesianTierPlotter.java,147,if (bestFit > 15) {
+contrib/spatial/src/java/org/apache/lucene/spatial/tier/projections/CartesianTierPlotter.java,150,return 15;
+src/java/org/apache/lucene/index/DocumentsWriter.java,1226,for(int i=start;i<end;i++)
+src/java/org/apache/lucene/index/DocumentsWriter.java,1273,for(int i=start;i<end;i++)
+src/java/org/apache/lucene/index/DocumentsWriter.java,772,final DocWriter perDoc = state.consumer.processDocument();
+src/java/org/apache/lucene/index/IndexWriter.java,4174,"return doFlushInternal(flushDocStores, flushDeletes);"
+src/java/org/apache/lucene/index/TermsHashPerField.java,76,int newSize = postingsHash.length;
+src/java/org/apache/lucene/index/TermsHashPerField.java,77,while(newSize >= 8 && newSize/4 > targetSize) {
+src/java/org/apache/lucene/index/TermsHashPerField.java,78,newSize /= 2;
+src/java/org/apache/lucene/util/NumericUtils.java,372,if (shift+precisionStep>=valSize || nextMinBound>nextMaxBound) {
+src/java/org/apache/lucene/search/TimeLimitingCollector.java,205,"throw new TimeExceededException( timeout-t0, time-t0, doc );"
+src/java/org/apache/lucene/util/AttributeSource.java,126,public AttributeFactory getAttributeFactory() {

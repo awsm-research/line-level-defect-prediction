@@ -1,0 +1,1161 @@
+File,Line_number,SRC
+java/engine/org/apache/derby/impl/store/access/btree/BTreeMaxScan.java,536,pos.current_leaf = null;
+java/engine/org/apache/derby/impl/store/access/btree/BTreeScan.java,460,pos.current_leaf = null;
+java/engine/org/apache/derby/impl/sql/execute/RowCountResultSet.java,52,private long offset;
+java/engine/org/apache/derby/impl/sql/execute/RowCountResultSet.java,53,private long fetchFirst;
+java/engine/org/apache/derby/impl/sql/execute/RowCountResultSet.java,162,if (offset > 0) {
+java/engine/org/apache/derby/impl/sql/execute/RowCountResultSet.java,165,offset--;
+java/engine/org/apache/derby/impl/sql/execute/RowCountResultSet.java,167,if (result != null && offset >= 0) {
+java/engine/org/apache/derby/impl/sql/execute/RowCountResultSet.java,179,if (fetchFirst != -1 && rowsSeen >= fetchFirst) {
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,3651,} catch (StandardException t) {
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,3736,} catch (StandardException t) {
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,3798,} catch (StandardException t) {
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,208,private boolean[] streamUsedFlags;
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,511,if (streamUsedFlags != null)
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,512,"Arrays.fill(streamUsedFlags, false);"
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,1127,useStream(columnIndex);
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,1240,useStream(columnIndex);
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,4571,final void useStream(int columnIndex) throws SQLException {
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,4573,if (streamUsedFlags == null)
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,4574,streamUsedFlags = new boolean[getMetaData().getColumnCount()];
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,4576,else if (streamUsedFlags[columnIndex - 1])
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,4577,throw newSQLException(SQLState.LANG_STREAM_RETRIEVED_ALREADY);
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,4579,streamUsedFlags[columnIndex - 1] = true;
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,3986,if (wasNull = dvd.isNull())
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,3998,"return new EmbedBlob(dvd, getEmbedConnection());"
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,4038,if (wasNull = dvd.isNull())
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,4050,"return new EmbedClob(getEmbedConnection(), dvd);"
+java/engine/org/apache/derby/impl/jdbc/EmbedResultSet.java,4487,try {
+java/engine/org/apache/derby/impl/store/raw/data/BasePage.java,820,"When we update a column, it turned into a long column.  Need to change"
+java/engine/org/apache/derby/impl/store/raw/data/BasePage.java,821,the update to effectively insert a new long column chain.
+java/engine/org/apache/derby/impl/store/raw/data/BasePage.java,825,"protected RecordHandle insertLongColumn(BasePage mainChainPage,"
+java/engine/org/apache/derby/impl/store/raw/data/BasePage.java,826,"LongColumnException lce, byte insertFlag)"
+java/engine/org/apache/derby/impl/store/raw/data/BasePage.java,836,RecordHandle handle = null;
+java/engine/org/apache/derby/impl/store/raw/data/BasePage.java,837,RecordHandle prevHandle = null;
+java/engine/org/apache/derby/impl/store/raw/data/BasePage.java,838,BasePage curPage = mainChainPage;
+java/engine/org/apache/derby/impl/store/raw/data/BasePage.java,839,BasePage prevPage = null;
+java/engine/org/apache/derby/impl/store/raw/data/BasePage.java,840,boolean isFirstPage = true;
+java/engine/org/apache/derby/impl/store/raw/data/BasePage.java,876,"startColumn = owner.getActionSet().actionInsert(t, curPage, slot, recordId,"
+java/engine/org/apache/derby/impl/store/raw/data/BasePage.java,877,"row, (FormatableBitSet)null, (LogicalUndo) null, insertFlag,"
+java/engine/org/apache/derby/impl/store/raw/data/BasePage.java,878,"startColumn, true, -1, (DynamicByteArrayOutputStream) null, -1, 100);"
+java/engine/org/apache/derby/impl/store/raw/data/BasePage.java,888,} else
+java/engine/org/apache/derby/impl/store/raw/data/BasePage.java,1619,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/impl/store/raw/RawStore.java,471,"logFactory.checkpoint(this, dataFactory, xactFactory, false);"
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1487,if (inReplicationSlavePreMode) {
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1496,"boolean done = checkpointWithTran(null, rsf, df, tf);"
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1506,if(!done && wait)
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1508,synchronized(this)
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1511,while(inCheckpoint)
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1513,try
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1515,wait();
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1517,catch (InterruptedException ie)
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1519,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1522,done = true;
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1535,"protected boolean checkpointWithTran(RawTransaction cptran,"
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1536,"RawStoreFactory rsf,"
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1537,"DataFactory df,"
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1538,TransactionFactory tf)
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1541,boolean proceed = true;
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1542,LogInstant redoLWM;
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1553,synchronized (this)
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1556,if (corrupt != null)
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1558,"throw StandardException.newException(SQLState.LOG_STORE_CORRUPT, corrupt);"
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1562,if (inCheckpoint == true)
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1563,proceed = false;
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1564,else
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1565,inCheckpoint = true;
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,1973,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,3896,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,3958,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/impl/store/raw/log/LogToFile.java,4924,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/iapi/types/SQLClob.java,239,rewindStream(csd.getDataOffset());
+java/engine/org/apache/derby/iapi/types/SQLClob.java,243,rewindStream(0);
+java/engine/org/apache/derby/iapi/types/SQLClob.java,345,rewindStream(read);
+java/engine/org/apache/derby/iapi/types/SQLClob.java,689,rewindStream(hdrLen);
+java/engine/org/apache/derby/iapi/types/SQLClob.java,691,final boolean markSet = stream.markSupported();
+java/engine/org/apache/derby/iapi/types/SQLClob.java,693,stream.mark(MAX_STREAM_HEADER_LENGTH);
+java/engine/org/apache/derby/iapi/types/SQLClob.java,710,stream.reset();
+java/engine/org/apache/derby/iapi/types/SQLClob.java,711,"InputStreamUtil.skipFully(stream, hdrInfo.headerLength());"
+java/engine/org/apache/derby/iapi/types/SQLClob.java,712,} else if (stream instanceof Resetable) {
+java/engine/org/apache/derby/iapi/types/SQLClob.java,714,rewindStream(hdrInfo.headerLength());
+java/engine/org/apache/derby/iapi/types/SQLClob.java,769,private void rewindStream(long pos)
+java/engine/org/apache/derby/iapi/types/SQLClob.java,772,((Resetable)stream).resetStream();
+java/engine/org/apache/derby/iapi/types/SQLClob.java,773,"InputStreamUtil.skipFully(stream, pos);"
+java/engine/org/apache/derby/iapi/types/SQLClob.java,105,return new SQLClob(getString());
+java/engine/org/apache/derby/iapi/types/SQLClob.java,121,return new SQLClob();
+java/engine/org/apache/derby/iapi/sql/execute/NoPutResultSet.java,187,public void updateRow(ExecRow row) throws StandardException;
+java/engine/org/apache/derby/impl/sql/execute/CurrentOfResultSet.java,333,public void updateRow (ExecRow row) throws StandardException {
+java/engine/org/apache/derby/impl/sql/execute/CurrentOfResultSet.java,334,((NoPutResultSet)cursor).updateRow(row);
+java/engine/org/apache/derby/impl/sql/execute/NoPutResultSetImpl.java,509,public void updateRow(ExecRow row) throws StandardException {
+java/engine/org/apache/derby/impl/sql/execute/NormalizeResultSet.java,406,public void updateRow (ExecRow row) throws StandardException {
+java/engine/org/apache/derby/impl/sql/execute/NormalizeResultSet.java,407,source.updateRow(row);
+java/engine/org/apache/derby/impl/sql/execute/NormalizeResultSet.java,369,normalizedCol = normalizeColumn
+java/engine/org/apache/derby/impl/sql/execute/NormalizeResultSet.java,370,"( desiredTypes[i - 1], sourceRow, i, normalizedRow.getColumn(i), resultDescription );"
+java/engine/org/apache/derby/impl/sql/execute/NormalizeResultSet.java,385,private  DataTypeDescriptor[]    fetchResultTypes( ResultDescription desc )
+java/engine/org/apache/derby/impl/sql/execute/NormalizeResultSet.java,386,throws StandardException
+java/engine/org/apache/derby/impl/sql/execute/ProjectRestrictResultSet.java,586,public void updateRow (ExecRow row) throws StandardException {
+java/engine/org/apache/derby/impl/sql/execute/ProjectRestrictResultSet.java,587,source.updateRow(row);
+java/engine/org/apache/derby/impl/sql/execute/ProjectRestrictResultSet.java,509,"result.setColumn(index + 1, sourceRow.getColumn(projectMapping[index]));"
+java/engine/org/apache/derby/impl/sql/execute/ScrollInsensitiveResultSet.java,1101,public void updateRow(ExecRow row) throws StandardException {
+java/engine/org/apache/derby/impl/sql/execute/ScrollInsensitiveResultSet.java,1102,ExecRow newRow = row;
+java/engine/org/apache/derby/impl/sql/execute/ScrollInsensitiveResultSet.java,1103,boolean undoProjection = false;
+java/engine/org/apache/derby/impl/sql/execute/ScrollInsensitiveResultSet.java,1132,if (undoProjection) {
+java/engine/org/apache/derby/impl/sql/execute/ScrollInsensitiveResultSet.java,1134,final DataValueDescriptor[] newRowData = newRow.getRowArray();
+java/engine/org/apache/derby/impl/sql/execute/ScrollInsensitiveResultSet.java,1137,final int[] origPos = prRS.getBaseProjectMapping();
+java/engine/org/apache/derby/impl/sql/execute/ScrollInsensitiveResultSet.java,1140,final DataValueDescriptor[] backedData =
+java/engine/org/apache/derby/impl/sql/execute/ScrollInsensitiveResultSet.java,1141,getRowArrayFromHashTable(currentPosition);
+java/engine/org/apache/derby/impl/sql/execute/ScrollInsensitiveResultSet.java,1143,for (int i=0; i<origPos.length; i++) {
+java/engine/org/apache/derby/impl/sql/execute/ScrollInsensitiveResultSet.java,1144,if (origPos[i]>=0) {
+java/engine/org/apache/derby/impl/sql/execute/ScrollInsensitiveResultSet.java,1145,"row.setColumn(origPos[i], backedData[i]);"
+java/engine/org/apache/derby/impl/sql/execute/TemporaryRowHolderResultSet.java,1127,public void updateRow(ExecRow row) throws StandardException {
+java/engine/org/apache/derby/impl/sql/execute/UpdateResultSet.java,560,source.updateRow(newBaseRow);
+java/demo/nserverdemo/NsSample.java,69,"public static final String DB2_JDBC_UNIVERSAL_DRIVER = new String(""com.ibm.db2.jcc.DB2Driver"");"
+java/demo/nserverdemo/NsSample.java,70,"public static final String DERBY_CLIENT_DRIVER = ""org.apache.derby.jdbc.ClientDriver"";"
+java/demo/nserverdemo/NsSample.java,173,"properties.setProperty(""user"",""cloud"");"
+java/demo/nserverdemo/NsSample.java,174,"properties.setProperty(""password"",""scape"");"
+java/demo/nserverdemo/SimpleNetworkClientSample.java,246,"properties.setProperty(""user"",""cloud"");"
+java/demo/nserverdemo/SimpleNetworkClientSample.java,247,"properties.setProperty(""password"",""scape"");"
+java/demo/simple/SimpleApp.java,257,int number; // street number retreived from the database
+java/demo/simple/SimpleApp.java,482,"if (args[0].equalsIgnoreCase(""jccjdbcclient""))"
+java/demo/simple/SimpleApp.java,484,"framework = ""jccjdbc"";"
+java/demo/simple/SimpleApp.java,485,"driver = ""com.ibm.db2.jcc.DB2Driver"";"
+java/demo/simple/SimpleApp.java,486,"protocol = ""jdbc:derby:net://localhost:1527/"";"
+java/demo/simple/SimpleApp.java,488,"else if (args[0].equalsIgnoreCase(""derbyclient""))"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/DboPowersTest.java,635,suite.addTest(tests[NOAUTHENTICATION]);
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/DboPowersTest.java,638,suite.addTest(tests[AUTHENTICATION]);
+java/engine/org/apache/derby/impl/services/bytecode/BCClass.java,152,"String systemHome = System.getProperty(Property.SYSTEM_HOME_PROPERTY,""."");"
+java/engine/org/apache/derby/impl/services/bytecode/GClass.java,75,"File classFile = new File(dir,filename);"
+java/engine/org/apache/derby/impl/services/bytecode/GClass.java,81,FileOutputStream fis = new FileOutputStream(classFile);
+java/engine/org/apache/derby/impl/services/bytecode/GClass.java,82,"fis.write(bytecode.getArray(),"
+java/engine/org/apache/derby/impl/services/bytecode/GClass.java,84,fis.flush();
+java/engine/org/apache/derby/impl/services/bytecode/GClass.java,88,fis.close();
+java/engine/org/apache/derby/impl/sql/compile/DMLModStatementNode.java,1675,"LocalField field = ecb.newFieldDeclaration(Modifier.PRIVATE, ClassName.ExecRow);"
+java/engine/org/apache/derby/impl/sql/compile/DMLModStatementNode.java,1701,userExprFun.getField(field); // instance
+java/engine/org/apache/derby/impl/sql/compile/DMLModStatementNode.java,711,getCompilerContext().pushCurrentPrivType( Authorizer.NULL_PRIV);
+java/engine/org/apache/derby/impl/sql/compile/DMLModStatementNode.java,735,"bindRowScopedExpression(nodeFactory, getContextManager(),"
+java/engine/org/apache/derby/impl/sql/compile/DMLModStatementNode.java,736,"targetTableDescriptor,"
+java/engine/org/apache/derby/impl/sql/compile/DMLModStatementNode.java,737,"sourceRCL,"
+java/engine/org/apache/derby/impl/sql/compile/DMLModStatementNode.java,738,checkConstraints);
+java/engine/org/apache/derby/impl/sql/compile/DMLModStatementNode.java,743,getCompilerContext().popCurrentPrivType();
+java/client/org/apache/derby/jdbc/ClientBaseDataSource.java,566,String value = ov == null ? null : ov.toString();
+java/client/org/apache/derby/jdbc/ClientBaseDataSource.java,567,"ref.add(new StringRefAddr(propertyName, value));"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XAJNDITest.java,114,else
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XAJNDITest.java,121,String[] orgprops = getPropertyBeanList(xads);
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XAJNDITest.java,122,String[] bindprops = getPropertyBeanList(ads);
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XAJNDITest.java,123,"assertEquals(orgprops.length, bindprops.length);"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XAJNDITest.java,125,for (int i=0;i<orgprops.length;i++){
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XAJNDITest.java,126,"assertEquals(orgprops[i], bindprops[i]);"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XAJNDITest.java,129,"assertEqualPropValues(xads,ads, orgprops);"
+java/drda/org/apache/derby/impl/drda/Database.java,358,if (! forXA)
+java/testing/org/apache/derbyTesting/unitTests/junit/AssertFailureTest.java,102,"assertEquals(""String not correct."", expected, s);"
+java/testing/org/apache/derbyTesting/unitTests/junit/AssertFailureTest.java,130,"assertEquals(""String not correct."", expected, s);"
+java/testing/org/apache/derbyTesting/junit/XATestUtil.java,82,"JDBC.assertFullResultSet(rs, expectedRows);"
+java/tools/org/apache/derby/impl/tools/ij/Main.java,117,in1 = new FileInputStream(file);
+java/tools/org/apache/derby/impl/tools/ij/Main.java,122,} catch (FileNotFoundException e) {
+java/testing/org/apache/derbyTesting/system/mailjdbc/tasks/Backup.java,40,"conn = DbTasks.getConnection(""BACKUP"", ""Backup"");"
+java/client/org/apache/derby/client/am/Lob.java,403,if(!isValid_ || transactionID_ != agent_.connection_.getTransactionID())
+java/client/org/apache/derby/client/am/Lob.java,266,"typeDesc,"
+java/client/org/apache/derby/client/am/Lob.java,267,ioe
+java/testing/org/apache/derbyTesting/functionTests/tests/store/StreamingColumnTest.java,1488,"assertSQLState(""XJ215"", sqle);"
+java/testing/org/apache/derbyTesting/functionTests/tests/store/StreamingColumnTest.java,1489,"println(""Expected Exception: You cannot invoke other """
+java/testing/org/apache/derbyTesting/functionTests/tests/store/StreamingColumnTest.java,1490,java.sql.Clob/java.sql.Blob methods after calling the 
+java/testing/org/apache/derbyTesting/functionTests/tests/store/StreamingColumnTest.java,1491,free() method or after the Blob/Clob's transaction has
+java/testing/org/apache/derbyTesting/functionTests/tests/store/StreamingColumnTest.java,1492,"+ "" been committed or rolled back."");"
+java/testing/org/apache/derbyTesting/functionTests/tests/store/StreamingColumnTest.java,1557,"assertSQLState(""XJ215"", sqle);"
+java/testing/org/apache/derbyTesting/functionTests/tests/store/StreamingColumnTest.java,1558,"println(""Expected Exception: You cannot invoke other """
+java/testing/org/apache/derbyTesting/functionTests/tests/store/StreamingColumnTest.java,1559,java.sql.Clob/java.sql.Blob methods after calling the 
+java/testing/org/apache/derbyTesting/functionTests/tests/store/StreamingColumnTest.java,1560,free() method or after the Blob/Clob's transaction has
+java/testing/org/apache/derbyTesting/functionTests/tests/store/StreamingColumnTest.java,1561,"+ "" been committed or rolled back."");"
+java/engine/org/apache/derby/iapi/jdbc/BrokeredStatement.java,128,public final void close() throws SQLException
+java/engine/org/apache/derby/iapi/jdbc/BrokeredStatement.java,130,getStatement().close();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,183,"s.executeUpdate(""insert into APP.foo values (1)"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,187,"s.executeUpdate(""insert into APP.foo values (2)"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,191,"s.executeUpdate(""insert into APP.foo values (3)"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,195,"s.executeUpdate(""insert into APP.foo values (4)"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,258,"ResultSet rs = s.executeQuery(""select * from APP.foo"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,400,"s.executeUpdate(""insert into APP.foo values (2001)"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,412,"s.executeUpdate(""insert into APP.foo values (2002)"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,426,"s.executeUpdate(""insert into APP.foo values (2003)"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,465,"s.executeQuery(""select * from APP.foo where A >= 2000"").close();"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,476,"ResultSet rs = s.executeQuery(""select * from APP.foo where A >= 2000"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,536,"s.executeUpdate(""insert into APP.foo values (2005)"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,539,"s.executeUpdate(""insert into APP.foo values (2006)"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,541,"s.executeUpdate(""insert into APP.foo values (2007)"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,558,"rs = s.executeQuery(""select * from APP.foo where A >= 2000"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,574,"s.executeUpdate(""delete from app.foo"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,575,"rs = s.executeQuery(""select * from APP.foo"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,585,"rs = s.executeQuery(""select * from APP.foo where A >= 2000"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,626,"s.executeUpdate(""delete from APP.foo"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,627,"rs = s.executeQuery(""select * from APP.foo where A >= 2000"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,641,"rs = s.executeQuery(""select * from APP.foo where A >= 2000"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,673,"checkHeldRS(conn, sdh, sdh.executeQuery(""select * from app.foo""));"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,674,"PreparedStatement psdh = conn.prepareStatement(""SELECT * FROM APP.FOO"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,676,".prepareStatement(""DELETE FROM APP.FOO WHERE A < -99"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,685,"checkHeldRS(conn, shh, shh.executeQuery(""select * from app.foo""));"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,686,"PreparedStatement pshh = conn.prepareStatement(""SELECT * FROM APP.FOO"","
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,690,"""DELETE FROM APP.FOO WHERE A < -99"","
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,702,"checkHeldRS(conn, sch, sch.executeQuery(""select * from app.foo""));"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,703,"PreparedStatement psch = conn.prepareStatement(""SELECT * FROM APP.FOO"","
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,707,"""DELETE FROM APP.FOO WHERE A < -99"","
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,720,"checkHeldRS(conn, sdc, sdc.executeQuery(""select * from app.foo""));"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,721,"PreparedStatement psdc = conn.prepareStatement(""SELECT * FROM APP.FOO"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,723,".prepareStatement(""DELETE FROM APP.FOO WHERE A < -99"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,732,"checkHeldRS(conn, shc, shc.executeQuery(""select * from app.foo""));"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,733,"PreparedStatement pshc = conn.prepareStatement(""SELECT * FROM APP.FOO"","
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,737,"""DELETE FROM APP.FOO WHERE A < -99"","
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,749,"checkHeldRS(conn, scc, scc.executeQuery(""select * from app.foo""));"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,750,"PreparedStatement pscc = conn.prepareStatement(""SELECT * FROM APP.FOO"","
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,754,"""DELETE FROM APP.FOO WHERE A < -99"","
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,765,"ResultSet rs = sdh.executeQuery(""SELECT * FROM APP.FOO"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,776,"rs = sdh.executeQuery(""SELECT * FROM APP.FOO"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,786,"sdh.executeUpdate(""DELETE FROM APP.FOO where A < -99"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,787,"shh.executeUpdate(""DELETE FROM APP.FOO where A < -99"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,788,"sch.executeUpdate(""DELETE FROM APP.FOO where A < -99"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,795,"openRS.add(sdh.executeQuery(""SELECT * FROM APP.FOO""));"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,796,"openRS.add(shh.executeQuery(""SELECT * FROM APP.FOO""));"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,797,"openRS.add(sch.executeQuery(""SELECT * FROM APP.FOO""));"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,811,"sdc.executeUpdate(""DELETE FROM APP.FOO where A < -99"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,812,"shc.executeUpdate(""DELETE FROM APP.FOO where A < -99"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,813,"scc.executeUpdate(""DELETE FROM APP.FOO where A < -99"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,817,"openRS.add(sdc.executeQuery(""SELECT * FROM APP.FOO""));"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,818,"openRS.add(shc.executeQuery(""SELECT * FROM APP.FOO""));"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,819,"openRS.add(scc.executeQuery(""SELECT * FROM APP.FOO""));"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/XATest.java,866,"""SELECT * FROM APP.FOO"", ResultSet.TYPE_FORWARD_ONLY,"
+java/engine/org/apache/derby/impl/services/jce/JCECipherFactory.java,190,"private String encryptKey(byte[] secretKey, byte[] bootPassword)"
+java/engine/org/apache/derby/impl/services/jce/JCECipherFactory.java,218,"return org.apache.derby.iapi.util.StringUtil.toHexString(result, 0, result.length);"
+java/engine/org/apache/derby/impl/services/jce/JCECipherFactory.java,752,"String encryptedKey = encryptKey(secretKey, bootPassword);"
+java/engine/org/apache/derby/impl/services/jce/JCECipherFactory.java,756,int verifyKey = digest(secretKey);
+java/testing/org/apache/derbyTesting/functionTests/tests/store/EncryptionAESTest.java,225,"if (!encryptionKeyLength.equals(""192""))"
+java/testing/org/apache/derbyTesting/functionTests/tests/store/EncryptionAESTest.java,226,shutdown(dbName);
+java/testing/org/apache/derbyTesting/functionTests/tests/store/EncryptionAESTest.java,237,"if (!encryptionKeyLength.equals(""192""))"
+java/testing/org/apache/derbyTesting/functionTests/tests/store/EncryptionAESTest.java,238,shutdown(dbName);
+java/testing/org/apache/derbyTesting/functionTests/tests/store/EncryptionAESTest.java,252,"if (encryptionKeyLength.equals(""192""))"
+java/testing/org/apache/derbyTesting/functionTests/tests/store/EncryptionAESTest.java,254,attributes = new String[]
+java/testing/org/apache/derbyTesting/functionTests/tests/store/EncryptionAESTest.java,255,"{(""encryptionKeyLength="" + encryptionKeyLength),"
+java/testing/org/apache/derbyTesting/functionTests/tests/store/EncryptionAESTest.java,256,"""bootPassword=Thursday""};"
+java/testing/org/apache/derbyTesting/functionTests/tests/store/EncryptionAESTest.java,257,shutdown(dbName);
+java/testing/org/apache/derbyTesting/functionTests/tests/store/EncryptionAESTest.java,276,"if (!encryptionKeyLength.equals(""192""))"
+java/testing/org/apache/derbyTesting/functionTests/tests/store/EncryptionAESTest.java,277,shutdown(dbName);
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,4060,"null,"
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,1703,if (resultColumn.isGenerated())
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,3880,"void replaceDefaults(TableDescriptor ttd, ResultColumnList tcl)"
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,3510,int[] mapSourceColumns()
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,3512,"int[]			mapArray = new int[size()];"
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,3532,mapArray[index] = vcn.getSourceColumn().getVirtualColumnId();
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,3547,mapArray[index] = cr.getSource().getVirtualColumnId();
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,3556,return mapArray;
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,2313,if (
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,2314,"!thisExpr.getTypeCompiler().storable(otherTypeId, cf) &&"
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,2315,"!otherExpr.getTypeCompiler().storable(thisTypeId, cf))"
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,1435,cc = getLanguageConnectionContext().
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,1436,getTransactionCompile().openConglomerate(
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,1437,"conglomerateId,"
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,1438,"false,"
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,1439,"0,"
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,1440,"TransactionController.MODE_RECORD,"
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,1441,TransactionController.ISOLATION_READ_COMMITTED);
+java/engine/org/apache/derby/impl/sql/compile/ResultColumnList.java,1156,continue;
+java/engine/org/apache/derby/impl/jdbc/EmbedConnection.java,1806,throw newSQLException(SQLState.CANNOT_CLOSE_ACTIVE_CONNECTION);
+java/engine/org/apache/derby/impl/jdbc/EmbedConnection.java,1947,getLanguageConnection().setReadOnly(readOnly);
+java/engine/org/apache/derby/impl/jdbc/EmbedConnection.java,2041,getLanguageConnection().setIsolationLevel(iLevel);
+java/engine/org/apache/derby/impl/jdbc/EmbedConnection.java,2749,getLanguageConnection().resetFromPool();
+java/engine/org/apache/derby/impl/jdbc/EmbedConnection.java,2786,(XATransactionController) getLanguageConnection().getTransactionExecute();
+java/engine/org/apache/derby/impl/jdbc/EmbedConnection.java,2801,getLanguageConnection().internalCommit(false /* don't commitStore again */);
+java/engine/org/apache/derby/impl/jdbc/EmbedConnection.java,2828,getLanguageConnection().xaCommit(onePhase);
+java/engine/org/apache/derby/impl/jdbc/EmbedConnection.java,2852,getLanguageConnection().xaRollback();
+java/engine/org/apache/derby/impl/sql/execute/DistinctScalarAggregateResultSet.java,144,scanController = loadSorter();
+java/engine/org/apache/derby/impl/sql/execute/GroupedAggregateResultSet.java,166,if (isInSortedOrder)
+java/engine/org/apache/derby/impl/sql/execute/GroupedAggregateResultSet.java,168,currSortedRow = getNextRowFromRS();
+java/engine/org/apache/derby/impl/sql/execute/GroupedAggregateResultSet.java,169,if (currSortedRow != null)
+java/engine/org/apache/derby/impl/sql/execute/GroupedAggregateResultSet.java,171,currSortedRow = (ExecIndexRow) currSortedRow.getClone();
+java/engine/org/apache/derby/impl/sql/execute/GroupedAggregateResultSet.java,172,initializeVectorAggregation(currSortedRow);
+java/engine/org/apache/derby/impl/sql/execute/GroupedAggregateResultSet.java,175,else
+java/engine/org/apache/derby/impl/sql/execute/GroupedAggregateResultSet.java,180,scanController = loadSorter();
+java/engine/org/apache/derby/impl/sql/execute/JoinResultSet.java,148,leftRow = leftResultSet.getNextRowCore();
+java/engine/org/apache/derby/impl/sql/execute/JoinResultSet.java,149,if (leftRow != null)
+java/engine/org/apache/derby/impl/sql/execute/JoinResultSet.java,151,openRight();
+java/engine/org/apache/derby/impl/sql/execute/JoinResultSet.java,152,rowsSeenLeft++;
+java/engine/org/apache/derby/impl/sql/execute/SetOpResultSet.java,113,rightSource.openCore();
+java/engine/org/apache/derby/impl/sql/execute/SetOpResultSet.java,114,rightInputRow = rightSource.getNextRowCore();
+java/engine/org/apache/derby/impl/sql/execute/SortResultSet.java,255,if (isInSortedOrder && distinct)
+java/engine/org/apache/derby/impl/sql/execute/SortResultSet.java,257,currSortedRow = getNextRowFromRS();
+java/engine/org/apache/derby/impl/sql/execute/SortResultSet.java,258,if (currSortedRow != null)
+java/engine/org/apache/derby/impl/sql/execute/SortResultSet.java,260,currSortedRow = (ExecRow) currSortedRow.getClone();
+java/engine/org/apache/derby/impl/sql/execute/SortResultSet.java,263,else
+java/engine/org/apache/derby/impl/sql/execute/SortResultSet.java,268,scanController = loadSorter();
+java/engine/org/apache/derby/impl/sql/execute/SortResultSet.java,269,sorted = true;
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/PredicatePushdownTest.java,1373,"assertTrue(""Expected Table Scan ResultSet for T3"", p.usedTableScan(""T3""));"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/PredicatePushdownTest.java,1374,"assertTrue(""Expected Hash Join"",p.usedHashJoin());"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/PredicatePushdownTest.java,1688,"assertTrue(""Expected hash join"", p.usedHashJoin());"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/PredicatePushdownTest.java,1730,"assertTrue(""Expected hash join"", p.usedHashJoin());"
+java/engine/org/apache/derby/iapi/types/DataTypeDescriptor.java,638,if (cachedDest == null)
+java/engine/org/apache/derby/iapi/types/DataTypeDescriptor.java,639,cachedDest = getNull();
+java/engine/org/apache/derby/iapi/types/DataTypeDescriptor.java,640,else
+java/engine/org/apache/derby/iapi/types/DataTypeDescriptor.java,641,cachedDest.setToNull();
+java/engine/org/apache/derby/iapi/types/DataTypeDescriptor.java,1321,return (compareWithTypeID.isNumericTypeId() ||
+java/engine/org/apache/derby/iapi/types/DataTypeDescriptor.java,1322,compareWithTypeID.isBooleanTypeId());
+java/engine/org/apache/derby/iapi/types/DataTypeDescriptor.java,1346,compareWithTypeID.isStringTypeId() ||
+java/engine/org/apache/derby/iapi/types/DataTypeDescriptor.java,1347,compareWithTypeID.isNumericTypeId());
+java/client/org/apache/derby/client/am/Statement.java,2348,"if (firstToken.startsWith(""--"")) {"
+java/client/org/apache/derby/client/am/Statement.java,2351,sqlMode_ = isQuery__;
+java/client/org/apache/derby/client/am/Statement.java,2352,return;
+java/client/org/apache/derby/client/am/Statement.java,2354,else {
+java/client/org/apache/derby/client/am/Statement.java,2357,tokenizer = new java.util.StringTokenizer(
+java/client/org/apache/derby/client/am/Statement.java,2358,"sql.substring(lastEndLine+1), delims);"
+java/client/org/apache/derby/client/am/Statement.java,2362,else {
+java/client/org/apache/derby/client/am/Statement.java,2365,"tokenizer = new java.util.StringTokenizer(sql, delims);"
+java/client/org/apache/derby/client/am/Statement.java,2368,if (!tokenizer.hasMoreTokens()) {
+java/client/org/apache/derby/client/am/Statement.java,2369,"throw new SqlException(agent_.logWriter_,"
+java/client/org/apache/derby/client/am/Statement.java,2370,"new ClientMessageId(SQLState.NO_TOKENS_IN_SQL_TEXT), sql);"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/CommentTest.java,57,return TestConfiguration.embeddedSuite(CommentTest.class);
+java/engine/org/apache/derby/impl/sql/execute/BaseExpressionActivation.java,80,"if (v2 != null && judge.lessThan(v2, minVal).equals(true))"
+java/engine/org/apache/derby/impl/sql/execute/BaseExpressionActivation.java,82,"if (v3 != null && judge.lessThan(v3, minVal).equals(true))"
+java/engine/org/apache/derby/impl/sql/execute/BaseExpressionActivation.java,84,"if (v4 != null && judge.lessThan(v4, minVal).equals(true))"
+java/engine/org/apache/derby/impl/sql/execute/BaseExpressionActivation.java,122,"if (v2 != null && judge.greaterThan(v2, maxVal).equals(true))"
+java/engine/org/apache/derby/impl/sql/execute/BaseExpressionActivation.java,124,"if (v3 != null && judge.greaterThan(v3, maxVal).equals(true))"
+java/engine/org/apache/derby/impl/sql/execute/BaseExpressionActivation.java,126,"if (v4 != null && judge.greaterThan(v4, maxVal).equals(true))"
+java/engine/org/apache/derby/impl/sql/execute/BaseExpressionActivation.java,70,int judgeUserJDBCTypeId)
+java/engine/org/apache/derby/impl/sql/execute/BaseExpressionActivation.java,112,int judgeUserJDBCTypeId)
+java/engine/org/apache/derby/impl/sql/execute/BaseExpressionActivation.java,116,if (judgeUserJDBCTypeId == -1)
+java/engine/org/apache/derby/impl/sql/execute/BaseExpressionActivation.java,117,"judge =  new TypeId(judgeTypeFormatId, null).getNull();"
+java/engine/org/apache/derby/impl/sql/execute/BaseExpressionActivation.java,118,else
+java/engine/org/apache/derby/impl/sql/compile/BaseTypeCompiler.java,320,"if ((otherType.isNumericTypeId())	||"
+java/engine/org/apache/derby/impl/sql/compile/BaseTypeCompiler.java,321,(otherType.isBooleanTypeId()))
+java/engine/org/apache/derby/impl/sql/compile/BaseTypeCompiler.java,322,return true;
+java/engine/org/apache/derby/impl/sql/compile/BooleanTypeCompiler.java,55,int otherJDBCTypeId = otherType.getJDBCTypeId();
+java/engine/org/apache/derby/impl/sql/compile/BooleanTypeCompiler.java,57,if ((otherJDBCTypeId == Types.DATE) ||
+java/engine/org/apache/derby/impl/sql/compile/BooleanTypeCompiler.java,58,(otherJDBCTypeId == Types.TIME) ||
+java/engine/org/apache/derby/impl/sql/compile/BooleanTypeCompiler.java,59,(otherJDBCTypeId == Types.TIMESTAMP))
+java/engine/org/apache/derby/impl/sql/compile/BooleanTypeCompiler.java,61,return false;
+java/engine/org/apache/derby/impl/sql/compile/BooleanTypeCompiler.java,64,return true;
+java/engine/org/apache/derby/impl/sql/compile/CLOBTypeCompiler.java,55,return (otherType.isStringTypeId()) ;
+java/engine/org/apache/derby/impl/sql/compile/CLOBTypeCompiler.java,81,return (otherType.isStringTypeId()) ;
+java/engine/org/apache/derby/impl/sql/compile/CharTypeCompiler.java,58,return (otherType.isStringTypeId());
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/ProcedureInTriggerTest.java,438,"rs = s.executeQuery(""select count(*) from SYS.SYSCONGLOMERATES where CAST(CONGLOMERATENAME AS VARCHAR(128))='IX' and ISINDEX=1"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/ProcedureInTriggerTest.java,450,"rs = s.executeQuery(""select count(*) from SYS.SYSCONGLOMERATES where CAST(CONGLOMERATENAME AS VARCHAR(128))='IX' and ISINDEX=1"");"
+java/engine/org/apache/derby/impl/sql/GenericColumnDescriptor.java,242,"""\n\tType: ""+type;"
+java/engine/org/apache/derby/impl/sql/execute/BasicSortObserver.java,171,newArray[i] = origArray[i].getClone();
+java/engine/org/apache/derby/impl/store/access/sort/MergeSort.java,458,SanityManager.THROWASSERT(
+java/engine/org/apache/derby/impl/store/access/sort/MergeSort.java,459,"""col["" + colid + ""]  is null"");"
+java/engine/org/apache/derby/impl/store/access/sort/MergeSort.java,549,for (int i = 0; i < columnOrdering.length; i++)
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,317,if (SanityManager.DEBUG)
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,318,"SanityManager.ASSERT(resultColumns.visibleSize() <= typeColumns.size(),"
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,319,"""More columns in ResultColumnList than in base table"");"
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,322,int rclSize = resultColumns.size();
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,323,for (int index = 0; index < rclSize; index++)
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,325,"ResultColumn	rc = (ResultColumn) resultColumns.elementAt(index);"
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,327,ValueNode re = rc.getExpression();
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,329,if (re.requiresTypeFromContext())
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,331,"ResultColumn	typeCol ="
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,332,(ResultColumn) typeColumns.elementAt(index);
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,338,re.setType(typeCol.getTypeServices());
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,340,else if (re instanceof CharConstantNode)
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,378,"ResultColumn	typeCol ="
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,379,(ResultColumn) typeColumns.elementAt(index);
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,381,TypeId colTypeId = typeCol.getTypeId();
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,383,if (colTypeId.isStringTypeId()) {
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,385,if (colTypeId.getJDBCTypeId() != java.sql.Types.CHAR) {
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,387,int maxWidth = re.getTypeServices().getMaximumWidth();
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,389,"re.setType(new DataTypeDescriptor(colTypeId, true, maxWidth));"
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,392,else if (colTypeId.isBitTypeId()) {
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,393,if (colTypeId.getJDBCTypeId() == java.sql.Types.VARBINARY) {
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,401,TypeId tId = TypeId.getBuiltInTypeId(java.sql.Types.VARCHAR);
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,402,"re.setType(new DataTypeDescriptor(tId, true));"
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,403,"typeColumns.setElementAt(typeCol, index);"
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,405,else if (colTypeId.getJDBCTypeId() == java.sql.Types.LONGVARBINARY) {
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,406,TypeId tId = TypeId.getBuiltInTypeId(java.sql.Types.LONGVARCHAR);
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,407,"re.setType(new DataTypeDescriptor(tId, true));"
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,408,"typeColumns.setElementAt(typeCol, index);"
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,413,else if (re instanceof BitConstantNode)
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,415,"ResultColumn	typeCol ="
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,416,(ResultColumn) typeColumns.elementAt(index);
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,418,TypeId colTypeId = typeCol.getTypeId();
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,420,if (colTypeId.isBitTypeId()) {
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,425,if ((colTypeId.getJDBCTypeId() != java.sql.Types.BINARY) &&
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,426,(colTypeId.getJDBCTypeId() != java.sql.Types.BLOB)) {
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,428,int maxWidth = re.getTypeServices().getMaximumWidth();
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,430,"re.setType(new DataTypeDescriptor(colTypeId, true, maxWidth));"
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,433,else if (colTypeId.isStringTypeId()) {
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,434,if (colTypeId.getJDBCTypeId() == java.sql.Types.VARCHAR) {
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,442,TypeId tId = TypeId.getBuiltInTypeId(java.sql.Types.VARBINARY);
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,443,"re.setType(new DataTypeDescriptor(tId, true));"
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,444,"typeColumns.setElementAt(typeCol, index);"
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,446,else if (colTypeId.getJDBCTypeId() == java.sql.Types.LONGVARCHAR) {
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,447,TypeId tId = TypeId.getBuiltInTypeId(java.sql.Types.LONGVARBINARY);
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,448,"re.setType(new DataTypeDescriptor(tId, true));"
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,449,"typeColumns.setElementAt(typeCol, index);"
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,1790,"void replaceDefaults(TableDescriptor ttd, ResultColumnList tcl)"
+java/engine/org/apache/derby/impl/sql/compile/ResultSetNode.java,1791,throws StandardException
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,163,if (dvdStream == null)
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,181,else
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,818,if (pos - 1 > length())
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,819,throw Util.generateCsSQLException(
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,820,"SQLState.BLOB_POSITION_TOO_LARGE, new Long(pos));"
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,821,if (pos < 1)
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,822,throw Util.generateCsSQLException(
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,823,"SQLState.BLOB_BAD_POSITION, new Long(pos));"
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,824,"control.write (bytes, offset, len, pos - 1);"
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,826,else {
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,827,control = new LOBStreamControl (getEmbedConnection());
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,828,"control.copyData (myStream, length());"
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,330,pushStack = !getEmbedConnection().isClosed();
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,406,if (sz == -1)
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,418,pushStack = !getEmbedConnection().isClosed();
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,484,return control.getInputStream(0);
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,492,pushStack = !getEmbedConnection().isClosed();
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,499,"return new UpdatableBlobStream (this,"
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,500,"new AutoPositioningStream (this, myStream, this));"
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,549,pushStack = !getEmbedConnection().isClosed();
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,561,if (c == -1)  // run out of stream
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,566,"if (checkMatch(pattern, pos))"
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,568,else
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,643,pushStack = !getEmbedConnection().isClosed();
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,658,if (b == null || b.length < 1)  // the 'empty' blob
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,666,if (c == -1)  // run out of stream
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,671,"if (checkMatch(pattern, pos))"
+java/engine/org/apache/derby/impl/jdbc/EmbedBlob.java,673,else
+java/engine/org/apache/derby/impl/sql/compile/SelectNode.java,1452,ResultColumnList newSelectList = prnRSN.getResultColumns().copyListAndObjects();
+java/engine/org/apache/derby/impl/sql/compile/SelectNode.java,1453,newSelectList.removeGeneratedGroupingColumns();
+java/engine/org/apache/derby/impl/sql/compile/SelectNode.java,1454,"newSelectList.genVirtualColumnNodes(prnRSN, prnRSN.getResultColumns());"
+java/engine/org/apache/derby/impl/sql/compile/SelectNode.java,1458,"newSelectList,"
+java/engine/org/apache/derby/impl/sql/compile/SelectNode.java,945,groupByList);
+java/engine/org/apache/derby/impl/sql/compile/InsertNode.java,302,"resultSet.replaceDefaults(targetTableDescriptor, targetColumnList);"
+java/engine/org/apache/derby/impl/sql/compile/RowResultSetNode.java,707,"void replaceDefaults(TableDescriptor ttd, ResultColumnList tcl)"
+java/engine/org/apache/derby/impl/sql/compile/RowResultSetNode.java,710,"resultColumns.replaceDefaults(ttd, tcl);"
+java/engine/org/apache/derby/impl/store/raw/xact/TransactionTable.java,950,synchronized(this)
+java/engine/org/apache/derby/iapi/sql/dictionary/StatementColumnPermission.java,185,"unresolvedColumns = tryRole(lcc, dd, forGrant,"
+java/engine/org/apache/derby/iapi/sql/dictionary/StatementColumnPermission.java,186,"r, unresolvedColumns);"
+java/engine/org/apache/derby/iapi/sql/dictionary/StatementColumnPermission.java,396,"String r,"
+java/engine/org/apache/derby/iapi/sql/dictionary/StatementColumnPermission.java,397,FormatableBitSet unresolvedColumns)
+java/engine/org/apache/derby/iapi/sql/dictionary/StatementColumnPermission.java,411,for(int i = unresolvedColumns.anySetBit();
+java/engine/org/apache/derby/iapi/sql/dictionary/StatementColumnPermission.java,412,i >= 0;
+java/engine/org/apache/derby/iapi/sql/dictionary/StatementColumnPermission.java,413,i = unresolvedColumns.anySetBit(i)) {
+java/engine/org/apache/derby/iapi/sql/dictionary/StatementColumnPermission.java,415,if(permittedColumns != null && permittedColumns.get(i)) {
+java/engine/org/apache/derby/iapi/sql/dictionary/StatementColumnPermission.java,416,unresolvedColumns.clear(i);
+java/engine/org/apache/derby/iapi/sql/dictionary/StatementColumnPermission.java,420,return unresolvedColumns;
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/RolesConferredPrivilegesTest.java,66,"private final static String[] users = {""test_dbo"", ""DonaldDuck""};"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/RolesConferredPrivilegesTest.java,258,public void testConferredPrivileges() throws SQLException
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/RolesConferredPrivilegesTest.java,2043,assertSelectPrivilege
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/RolesConferredPrivilegesTest.java,2044,"(hasPrivilege, c, schema, table, columns, NOCOLUMNPERMISSION);"
+java/client/org/apache/derby/client/am/PreparedStatement.java,1423,if (x instanceof String) {
+java/client/org/apache/derby/client/net/DssConstants.java,25,static final int MAX_DSS_LEN = 32767;
+java/client/org/apache/derby/client/net/NetStatementReply.java,2087,int columnNumber) throws DisconnectException {
+java/client/org/apache/derby/client/net/NetStatementReply.java,2088,if (readFastUnsignedByte() == CodePoint.NULLDATA) {
+java/client/org/apache/derby/client/net/NetStatementReply.java,2089,return;
+java/client/org/apache/derby/client/net/Request.java,1611,"System.arraycopy(bytes, 0, bytes_, offset_, bytes.length);"
+java/client/org/apache/derby/client/net/Request.java,1612,offset_ += bytes.length;
+java/client/org/apache/derby/client/net/Request.java,321,} catch (java.io.IOException e) {
+java/client/org/apache/derby/client/net/Request.java,589,"new ClientMessageId(SQLState.NET_IOEXCEPTION_ON_READ),"
+java/client/org/apache/derby/client/net/Request.java,729,} catch (java.io.IOException e) {
+java/client/org/apache/derby/client/net/Request.java,516,"SQLState.NET_IOEXCEPTION_ON_STREAMLEN_VERIFICATION),"
+java/client/org/apache/derby/client/net/Request.java,475,} catch (java.io.IOException e) {
+java/client/org/apache/derby/client/net/Request.java,480,"new ClientMessageId(SQLState.NET_IOEXCEPTION_ON_READ),"
+java/client/org/apache/derby/client/net/Typdef.java,429,"null,"
+java/client/org/apache/derby/client/net/Typdef.java,431,"null,"
+java/client/org/apache/derby/client/net/Typdef.java,768,"0x00, // 0x50 Empties"
+java/client/org/apache/derby/client/net/Typdef.java,769,"0x00, // 0x51 Empties"
+java/drda/org/apache/derby/impl/drda/DRDAConnThread.java,6600,"int drdaType = FdocaConstants.mapJdbcTypeToDrdaType(colType,nullable,outlen);"
+java/drda/org/apache/derby/impl/drda/DRDAConnThread.java,7031,"drdaType = FdocaConstants.mapJdbcTypeToDrdaType(stmt.getOutputParamType(i),true,outlen);"
+java/drda/org/apache/derby/impl/drda/DRDAConnThread.java,7355,"nullable,"
+java/drda/org/apache/derby/impl/drda/DRDAConnThread.java,7469,writer.writeByte(CodePoint.NULLDATA);
+java/drda/org/apache/derby/impl/drda/FdocaConstants.java,135,"protected static int mapJdbcTypeToDrdaType(int jdbcType, boolean nullable,"
+java/drda/org/apache/derby/impl/drda/FdocaConstants.java,198,drdaType = DRDAConstants.DRDA_TYPE_NLONG;
+java/drda/org/apache/derby/impl/drda/FdocaConstants.java,199,outlen[0] = LONGVARCHAR_MAX_LEN;
+java/drda/org/apache/derby/impl/drda/SQLTypes.java,133,"static protected int mapJdbcTypeToDB2SqlType (int jdbctype, boolean nullable,"
+java/drda/org/apache/derby/impl/drda/SQLTypes.java,143,"FdocaConstants.mapJdbcTypeToDrdaType(jdbctype,nullable,outlen);"
+java/drda/org/apache/derby/impl/drda/SQLTypes.java,179,return DRDAConstants.DB2_SQLTYPE_LONG + nullAddVal;
+java/engine/org/apache/derby/catalog/types/BaseTypeIdImpl.java,154,switch (formatId)
+java/engine/org/apache/derby/catalog/types/BaseTypeIdImpl.java,226,return formatId;
+java/engine/org/apache/derby/catalog/types/BaseTypeIdImpl.java,258,switch (formatId)
+java/engine/org/apache/derby/catalog/types/BaseTypeIdImpl.java,368,"SanityManager.THROWASSERT(""Unexpected formatId "" + formatId);"
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,36,public class DynamicByteArrayOutputStream extends OutputStream {
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,38,private static int INITIAL_SIZE = 4096;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,40,private byte[] buf;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,41,"private int		position;"
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,42,"private int		used;		// how many bytes are used"
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,43,"private int		beginPosition;"
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,45,public DynamicByteArrayOutputStream() {
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,46,this(INITIAL_SIZE);
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,49,public DynamicByteArrayOutputStream(int size) {
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,50,super();
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,52,buf = new byte[size];
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,55,public DynamicByteArrayOutputStream(byte[] data) {
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,56,super();
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,58,buf = data;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,61,public DynamicByteArrayOutputStream(DynamicByteArrayOutputStream toBeCloned) {
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,63,byte[] cbuf = toBeCloned.getByteArray();
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,64,buf = new byte[cbuf.length];
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,66,"write(cbuf, 0, cbuf.length);"
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,67,position = toBeCloned.getPosition();
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,68,used = toBeCloned.getUsed();
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,69,beginPosition = toBeCloned.getBeginPosition();
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,75,public void write(int b)
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,77,if (position >= buf.length)
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,78,expandBuffer(INITIAL_SIZE);
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,80,buf[position++] = (byte) b;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,82,if (position > used)
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,83,used = position;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,86,"public void write(byte[] b, int off, int len)"
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,88,if ((position+len) > buf.length)
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,89,expandBuffer(len);
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,91,"System.arraycopy(b, off, buf, position, len);"
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,92,position += len;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,94,if (position > used)
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,95,used = position;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,98,"void writeCompleteStream(InputStream dataIn, int len) throws IOException"
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,100,if ((position+len) > buf.length)
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,101,expandBuffer(len);
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,103,"org.apache.derby.iapi.services.io.InputStreamUtil.readFully(dataIn, buf, position, len);"
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,104,position += len;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,106,if (position > used)
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,107,used = position;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,110,public void close()
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,112,buf = null;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,113,reset();
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,121,Reset the stream for reuse
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,123,public void reset()
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,125,position = 0;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,126,beginPosition = 0;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,127,used = 0;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,131,Get a reference to the byte array stored in the byte array output
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,132,stream. Note that the byte array may be longer that getPosition().
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,133,Bytes beyond and including the current poistion are invalid.
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,135,public byte[] getByteArray()
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,137,return buf;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,141,Get the number of bytes that was used.
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,143,public int getUsed()
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,145,return used;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,149,Get the current position in the stream
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,151,public int getPosition()
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,153,return position;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,157,Get the current position in the stream
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,159,public int getBeginPosition()
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,161,return beginPosition;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,165,Set the position of the stream pointer.
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,166,It is up to the caller to make sure the stream has no gap of garbage in
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,167,it or useful information is not left out at the end because the stream
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,168,does not remember anything about the previous position.
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,170,public void setPosition(int newPosition)
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,172,if (newPosition > position)
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,174,if (newPosition > buf.length)
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,175,expandBuffer(newPosition - buf.length);
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,178,position = newPosition;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,180,if (position > used)
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,181,used = position;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,183,return ;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,187,Set the begin position of the stream pointer.
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,188,"If the newBeginPosition is larger than the stream itself,"
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,189,"then, the begin position is not set."
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,191,public void setBeginPosition(int newBeginPosition)
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,194,if (newBeginPosition > buf.length)
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,195,return;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,197,beginPosition = newBeginPosition;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,201,Shrink the buffer left by the amount given. Ie.
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,202,bytes from 0 to amountToShrinkBy are thrown away
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,204,public void discardLeft(int amountToShrinkBy) {
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,206,"System.arraycopy(buf, amountToShrinkBy, buf, 0,"
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,207,used - amountToShrinkBy);
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,209,position -= amountToShrinkBy;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,210,used -= amountToShrinkBy;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,214,Expand the buffer by at least the number of bytes requested in minExtension.
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,216,"To optimize performance and reduce memory copies and allocation, we have a staged buffer"
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,217,expansion.
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,219,<UL>
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,220,<LI> buf.length < 128k - increase by 4k
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,221,<LI> buf.length < 1Mb - increase by 128k
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,222,<LI> otherwise increase by 1Mb.
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,223,</UL>
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,225,"In all cases, if minExpansion is greater than the value about then the buffer will"
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,226,be increased by minExtension.
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,228,private void expandBuffer(int minExtension)
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,230,if (buf.length < (128 * 1024)) {
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,231,if (minExtension < INITIAL_SIZE)
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,232,minExtension = INITIAL_SIZE;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,233,} else if (buf.length < (1024 * 1024)) {
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,235,if (minExtension < (128 * 1024))
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,236,minExtension = (128 * 1024);
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,237,} else {
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,238,if (minExtension < (1024 * 1024))
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,239,minExtension = 1024 * 1024;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,242,int newsize = buf.length + minExtension;
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,244,byte[] newbuf = new byte[newsize];
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,245,"System.arraycopy(buf, 0, newbuf, 0, buf.length);"
+java/engine/org/apache/derby/iapi/services/io/DynamicByteArrayOutputStream.java,246,buf = newbuf;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,31,public final class InputStreamUtil {
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,32,private static final int SKIP_FRAGMENT_SIZE = Integer.MAX_VALUE;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,35,"Read an unsigned byte from an InputStream, throwing an EOFException"
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,36,if the end of the input is reached.
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,44,public static int readUnsignedByte(InputStream in) throws IOException {
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,45,int b = in.read();
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,46,if (b < 0)
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,47,throw new EOFException();
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,49,return b;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,53,Read a number of bytes into an array.
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,61,"public static void readFully(InputStream in, byte b[],"
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,62,"int offset,"
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,63,int len) throws IOException
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,65,do {
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,66,"int bytesRead = in.read(b, offset, len);"
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,67,if (bytesRead < 0)
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,68,throw new EOFException();
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,69,len -= bytesRead;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,70,offset += bytesRead;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,71,} while (len != 0);
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,76,Read a number of bytes into an array.
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,77,Keep reading in a loop until len bytes are read or EOF is reached or
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,78,an exception is thrown. Return the number of bytes read.
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,79,"(InputStream.read(byte[],int,int) does not guarantee to read len bytes"
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,80,even if it can do so without reaching EOF or raising an exception.)
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,84,"public static int readLoop(InputStream in,"
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,85,"byte b[],"
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,86,"int offset,"
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,87,int len)
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,88,throws IOException
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,90,int firstOffset = offset;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,91,do {
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,92,"int bytesRead = in.read(b, offset, len);"
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,93,if (bytesRead <= 0)
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,94,break;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,95,len -= bytesRead;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,96,offset += bytesRead;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,97,} while (len != 0);
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,98,return offset - firstOffset;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,112,public static long skipUntilEOF(InputStream is) throws IOException {
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,113,if(is == null)
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,114,throw new NullPointerException();
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,116,long bytes = 0;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,117,while(true){
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,118,"long r = skipPersistent(is, SKIP_FRAGMENT_SIZE);"
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,119,bytes += r;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,120,if(r < SKIP_FRAGMENT_SIZE)
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,121,return bytes;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,139,"public static void skipFully(InputStream is, long skippedBytes)"
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,140,throws IOException {
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,141,if(is == null)
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,142,throw new NullPointerException();
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,144,if(skippedBytes <= 0)
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,145,return;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,147,"long bytes = skipPersistent(is, skippedBytes);"
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,149,if(bytes < skippedBytes)
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,150,throw new EOFException();
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,165,"public static final long skipPersistent(InputStream in, long bytesToSkip)"
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,166,throws IOException {
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,167,long skipped = 0;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,168,while (skipped < bytesToSkip) {
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,169,long skippedNow = in.skip(bytesToSkip - skipped);
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,170,if (skippedNow == 0) {
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,171,if (in.read() == -1) {
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,174,break;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,175,} else {
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,176,skippedNow = 1; // Added to count below.
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,179,skipped += skippedNow;
+java/engine/org/apache/derby/iapi/services/io/InputStreamUtil.java,181,return skipped;
+java/engine/org/apache/derby/iapi/types/DataTypeUtilities.java,204,size = (w > 0 ? w : 15);
+java/shared/org/apache/derby/shared/common/reference/JDBC30Translation.java,45,public static final int PARAMETER_NO_NULLS = ParameterMetaData.parameterNoNulls;
+java/shared/org/apache/derby/shared/common/reference/JDBC30Translation.java,46,public static final int PARAMETER_NULLABLE = ParameterMetaData.parameterNullable;
+java/shared/org/apache/derby/shared/common/reference/JDBC30Translation.java,47,public static final int PARAMETER_NULLABLE_UNKNOWN = ParameterMetaData.parameterNullableUnknown;
+java/shared/org/apache/derby/shared/common/reference/JDBC30Translation.java,48,public static final int PARAMETER_MODE_UNKNOWN = ParameterMetaData.parameterModeUnknown;
+java/shared/org/apache/derby/shared/common/reference/JDBC30Translation.java,49,public static final int PARAMETER_MODE_IN = ParameterMetaData.parameterModeIn;
+java/shared/org/apache/derby/shared/common/reference/JDBC30Translation.java,50,public static final int PARAMETER_MODE_IN_OUT = ParameterMetaData.parameterModeInOut;
+java/shared/org/apache/derby/shared/common/reference/JDBC30Translation.java,51,public static final int PARAMETER_MODE_OUT = ParameterMetaData.parameterModeOut;
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/DatabaseMetaDataTest.java,1384,public void testGetColumnsReadOnly() throws SQLException
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/DatabaseMetaDataTest.java,1398,public void testGetColumnsModify() throws SQLException {
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/DatabaseMetaDataTest.java,1657,throws SQLException
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/DatabaseMetaDataTest.java,1709,public static void crossCheckGetColumnRowAndResultSetMetaData(
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/DatabaseMetaDataTest.java,1711,throws SQLException
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/DatabaseMetaDataTest.java,1740,else if (dmdColumnType == Types.JAVA_OBJECT && usingDerbyNetClient())
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/CompatibilityCombinations.java,1045,pingServer(5); // Wait for the server to come up in a reasonable time....
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/CompatibilityCombinations.java,1181,"private	void	pingServer( int iterations )"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/CompatibilityCombinations.java,1185,"ping( new NetworkServerControl(), iterations );"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/CompatibilityCombinations.java,1190,"private	void	ping( NetworkServerControl controller, int iterations )"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/CompatibilityCombinations.java,1209,"System.out.println( ""Server did not come up: "" + finalException.getMessage() );"
+java/testing/org/apache/derbyTesting/functionTests/util/DerbyJUnitTest.java,516,"dropSchemaObject( conn, TABLE, name );"
+java/testing/org/apache/derbyTesting/functionTests/util/DerbyJUnitTest.java,530,"dropSchemaObject( conn, FUNCTION, name );"
+java/testing/org/apache/derbyTesting/functionTests/util/DerbyJUnitTest.java,544,"dropSchemaObject( conn, PROCEDURE, name );"
+java/testing/org/apache/derbyTesting/functionTests/util/DerbyJUnitTest.java,556,"protected	static	void	dropSchemaObject( Connection conn, String genus, String objectName )"
+java/testing/org/apache/derbyTesting/functionTests/util/DerbyJUnitTest.java,561,"ps = prepare( conn, ""drop "" + genus + "" "" + objectName );"
+java/engine/org/apache/derby/impl/sql/compile/HashTableNode.java,259,int[] mapArray = resultColumns.mapSourceColumns();
+java/engine/org/apache/derby/impl/sql/compile/ProjectRestrictNode.java,1421,int[] mapArray = resultColumns.mapSourceColumns();
+java/engine/org/apache/derby/impl/sql/compile/ProjectRestrictNode.java,1601,"ClassName.NoPutResultSet, 10);"
+java/engine/org/apache/derby/impl/sql/execute/GenericResultSetFactory.java,223,"constantRestriction, mapRefItem,"
+java/engine/org/apache/derby/impl/sql/execute/NoRowsResultSetImpl.java,64,"NoPutResultSet[]	subqueryTrackingArray;"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,522,"private	void	checkRows( ResultSet rs, TypeDescriptor[] types, Object[][] rows, List casts )"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,523,throws Exception
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,525,"int					rowCount = rows.length;"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,527,for ( int i = 0; i < rowCount; i++ )
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,529,rs.next();
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,530,"checkRow( rs, types, rows[ i ], casts );"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,538,"private	void	checkRow( ResultSet rs, TypeDescriptor[] types, Object[] row, List casts )"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,539,throws Exception
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,812,"int				typeCount = types.length;"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,543,for ( int i = 0; i < typeCount; i++ )
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,821,"TypeDescriptor	type = types[ i ];"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,547,if ( getServerVersion().atLeast( type.getDerbyVersion() ) )
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,549,"String	columnName = type.getDerbyTypeName();"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,550,"Object	expectedValue = row[ i ];"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,551,"Object	actualValue = getColumn( rs, columnName, type );"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,553,"println( ""Comparing column "" + columnName + "": "" + expectedValue + "" to "" + actualValue );"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,554,"compareObjects( columnName, expectedValue, actualValue );"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,556,"checkCoercions( rs, columnName, type, casts );"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,564,"private	void	checkCoercions( ResultSet rs, String columnName, TypeDescriptor type, List casts )"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,565,throws Exception
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,567,"T_CN		coercionDesc = COERCIONS[ getCoercionIndex( type.getJdbcType() ) ];"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,568,"boolean[]	coercions = coercionDesc.getCoercions();"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,569,"int			count = coercions.length;"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,570,"int			legalCoercions = 0;"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,572,"println( ""Checking coercions for "" + columnName );"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,574,for ( int i = 0; i < count; i++ )
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,576,if ( coercions[ i ] )
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,578,legalCoercions++;
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,580,"int		jdbcType = COERCIONS[ i ].getJdbcType();"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,581,"Object	retval = getColumn( rs, columnName, jdbcType );"
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,583,if ( casts != null ) { casts.add( retval ); }
+java/testing/org/apache/derbyTesting/functionTests/tests/junitTests/compatibility/JDBCDriverTest.java,585,"println( ""\t"" + jdbcType + "":\t"" + retval );"
+java/client/org/apache/derby/client/am/ResultSet.java,208,private boolean[] streamUsedFlags_;
+java/client/org/apache/derby/client/am/ResultSet.java,297,unuseStreams();
+java/client/org/apache/derby/client/am/ResultSet.java,1122,useStream(column);
+java/client/org/apache/derby/client/am/ResultSet.java,1153,useStream(column);
+java/client/org/apache/derby/client/am/ResultSet.java,1204,useStream(column);
+java/client/org/apache/derby/client/am/ResultSet.java,2099,resetRowsetFlags();
+java/client/org/apache/derby/client/am/ResultSet.java,2100,unuseStreams();
+java/client/org/apache/derby/client/am/ResultSet.java,2140,unuseStreams();
+java/client/org/apache/derby/client/am/ResultSet.java,2192,unuseStreams();
+java/client/org/apache/derby/client/am/ResultSet.java,2247,unuseStreams();
+java/client/org/apache/derby/client/am/ResultSet.java,2364,unuseStreams();
+java/client/org/apache/derby/client/am/ResultSet.java,2448,unuseStreams();
+java/client/org/apache/derby/client/am/ResultSet.java,2575,unuseStreams();
+java/client/org/apache/derby/client/am/ResultSet.java,3695,unuseStreams();
+java/client/org/apache/derby/client/am/ResultSet.java,5489,void useStream(int columnIndex) throws SqlException {
+java/client/org/apache/derby/client/am/ResultSet.java,5491,if(streamUsedFlags_[columnIndex - 1]){
+java/client/org/apache/derby/client/am/ResultSet.java,5492,"throw new SqlException(agent_.logWriter_,"
+java/client/org/apache/derby/client/am/ResultSet.java,5493,new ClientMessageId(SQLState.LANG_STREAM_RETRIEVED_ALREADY));
+java/client/org/apache/derby/client/am/ResultSet.java,5496,streamUsedFlags_[columnIndex - 1] = true;
+java/client/org/apache/derby/client/am/ResultSet.java,5501,private void unuseStreams(){
+java/client/org/apache/derby/client/am/ResultSet.java,5503,if(streamUsedFlags_ == null){
+java/client/org/apache/derby/client/am/ResultSet.java,5504,streamUsedFlags_ = new boolean[ resultSetMetaData_.columns_ ];
+java/client/org/apache/derby/client/am/ResultSet.java,5505,return;
+java/client/org/apache/derby/client/am/ResultSet.java,5508,for(int i = 0;
+java/client/org/apache/derby/client/am/ResultSet.java,5509,i < streamUsedFlags_.length;
+java/client/org/apache/derby/client/am/ResultSet.java,5510,i ++){
+java/client/org/apache/derby/client/am/ResultSet.java,5512,streamUsedFlags_[i] = false;
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/BlobClob4BlobTest.java,421,if (origRS.getClob(1) != null) {
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/BlobClob4BlobTest.java,423,"getStreamCheckSum(origRS.getClob(1).getAsciiStream()),"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/BlobClob4BlobTest.java,426,"getStreamCheckSum(origRS.getClob(1).getAsciiStream()),"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,123,long new_length = rs3.getBlob(1).length();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,129,InputStream lStream = rs3.getBlob(1).getBinaryStream();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,172,long new_length = rs3.getBlob(1).length();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,177,InputStream lStream = rs3.getBlob(1).getBinaryStream();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,219,long new_length = rs3.getClob(1).length();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,224,InputStream lStream = rs3.getClob(1).getAsciiStream();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,267,long new_length = rs3.getClob(1).length();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,272,InputStream lStream = rs3.getClob(1).getAsciiStream();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,309,long new_length = rs3.getClob(1).length();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,314,Reader lStream = rs3.getClob(1).getCharacterStream();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,347,long new_length = rs3.getClob(1).length();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,351,Reader lStream = rs3.getClob(1).getCharacterStream();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,386,long new_length = rs3.getClob(1).length();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,390,Reader lStream = rs3.getClob(1).getCharacterStream();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,428,long new_length = rs3.getClob(1).length();
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,429,Clob fish = rs3.getClob(1);
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/LobStreamsTest.java,432,Reader lStream = rs3.getClob(1).getCharacterStream();
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TableFunctionTest.java,2014,actualValue = squeezeString(  rs.getBlob( column ) );
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TableFunctionTest.java,2015,actualValueByName = squeezeString(  rs.getBlob( columnName ) );
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TableFunctionTest.java,2018,actualValue = squeezeString(  rs.getClob( column ) );
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TableFunctionTest.java,2019,actualValueByName = squeezeString(  rs.getClob( columnName ) );
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/UpdatableResultSetTest.java,4521,int len = (int)rs.getClob(sqlType).length();
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/UpdatableResultSetTest.java,4525,"rs.getClob(sqlType).getSubString(1, len).trim());"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/UpdatableResultSetTest.java,4543,long len = rs.getBlob(sqlType).length();
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/UpdatableResultSetTest.java,4546,"Arrays.equals(rs.getBlob(sqlType).getBytes(1, (int)len),"
+java/client/org/apache/derby/client/net/NetDatabaseMetaData.java,118,return supportsSessionDataCaching_;
+java/testing/org/apache/derbyTesting/functionTests/tests/memory/_Suite.java,41,return suite;
+java/client/org/apache/derby/client/net/NetConnection.java,1302,"extnam_ = ""derbydnc"" + java.lang.Thread.currentThread().getName();"
+java/engine/org/apache/derby/impl/sql/execute/TableScanResultSet.java,788,activation.clearIndexScanInfo();
+java/testing/org/apache/derbyTesting/junit/BaseTestCase.java,514,public static final String getJavaExecutableName() {
+java/testing/org/apache/derbyTesting/junit/BaseTestCase.java,515,"String vmname = getSystemProperty(""com.ibm.oti.vm.exe"");"
+java/testing/org/apache/derbyTesting/junit/BaseTestCase.java,516,if (vmname == null)
+java/testing/org/apache/derbyTesting/junit/BaseTestCase.java,517,"vmname = getSystemProperty(""java.home"") + File.separator + ""bin"" +"
+java/testing/org/apache/derbyTesting/junit/BaseTestCase.java,518,"File.separator +""java"";"
+java/testing/org/apache/derbyTesting/junit/BaseTestCase.java,519,return vmname;
+java/engine/org/apache/derby/impl/sql/compile/ColumnReference.java,841,if (SanityManager.DEBUG)
+java/engine/org/apache/derby/impl/sql/compile/ColumnReference.java,843,"SanityManager.ASSERT(ftRC != null,"
+java/engine/org/apache/derby/impl/sql/compile/ColumnReference.java,844,"""Failed to find column '"" + columnName + ""' in the "" +"
+java/engine/org/apache/derby/impl/sql/compile/ColumnReference.java,845,"""RCL for '"" + ft.getTableName() + ""'."");"
+java/engine/org/apache/derby/impl/sql/compile/ColumnReference.java,673,columnNumber = source.getColumnPosition();
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/DateTimeTest.java,1567,if (usingDerbyNetClient())
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/DateTimeTest.java,1568,"JDBC.assertFullResultSet(rs, new String[][] { { ""1970-01-01"","
+java/engine/org/apache/derby/impl/sql/compile/FromList.java,731,GroupByList gbl)
+java/engine/org/apache/derby/impl/sql/compile/FromList.java,774,gbl);
+java/engine/org/apache/derby/impl/sql/compile/FromSubquery.java,460,GroupByList gbl)
+java/engine/org/apache/derby/impl/sql/compile/FromSubquery.java,140,"return super.getFromTableByName(name, schemaName, exactMatch);"
+java/engine/org/apache/derby/impl/sql/compile/FromTable.java,1431,GroupByList gbl)
+java/engine/org/apache/derby/impl/sql/compile/JoinNode.java,1370,GroupByList gbl)
+java/engine/org/apache/derby/iapi/sql/PreparedStatement.java,76,void rePrepare(LanguageConnectionContext lcc)
+java/engine/org/apache/derby/impl/sql/GenericActivationHolder.java,267,GeneratedClass newGC;
+java/engine/org/apache/derby/impl/sql/GenericActivationHolder.java,269,if (gc != ps.getActivationClass()) {
+java/engine/org/apache/derby/impl/sql/GenericActivationHolder.java,277,synchronized (ps) {
+java/engine/org/apache/derby/impl/sql/GenericActivationHolder.java,278,ps.rePrepare(getLanguageConnectionContext());
+java/engine/org/apache/derby/impl/sql/GenericActivationHolder.java,279,newGC = ps.getActivationClass();
+java/engine/org/apache/derby/impl/sql/GenericActivationHolder.java,281,} else {
+java/engine/org/apache/derby/impl/sql/GenericActivationHolder.java,284,newGC = gc;
+java/engine/org/apache/derby/impl/sql/GenericPreparedStatement.java,206,public void rePrepare(LanguageConnectionContext lcc)
+java/engine/org/apache/derby/impl/sql/GenericPreparedStatement.java,211,if (SanityManager.DEBUG)
+java/engine/org/apache/derby/impl/sql/GenericPreparedStatement.java,212,"SanityManager.ASSERT(ps == this, ""ps != this"");"
+java/engine/org/apache/derby/impl/sql/GenericPreparedStatement.java,230,rePrepare(lcc);
+java/engine/org/apache/derby/impl/sql/GenericStatement.java,173,for (;;) {
+java/engine/org/apache/derby/impl/sql/GenericStatement.java,175,if (foundInCache) {
+java/engine/org/apache/derby/impl/sql/GenericStatement.java,176,if (preparedStmt.referencesSessionSchema()) {
+java/engine/org/apache/derby/impl/sql/GenericStatement.java,190,if (!preparedStmt.compilingStatement) {
+java/engine/org/apache/derby/impl/sql/GenericStatement.java,181,break;
+java/engine/org/apache/derby/impl/sql/GenericStatement.java,194,try {
+java/engine/org/apache/derby/impl/sql/GenericStatement.java,195,preparedStmt.wait();
+java/engine/org/apache/derby/impl/sql/GenericStatement.java,196,} catch (InterruptedException ie) {
+java/engine/org/apache/derby/impl/sql/GenericStatement.java,191,break;
+java/engine/org/apache/derby/impl/sql/GenericStatement.java,197,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/iapi/types/SQLChar.java,3013,this.localeFinder = localeFinder;
+java/client/org/apache/derby/jdbc/ClientDataSource.java,163,"return getConnection(getUser(), getPassword());"
+java/client/org/apache/derby/jdbc/ClientDataSource.java,185,"updateDataSourceValues(tokenizeAttributes(getConnectionAttributes(), null));"
+java/client/org/apache/derby/jdbc/ClientDataSource.java,186,return ClientDriver.getFactory().newNetConnection
+java/client/org/apache/derby/jdbc/ClientDataSource.java,187,"((NetLogWriter) dncLogWriter, user,"
+java/client/org/apache/derby/jdbc/ClientDataSource.java,188,"password, this, -1, false);"
+java/client/org/apache/derby/jdbc/ClientXADataSource.java,65,"return getXAConnection(getUser(), getPassword());"
+java/engine/org/apache/derby/impl/sql/compile/OrderByColumn.java,24,import org.apache.derby.iapi.types.TypeId;
+java/engine/org/apache/derby/impl/sql/compile/OrderByColumn.java,212,if( SanityManager.DEBUG)
+java/engine/org/apache/derby/impl/sql/compile/OrderByColumn.java,213,"SanityManager.ASSERT( addedColumnOffset >= 0,"
+java/engine/org/apache/derby/impl/sql/compile/OrderByColumn.java,214,"""Order by expression was not pulled into the result column list"");"
+java/engine/org/apache/derby/impl/sql/compile/OrderByColumn.java,215,resolveAddedColumn(target);
+java/engine/org/apache/derby/impl/sql/compile/OrderByColumn.java,216,if (resultCol == null)
+java/engine/org/apache/derby/impl/sql/compile/OrderByColumn.java,217,throw StandardException.newException(SQLState.LANG_UNION_ORDER_BY);
+java/engine/org/apache/derby/impl/sql/compile/OrderByColumn.java,359,if(!expression.isConstantExpression()){
+java/engine/org/apache/derby/impl/sql/compile/OrderByColumn.java,360,return false;
+java/engine/org/apache/derby/impl/sql/compile/OrderByColumn.java,363,return expression.getConstantValueAsObject() instanceof Integer;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,303,{// left operand must be either a base table or another LOJ
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,318,{// right operand must be either a base table or another LOJ
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,335,"JBitSet				NPReferencedTableMap; // Null-producing"
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,336,"JBitSet				RPReferencedTableMap; // Row-preserving"
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,356,BinaryRelationalOperatorNode equals;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,357,ValueNode leftCol;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,358,ValueNode rightCol;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,359,AndNode   and;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,360,ValueNode left;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,361,ValueNode vn = joinClause;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,362,while (vn instanceof AndNode)
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,364,and = (AndNode) vn;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,365,left = and.getLeftOperand();
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,379,boolean refCheck = false;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,380,boolean leftOperandCheck = false;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,382,if (RPReferencedTableMap.get(((ColumnReference)leftCol).getTableNumber()))
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,384,refCheck = true;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,385,leftOperandCheck = true;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,387,else if (NPReferencedTableMap.get(((ColumnReference)leftCol).getTableNumber()))
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,389,refCheck = true;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,392,if (refCheck == false)
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,393,return LOJ_bindResultColumns(anyChange);
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,395,refCheck = false;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,396,if (leftOperandCheck == false && RPReferencedTableMap.get(((ColumnReference)rightCol).getTableNumber()))
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,398,refCheck = true;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,400,else if (leftOperandCheck == true && NPReferencedTableMap.get(((ColumnReference)rightCol).getTableNumber()))
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,402,refCheck = true;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,405,if (refCheck == false)
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,406,return LOJ_bindResultColumns(anyChange);
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,408,else return LOJ_bindResultColumns(anyChange); //  get out of here
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,410,vn = and.getRightOperand();
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,415,boolean       push = false;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,418,if (logicalRightResultSet instanceof HalfOuterJoinNode)
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,421,JBitSet  logicalNPRefTableMap = ((HalfOuterJoinNode)logicalRightResultSet).LOJgetNPReferencedTables(numTables);
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,426,vn = joinClause;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,427,push = true;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,428,while (vn instanceof AndNode)
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,430,and = (AndNode) vn;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,431,left = and.getLeftOperand();
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,432,equals = (BinaryRelationalOperatorNode) left;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,433,leftCol = equals.getLeftOperand();
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,434,rightCol = equals.getRightOperand();
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,436,if (logicalNPRefTableMap.get(((ColumnReference)leftCol).getTableNumber()) ||
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,437,logicalNPRefTableMap.get(((ColumnReference)rightCol).getTableNumber()))
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,439,push = false;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,440,break;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,443,vn = and.getRightOperand();
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,448,if (push)
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,452,if (super.subqueryList.size() != 0 ||
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,453,((JoinNode)logicalRightResultSet).subqueryList.size() != 0 ||
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,454,super.joinPredicates.size() != 0 ||
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,455,((JoinNode)logicalRightResultSet).joinPredicates.size() != 0 ||
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,456,super.usingClause != null ||
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,457,((JoinNode)logicalRightResultSet).usingClause != null)
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,458,return LOJ_bindResultColumns(anyChange); //  get out of here
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,460,anyChange = true; // we are reordering the LOJs.
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,462,ResultSetNode tmp = logicalLeftResultSet;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,463,"ResultSetNode LChild, RChild;"
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,481,LChild = ((HalfOuterJoinNode)logicalRightResultSet).leftResultSet;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,482,RChild = ((HalfOuterJoinNode)logicalRightResultSet).rightResultSet;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,484,((HalfOuterJoinNode)logicalRightResultSet).rightResultSet = LChild;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,485,((HalfOuterJoinNode)logicalRightResultSet).leftResultSet  = tmp;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,488,vn = joinClause;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,489,joinClause   = ((HalfOuterJoinNode)logicalRightResultSet).joinClause;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,490,((HalfOuterJoinNode)logicalRightResultSet).joinClause = vn;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,501,FromList localFromList = (FromList) getNodeFactory().getNode(
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,502,"C_NodeTypes.FROM_LIST,"
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,503,"getNodeFactory().doJoinOrderOptimization(),"
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,504,getContextManager());
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,507,leftResultSet  = logicalRightResultSet;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,508,rightResultSet = RChild;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,511,((HalfOuterJoinNode)leftResultSet).resultColumns = null;
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,512,((JoinNode)leftResultSet).bindResultColumns(localFromList); // localFromList is empty
+java/engine/org/apache/derby/impl/sql/compile/HalfOuterJoinNode.java,515,boolean localChange = ((HalfOuterJoinNode)leftResultSet).LOJ_reorderable(numTables);
+java/drda/org/apache/derby/impl/drda/NetworkServerControlImpl.java,136,private final static int PROTOCOL_VERSION = 2;
+java/drda/org/apache/derby/impl/drda/NetworkServerControlImpl.java,986,writeCommandHeader(COMMAND_SHUTDOWN);
+java/drda/org/apache/derby/impl/drda/NetworkServerControlImpl.java,988,writeLDString(userArg);
+java/drda/org/apache/derby/impl/drda/NetworkServerControlImpl.java,989,writeLDString(passwordArg);
+java/drda/org/apache/derby/impl/drda/NetworkServerControlImpl.java,990,send();
+java/drda/org/apache/derby/impl/drda/NetworkServerControlImpl.java,991,readResult();
+java/drda/org/apache/derby/impl/drda/NetworkServerControlImpl.java,1570,if (version <= 0 || version > PROTOCOL_VERSION)
+java/drda/org/apache/derby/impl/drda/NetworkServerControlImpl.java,1605,userArg = reader.readCmdString();
+java/drda/org/apache/derby/impl/drda/NetworkServerControlImpl.java,1606,passwordArg = reader.readCmdString();
+java/drda/org/apache/derby/impl/drda/NetworkServerControlImpl.java,2581,commandOs.writeByte((byte)((PROTOCOL_VERSION & 0xf0) >> 8 ));
+java/drda/org/apache/derby/impl/drda/NetworkServerControlImpl.java,2582,commandOs.writeByte((byte)(PROTOCOL_VERSION & 0x0f));
+java/engine/org/apache/derby/impl/sql/execute/BaseActivation.java,1451,return row[rsNumber].getColumn(colId);
+java/engine/org/apache/derby/impl/jdbc/EmbedClob.java,338,pushStack = !getEmbedConnection().isClosed();
+java/engine/org/apache/derby/impl/jdbc/EmbedClob.java,350,if (readCount == -1)
+java/engine/org/apache/derby/impl/jdbc/EmbedClob.java,458,if (!seenOneCharacter)
+java/engine/org/apache/derby/impl/jdbc/EmbedClob.java,473,if (firstPosition == -1)
+java/engine/org/apache/derby/impl/jdbc/EmbedDatabaseMetaData.java,2314,getLanguageConnectionContext().getDataDictionary().checkVersion(
+java/engine/org/apache/derby/impl/jdbc/EmbedDatabaseMetaData.java,3549,s = getEmbedConnection().prepareMetaDataStatement(queryText);
+java/engine/org/apache/derby/impl/jdbc/EmbedPreparedStatement.java,138,} catch (Throwable t) {
+java/engine/org/apache/derby/impl/jdbc/EmbedPreparedStatement.java,139,throw handleException(t);
+java/engine/org/apache/derby/impl/jdbc/EmbedPreparedStatement.java,1062,if (gcDuringGetMetaData == null || gcDuringGetMetaData.equals(execp.getActivationClass().getName()) == false)
+java/engine/org/apache/derby/impl/jdbc/EmbedPreparedStatement.java,1064,rMetaData = null;
+java/engine/org/apache/derby/impl/jdbc/EmbedPreparedStatement.java,1065,gcDuringGetMetaData = execp.getActivationClass().getName();
+java/engine/org/apache/derby/impl/jdbc/EmbedPreparedStatement.java,1067,if (rMetaData == null)
+java/engine/org/apache/derby/impl/jdbc/EmbedPreparedStatement.java,1069,ResultDescription resd = preparedStatement.getResultDescription();
+java/engine/org/apache/derby/impl/jdbc/EmbedPreparedStatement.java,1070,if (resd != null)
+java/engine/org/apache/derby/impl/jdbc/EmbedPreparedStatement.java,1078,String statementType = resd.getStatementType();
+java/engine/org/apache/derby/impl/jdbc/EmbedPreparedStatement.java,1079,"if (statementType.equals(""INSERT"") ||"
+java/engine/org/apache/derby/impl/jdbc/EmbedPreparedStatement.java,1080,"statementType.equals(""UPDATE"") ||"
+java/engine/org/apache/derby/impl/jdbc/EmbedPreparedStatement.java,1081,"statementType.equals(""DELETE""))"
+java/engine/org/apache/derby/impl/jdbc/EmbedPreparedStatement.java,1082,rMetaData = null;
+java/engine/org/apache/derby/impl/jdbc/EmbedPreparedStatement.java,1083,else
+java/engine/org/apache/derby/impl/jdbc/EmbedPreparedStatement.java,1084,rMetaData = newEmbedResultSetMetaData(resd);
+java/engine/org/apache/derby/impl/jdbc/EmbedStatement.java,1319,} catch (Throwable t) {
+java/engine/org/apache/derby/iapi/sql/dictionary/TableDescriptor.java,27,import java.util.WeakHashMap;
+java/engine/org/apache/derby/iapi/sql/dictionary/TableDescriptor.java,140,return (FormatableBitSet) (map.get(this));
+java/engine/org/apache/derby/iapi/sql/dictionary/TableDescriptor.java,146,WeakHashMap map = (WeakHashMap)(referencedColumnMap.get());
+java/engine/org/apache/derby/iapi/sql/dictionary/TableDescriptor.java,147,"map.put(this, newReferencedColumnMap);"
+java/shared/org/apache/derby/shared/common/reference/SQLState.java,1580,"String NET_IOEXCEPTION_ON_READ                                  = ""XN014.S"";"
+java/shared/org/apache/derby/shared/common/reference/SQLState.java,1582,"String NET_IOEXCEPTION_ON_STREAMLEN_VERIFICATION                = ""XN016.S"";"
+java/shared/org/apache/derby/shared/common/reference/SQLState.java,935,"String LANG_AGGREGATE_IN_GROUPBY_LIST                              = ""42Y26"";"
+java/engine/org/apache/derby/impl/store/raw/data/FileContainer.java,1537,"long pageNumber;		// the page number of the new page"
+java/engine/org/apache/derby/impl/store/raw/data/FileContainer.java,1545,long startSearch = lastAllocatedPage;
+java/engine/org/apache/derby/impl/store/raw/data/FileContainer.java,1610,allocPage =
+java/engine/org/apache/derby/impl/store/raw/data/FileContainer.java,1611,"findAllocPageForAdd(allocHandle, ntt, startSearch);"
+java/engine/org/apache/derby/impl/store/raw/data/FileContainer.java,1993,synchronized(allocCache)
+java/engine/org/apache/derby/impl/store/raw/data/FileContainer.java,1995,"if (pagenum <= allocCache.getLastPageNumber(handle, firstAllocPageNumber) &&"
+java/engine/org/apache/derby/impl/store/raw/data/FileContainer.java,1996,"allocCache.getPageStatus(handle, pagenum, firstAllocPageNumber) == AllocExtent.ALLOCATED_PAGE)"
+java/engine/org/apache/derby/impl/store/raw/data/FileContainer.java,1997,retval = true;
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,179,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,479,synchronized (this) {
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,483,if (getCommittedDropState()) {
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,484,clearDirty();
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,485,return;
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,492,while(preDirty == true)
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,494,waited = true;
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,495,try
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,497,wait();
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,499,catch (InterruptedException ie)
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,501,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,505,if (waited)
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,508,if (getCommittedDropState())
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,510,clearDirty();
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,511,return;
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,853,return AccessController.doPrivileged( this) != null;
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,1028,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,846,synchronized boolean openContainer(ContainerKey newIdentity)
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,1303,try {
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,1308,dataFactory.writeInProgress();
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,1309,try
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,1311,"fileData = file.getRandomAccessFile( ""rw"");"
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,1313,finally
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,1315,dataFactory.writeFinished();
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,1340,} catch (SecurityException se) {
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,1344,"throw StandardException.newException( SQLState.FILE_CREATE, se, file);"
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,1346,} catch (IOException ioe) {
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer.java,1359,"throw StandardException.newException( SQLState.FILE_CREATE, ioe, file);"
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,80,private int iosInProgress = 0;
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,207,if (pageNumber == FIRST_ALLOC_PAGE_NUMBER) {
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,208,synchronized (this) {
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,209,"readPage0(pageNumber, pageData);"
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,212,"readPage0(pageNumber, pageData);"
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,216,"private void readPage0(long pageNumber, byte[] pageData)"
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,222,SanityManager.ASSERT(!getCommittedDropState());
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,242,"readFull(pageBuf, ioChannel, pageOffset);"
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,254,pageNumber != FIRST_ALLOC_PAGE_NUMBER)
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,284,if (pageNumber == FIRST_ALLOC_PAGE_NUMBER) {
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,285,synchronized (this) {
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,286,"writePage0(pageNumber, pageData, syncPage);"
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,289,"writePage0(pageNumber, pageData, syncPage);"
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,360,"SanityManager.DEBUG_PRINT(""RAFContainer4"","
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,361,"""Write to a dropped and closed container discarded."");"
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,451,ByteBuffer buffer =
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,452,ByteBuffer.allocate(AllocPage.MAX_BORROWED_SPACE);
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,453,"readFull(buffer, ioChannel, offset);"
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,454,return buffer.array();
+java/engine/org/apache/derby/impl/store/raw/data/RAFContainer4.java,294,"throws IOException, StandardException"
+java/engine/org/apache/derby/impl/services/locks/ActiveLock.java,122,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/impl/services/locks/ConcurrentLockSet.java,591,if (deadlockTrace)
+java/engine/org/apache/derby/impl/services/locks/LockSet.java,402,if (deadlockTrace)
+java/engine/org/apache/derby/impl/sql/execute/BasicNoPutResultSetImpl.java,983,StatementContext localStatementContext = getLanguageConnectionContext().getStatementContext();
+java/engine/org/apache/derby/impl/store/raw/data/BaseDataFileFactory.java,2277,isFrozen = false;
+java/engine/org/apache/derby/impl/store/raw/data/BaseDataFileFactory.java,2278,freezeSemaphore.notifyAll();
+java/engine/org/apache/derby/impl/store/raw/data/BaseDataFileFactory.java,2280,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/impl/store/raw/data/BaseDataFileFactory.java,2323,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/impl/store/raw/data/CachedPage.java,566,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/impl/store/raw/data/CachedPage.java,589,inClean = false;
+java/engine/org/apache/derby/impl/store/raw/data/CachedPage.java,590,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/impl/store/raw/log/LogAccessFile.java,679,{   //does not matter weather I get interrupted or not
+java/engine/org/apache/derby/impl/store/raw/xact/XactFactory.java,1044,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/impl/store/raw/xact/XactFactory.java,1116,inBackup = false;
+java/engine/org/apache/derby/impl/store/raw/xact/XactFactory.java,1117,backupSemaphore.notifyAll();
+java/engine/org/apache/derby/impl/store/raw/xact/XactFactory.java,1118,throw StandardException.interrupt(ie);
+java/engine/org/apache/derby/impl/store/replication/master/AsynchronousLogShipper.java,225,return;
+java/engine/org/apache/derby/impl/store/replication/net/ReplicationMessageReceive.java,465,try {
+java/engine/org/apache/derby/impl/store/replication/net/ReplicationMessageReceive.java,467,receivePongSemaphore.wait(DEFAULT_PING_TIMEOUT);
+java/engine/org/apache/derby/impl/store/replication/net/ReplicationMessageReceive.java,468,} catch (InterruptedException ex) {
+java/engine/org/apache/derby/impl/store/replication/net/ReplicationMessageReceive.java,494,sendPingSemaphore.wait();
+java/testing/org/apache/derbyTesting/junit/TestConfiguration.java,1312,Connection openDefaultConnection()
+java/engine/org/apache/derby/impl/sql/execute/AlterTableConstantAction.java,1699,if (cascade)
+java/engine/org/apache/derby/impl/sql/execute/AlterTableConstantAction.java,3480,break;
+java/engine/org/apache/derby/impl/services/monitor/TopService.java,193,return false;
+java/engine/org/apache/derby/impl/store/replication/net/ReplicationMessageTransmit.java,209,synchronized (receiveSemaphore) {
+java/engine/org/apache/derby/impl/store/replication/net/ReplicationMessageTransmit.java,210,try {
+java/engine/org/apache/derby/impl/store/replication/net/ReplicationMessageTransmit.java,211,receiveSemaphore.wait(DEFAULT_MESSAGE_RESPONSE_TIMEOUT);
+java/engine/org/apache/derby/impl/store/replication/net/ReplicationMessageTransmit.java,212,} catch (InterruptedException ie) {
+java/engine/org/apache/derby/impl/jdbc/Util.java,273,"return newEmbedSQLException(SQLState.SET_STREAM_FAILURE,"
+java/engine/org/apache/derby/impl/jdbc/Util.java,274,"new Object[] {msg},"
+java/engine/org/apache/derby/impl/jdbc/Util.java,275,StandardException.getSeverityFromIdentifier(SQLState.SET_STREAM_FAILURE));
+java/engine/org/apache/derby/impl/jdbc/Util.java,244,"return newEmbedSQLException(SQLState.JAVA_EXCEPTION,"
+java/engine/org/apache/derby/impl/services/locks/Deadlock.java,170,Lock waitingLock = (Lock) waiters.get(space);
+java/engine/org/apache/derby/impl/services/locks/Deadlock.java,171,if (waitingLock == null) {
+java/engine/org/apache/derby/impl/services/locks/Deadlock.java,174,rollback(chain);
+java/engine/org/apache/derby/impl/services/locks/Deadlock.java,175,continue outer;
+java/engine/org/apache/derby/impl/services/locks/Deadlock.java,179,Object waitOn = waiters.get(waitingLock);
+java/engine/org/apache/derby/impl/services/locks/Deadlock.java,180,if (waitOn instanceof LockControl) {
+java/engine/org/apache/derby/impl/services/locks/Deadlock.java,182,LockControl waitOnControl = (LockControl) waitOn;
+java/engine/org/apache/derby/impl/services/locks/Deadlock.java,189,if (waitOnControl.isUnlocked()) {
+java/engine/org/apache/derby/impl/services/locks/Deadlock.java,192,rollback(chain);
+java/engine/org/apache/derby/impl/services/locks/Deadlock.java,193,continue outer;
+java/engine/org/apache/derby/impl/services/locks/Deadlock.java,196,chain.push(waitOnControl.getGrants());
+java/engine/org/apache/derby/impl/services/locks/Deadlock.java,198,continue outer;
+java/engine/org/apache/derby/impl/services/locks/Deadlock.java,199,} else {
+java/engine/org/apache/derby/impl/services/locks/Deadlock.java,201,space = waitingLock.getCompatabilitySpace();
+java/engine/org/apache/derby/impl/store/raw/data/DropOnCommit.java,77,"SanityManager.THROWASSERT(""still on observr list "" + this);"
+java/engine/org/apache/derby/impl/sql/compile/FromBaseTable.java,2288,fsq.disablePrivilegeCollection();
+java/engine/org/apache/derby/impl/sql/compile/QueryTreeNode.java,494,public void disablePrivilegeCollection()
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/GrantRevokeTest.java,1336,"ResultSet rs = dm.getTablePrivileges(null, schema.toUpperCase(), table.toUpperCase());"
+java/drda/org/apache/derby/impl/drda/DRDAStatement.java,647,return ps;
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/PrepStmtMetaDataTest.java,125,"assertEquals(2, rsmd.getColumnCount());"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/PrepStmtMetaDataTest.java,133,"s.executeUpdate(""alter table bug4579 add column c13 int"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/PrepStmtMetaDataTest.java,134,ResultSet rs = ps.executeQuery();
+java/engine/org/apache/derby/impl/sql/compile/CastNode.java,970,mb.push(!sourceCTI.variableLength() || isNumber);
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/DatabaseClassLoadingTest.java,161,"""create function EMC.GETARTICLE(path VARCHAR(40)) "" +"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/GeneratedColumnsTest.java,2260,"""    b char( 5 ) generated always as( upper( a ) ),\n"" +"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/GeneratedColumnsTest.java,2263,"""    e varchar( 5 ) generated always as( upper( a ) ),\n"" +"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/GeneratedColumnsTest.java,2274,"""    b char( 5 ) generated always as( upper( a ) ),\n"" +"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/GeneratedColumnsTest.java,2277,"""    e varchar( 5 ) generated always as( upper( a ) ),\n"" +"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/GeneratedColumnsTest.java,2380,"""create table t_atac_3( a varchar( 5 ), b varchar( 5 ) generated always as ( upper( a )  ) )"""
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/GeneratedColumnsTest.java,2385,"""create table t_atac_4( a varchar( 5 ) for bit data,  b varchar( 5 ) for bit data generated always as ( a )  )"""
+java/testing/org/apache/derbyTesting/functionTests/tests/tools/ImportExportProcedureTest.java,2047,"+ ""'extinout/t1.dat' , '\\a', '\\', null) "");"
+java/testing/org/apache/derbyTesting/functionTests/tests/tools/ImportExportProcedureTest.java,45,public final class ImportExportProcedureTest extends BaseJDBCTestCase {
+java/engine/org/apache/derby/diag/SpaceTable.java,152,conglomTable[i] = new ConglomInfo(
+java/engine/org/apache/derby/diag/SpaceTable.java,153,"cds[i].getConglomerateNumber(),"
+java/engine/org/apache/derby/diag/SpaceTable.java,155,cds[i].isIndex());
+java/engine/org/apache/derby/diag/SpaceTable.java,232,String str = conglomInfo.getConglomName();
+java/engine/org/apache/derby/diag/SpaceTable.java,352,"public ConglomInfo(long conglomId, String conglomName, boolean isIndex)"
+java/engine/org/apache/derby/diag/SpaceTable.java,138,schemaName = lcc.getCurrentSchemaName();
+java/engine/org/apache/derby/diag/SpaceTable.java,141,"SchemaDescriptor sd = dd.getSchemaDescriptor(schemaName, tc, true);"
+java/engine/org/apache/derby/diag/SpaceTable.java,142,"TableDescriptor td = dd.getTableDescriptor(tableName,sd, tc);"
+java/engine/org/apache/derby/diag/SpaceTable.java,143,if (td == null)  // table does not exist
+java/engine/org/apache/derby/diag/SpaceTable.java,145,conglomTable = new ConglomInfo[0];   // make empty conglom table
+java/engine/org/apache/derby/diag/SpaceTable.java,146,return;
+java/engine/org/apache/derby/diag/SpaceTable.java,154,"cds[i].isIndex() ? cds[i].getConglomerateName() : tableName,"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,142,String [] expColNames = new String [] {
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,144,"""NUMUNFILLEDPAGES"", ""PAGESIZE"", ""ESTIMSPACESAVING""};"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,149,"{""T1"", ""0"", ""1"", ""0"", ""1"", ""4096"", ""0""}"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,165,"{""T1"", ""0"", ""1"", ""0"", ""1"", ""4096"", ""0""}"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,185,"{""T1"", ""0"", ""1"", ""0"", ""1"", ""4096"", ""0""}"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,204,"{""T1"", ""0"", ""1"", ""0"", ""1"", ""4096"", ""0""}"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,275,"{""T1"", ""0"", ""1"", ""0"", ""1"", ""4096"", ""0""}"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,333,expColNames = new String [] {
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,334,"""CONGLOMERATENAME"", ""ISINDEX"", ""NUMALLOCATEDPAGES"", ""NUMFREEPAGES"","
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,335,"""NUMUNFILLEDPAGES"", ""PAGESIZE"", ""ESTIMSPACESAVING""};"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,336,"JDBC.assertColumnNames(rs, expColNames);"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,340,"{""T1"", ""0"", ""1"", ""0"", ""1"", ""4096"", ""0""}"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,349,expColNames = new String [] {
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,350,"""CONGLOMERATENAME"", ""ISINDEX"", ""NUMALLOCATEDPAGES"", ""NUMFREEPAGES"","
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,351,"""NUMUNFILLEDPAGES"", ""PAGESIZE"", ""ESTIMSPACESAVING""};"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,352,"JDBC.assertColumnNames(rs, expColNames);"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/SysDiagVTIMappingTest.java,356,"{""T1"", ""0"", ""1"", ""0"", ""1"", ""4096"", ""0""}"
+java/engine/org/apache/derby/impl/sql/catalog/DataDictionaryImpl.java,6084,getDescriptorViaIndex(
+java/engine/org/apache/derby/impl/sql/catalog/DataDictionaryImpl.java,6085,"SYSCONGLOMERATESRowFactory.SYSCONGLOMERATES_INDEX1_ID,"
+java/engine/org/apache/derby/impl/sql/catalog/DataDictionaryImpl.java,6086,"keyRow,"
+java/engine/org/apache/derby/impl/sql/catalog/DataDictionaryImpl.java,6087,"(ScanQualifier [][]) null,"
+java/engine/org/apache/derby/impl/sql/catalog/DataDictionaryImpl.java,6088,"ti,"
+java/engine/org/apache/derby/impl/sql/catalog/DataDictionaryImpl.java,6089,"(TupleDescriptor) null,"
+java/engine/org/apache/derby/impl/sql/catalog/DataDictionaryImpl.java,6090,"cdl,"
+java/engine/org/apache/derby/impl/sql/catalog/DataDictionaryImpl.java,6091,false);
+java/engine/org/apache/derby/iapi/util/DoubleProperties.java,24,import java.util.Properties;
+java/engine/org/apache/derby/iapi/util/DoubleProperties.java,64,Properties p = new Properties();
+java/engine/org/apache/derby/iapi/util/DoubleProperties.java,66,if (write != null) {
+java/engine/org/apache/derby/iapi/util/DoubleProperties.java,68,for (Enumeration e = write.propertyNames(); e.hasMoreElements(); ) {
+java/engine/org/apache/derby/iapi/util/DoubleProperties.java,69,String key = (String) e.nextElement();
+java/engine/org/apache/derby/iapi/util/DoubleProperties.java,70,"p.put(key, write.getProperty(key));"
+java/engine/org/apache/derby/iapi/util/DoubleProperties.java,74,if (read != null) {
+java/engine/org/apache/derby/iapi/util/DoubleProperties.java,75,for (Enumeration e = read.propertyNames(); e.hasMoreElements(); ) {
+java/engine/org/apache/derby/iapi/util/DoubleProperties.java,76,String key = (String) e.nextElement();
+java/engine/org/apache/derby/iapi/util/DoubleProperties.java,77,"p.put(key, read.getProperty(key));"
+java/engine/org/apache/derby/iapi/util/DoubleProperties.java,80,return p.keys();
+java/engine/org/apache/derby/impl/db/SlaveDatabase.java,322,} catch (StandardException se) {
+java/engine/org/apache/derby/impl/db/SlaveDatabase.java,325,handleShutdown(se);
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/ClosedObjectTest.java,113,"suite.addTest(baseSuite(""ClosedObjectTest:embedded""));"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/ClosedObjectTest.java,114,suite.addTest(TestConfiguration.clientServerDecorator(
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/ClosedObjectTest.java,115,"baseSuite(""ClosedObjectTest:client"")));"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/ClosedObjectTest.java,127,private static Test baseSuite(String name)  {
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/ClosedObjectTest.java,128,TestSuite topSuite = new TestSuite(name);
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/ClosedObjectTest.java,138,TestSuite poolSuite = new TestSuite(
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/ClosedObjectTest.java,139,"""ClosedObjectTest ConnectionPoolDataSource"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/ClosedObjectTest.java,140,PoolDataSourceDecorator poolDecorator =
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/ClosedObjectTest.java,141,new PoolDataSourceDecorator(poolSuite);
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/ClosedObjectTest.java,142,topSuite.addTest(poolDecorator);
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/ClosedObjectTest.java,143,"fillDataSourceSuite(poolSuite, poolDecorator);"
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/ClosedObjectTest.java,151,return topSuite;
+java/testing/org/apache/derbyTesting/functionTests/tests/jdbcapi/ClosedObjectTest.java,745,public PoolDataSourceDecorator(Test test) {
+java/engine/org/apache/derby/iapi/types/SQLDouble.java,462,setValue(bigDecimal.doubleValue());
+java/engine/org/apache/derby/iapi/types/SQLReal.java,418,setValue(bigDecimal.floatValue());
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,131,"protected void setUp() throws UnsupportedEncodingException, SQLException"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,151,"public void testInertTime() throws SQLException, UnsupportedEncodingException"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,647,"assertTimeEqual(tv, tsv);"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,823,"cal.set(1970, Calendar.JANUARY, 1);"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,826,"cal.set(Calendar.HOUR_OF_DAY, hour);"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,827,"cal.set(Calendar.MINUTE, min);"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,828,"cal.set(Calendar.SECOND, sec);"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,830,Time to =  new Time(cal.getTime().getTime());
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,850,cal.setTime(new Date(t));
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,854,Time to =  new Time(cal.getTime().getTime());
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,871,cal.clear();
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,874,cal.setTime(Time.valueOf(s));
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,875,"cal.set(1970, Calendar.JANUARY, 1);"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,876,"cal.set(Calendar.MILLISECOND, 0);"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,878,Time to =  new Time(cal.getTime().getTime());
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,879,assertTime1970(to);
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,880,return to;
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/TimeHandlingTest.java,941,cal.setTime(new java.util.Date(d));
+java/engine/org/apache/derby/iapi/sql/dictionary/ConstraintDescriptor.java,458,"""referencedColumns: "" + referencedColumns + ""\n"" +"
+java/engine/org/apache/derby/impl/sql/compile/CreateTriggerNode.java,487,if (refTableName.equals(baseTableName))
+java/engine/org/apache/derby/impl/sql/compile/GroupByList.java,233,if (SanityManager.DEBUG)
+java/engine/org/apache/derby/impl/sql/compile/GroupByList.java,235,"SanityManager.ASSERT(dummySubqueryList.size() == 0,"
+java/engine/org/apache/derby/impl/sql/compile/GroupByList.java,236,"""dummySubqueryList.size() is expected to be 0"");"
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/GroupByTest.java,373,st.close();
+java/engine/org/apache/derby/impl/services/timer/SingletonTimerFactory.java,74,return Thread.currentThread().getContextClassLoader();
+java/testing/org/apache/derbyTesting/functionTests/tests/derbynet/SecureServerTest.java,193,"suite.addTest( decorateTest( true,  false, null, null, RUNNING_SECURITY_NOT_BOOTED ) );"
+java/testing/org/apache/derbyTesting/functionTests/tests/derbynet/SecureServerTest.java,194,"suite.addTest( decorateTest( true,  true, null, null, RUNNING_SECURITY_NOT_BOOTED ) );"
+java/testing/org/apache/derbyTesting/junit/BaseTestSetup.java,45,public final void run(TestResult result)
+java/engine/org/apache/derby/impl/sql/execute/InternalTriggerExecutionContext.java,258,lcc.popTriggerExecutionContext(this);
+java/testing/org/apache/derbyTesting/functionTests/tests/lang/StalePlansTest.java,53,"props.setProperty(""derby.language.stalePlanCheckInterval"", ""10"");"

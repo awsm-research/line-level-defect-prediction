@@ -1,0 +1,84 @@
+File,Line_number,SRC
+src/org/jruby/runtime/load/LoadService.java,547,"runtime.getGlobalVariables().set(""$!"", runtime.getNil());"
+src/org/jruby/javasupport/JavaClass.java,258,haveLocalMethod |= javaClass == method.getDeclaringClass();
+src/org/jruby/javasupport/JavaClass.java,1865,for (Method m: javaClass.getDeclaredMethods()) {
+src/org/jruby/javasupport/JavaClass.java,1866,int modifiers = m.getModifiers();
+src/org/jruby/javasupport/JavaClass.java,1867,if (Modifier.isPublic(modifiers) || Modifier.isProtected(modifiers)) {
+src/org/jruby/javasupport/JavaClass.java,1868,if (Modifier.isStatic(modifiers)) {
+src/org/jruby/javasupport/JavaClass.java,1870,list2.add(m);
+src/org/jruby/javasupport/JavaClass.java,1871,} else {
+src/org/jruby/javasupport/JavaClass.java,1872,List<Method> methods = nameMethods.get(m.getName());
+src/org/jruby/javasupport/JavaClass.java,1873,if (methods == null) {
+src/org/jruby/javasupport/JavaClass.java,1874,"nameMethods.put(m.getName(), methods = new ArrayList<Method>());"
+src/org/jruby/javasupport/JavaClass.java,1860,ArrayList<Method> list2 = new ArrayList<Method>();
+src/org/jruby/javasupport/JavaClass.java,1908,list2.add(m);
+src/org/jruby/javasupport/JavaClass.java,1915,return list2.toArray(new Method[list2.size()]);
+src/org/jruby/javasupport/JavaClass.java,1892,if (childMethods.isEmpty()) nameMethods.remove(m.getName());
+src/org/jruby/javasupport/JavaClass.java,1893,continue Methods;
+src/org/jruby/javasupport/JavaClass.java,1897,} catch (SecurityException e) {
+src/org/jruby/javasupport/JavaMethod.java,174,if (methodIsPublic &&
+src/org/jruby/javasupport/JavaMethod.java,175,!Modifier.isPublic(method.getDeclaringClass().getModifiers())) {
+src/org/jruby/javasupport/JavaMethod.java,176,accessibleObject().setAccessible(true);
+src/org/jruby/RubyDigest.java,362,"@JRubyMethod(name = ""digest"", required = 1, optional = 1, frame = true, meta = true)"
+src/org/jruby/lexer/yacc/ByteArrayLexerSource.java,49,if (c != '\n') {
+src/org/jruby/java/proxies/ConcreteJavaProxy.java,162,@Override
+src/org/jruby/java/proxies/ConcreteJavaProxy.java,163,public Object getVariable(int index) {
+src/org/jruby/java/proxies/ConcreteJavaProxy.java,164,"return getRuntime().getJavaSupport().getJavaObjectVariable(this, index);"
+src/org/jruby/java/proxies/ConcreteJavaProxy.java,167,@Override
+src/org/jruby/java/proxies/ConcreteJavaProxy.java,168,"public void setVariable(int index, Object value) {"
+src/org/jruby/java/proxies/ConcreteJavaProxy.java,169,"getRuntime().getJavaSupport().setJavaObjectVariable(this, index, value);"
+src/org/jruby/util/io/ChannelStream.java,1143,public synchronized void finalize() {
+src/org/jruby/RubyTime.java,553,int offset = dt.getZone().getOffsetFromLocal(dt.getMillis());
+src/org/jruby/RubyTime.java,90,public static DateTimeZone getLocalTimeZone(Ruby runtime) {
+src/org/jruby/RubyTime.java,151,"if (""MET"".equalsIgnoreCase(zone)) {"
+src/org/jruby/RubyTime.java,152,"zone = ""CET"";"
+src/org/jruby/RubyTime.java,155,DateTimeZone dtz = DateTimeZone.forTimeZone(TimeZone.getTimeZone(zone));
+src/org/jruby/RubyBasicObject.java,928,Ruby runtime = getRuntime();
+src/org/jruby/RubyBasicObject.java,929,Long id;
+src/org/jruby/RubyBasicObject.java,939,id = (Long)objectIdAccessor.get(this);
+src/org/jruby/RubyBasicObject.java,941,if (runtime.isObjectSpaceEnabled()) {
+src/org/jruby/RubyBasicObject.java,942,id = runtime.getObjectSpace().idOf(this);
+src/org/jruby/RubyBasicObject.java,943,} else {
+src/org/jruby/RubyBasicObject.java,944,id = ObjectSpace.calculateObjectID(this);
+src/org/jruby/RubyBasicObject.java,947,"setObjectId(objectIdAccessor.getIndex(), id);"
+src/org/jruby/RubyBasicObject.java,950,return runtime.newFixnum(id);
+src/org/jruby/RubyBasicObject.java,1091,finalizer = new Finalizer((RubyFixnum)id());
+src/org/jruby/RubyBasicObject.java,800,if (original instanceof RubyModule) ((RubyModule) clone).syncConstants((RubyModule) original);
+src/org/jruby/runtime/ObjectSpace.java,63,public long idOf(IRubyObject rubyObject) {
+src/org/jruby/runtime/ObjectSpace.java,73,public static long calculateObjectID(Object object) {
+src/org/jruby/runtime/ObjectSpace.java,75,return maxId.getAndIncrement() * 2;
+src/org/jruby/runtime/ObjectSpace.java,78,private Long createId(IRubyObject object) {
+src/org/jruby/runtime/ObjectSpace.java,79,cleanIdentities();
+src/org/jruby/runtime/ObjectSpace.java,80,long id = calculateObjectID(object);
+src/org/jruby/runtime/ObjectSpace.java,81,"identities.put(id, new IdReference(object, id, deadIdentityReferences));"
+src/org/jruby/runtime/ObjectSpace.java,82,"identitiesByObject.put(object, id);"
+src/org/jruby/RubyEnumerable.java,853,"this.block.call(context, new IRubyObject[] { runtime.newArray(checkArgs(runtime, iargs), runtime.newFixnum(index++)) });"
+src/org/jruby/ext/socket/RubyTCPSocket.java,87,return RubyNumeric.fix2int(arg instanceof RubyString ?
+src/org/jruby/ext/socket/RubyTCPSocket.java,88,"RubyNumeric.str2inum(runtime, (RubyString) arg, 0, true) : arg);"
+src/org/jruby/util/ConvertBytes.java,610,"return new RubyBignum(runtime, z);"
+src/org/jruby/util/ShellLauncher.java,333,String path = System.getenv(PATH_ENV);
+src/org/jruby/util/ShellLauncher.java,335,if (path == null) {
+src/org/jruby/RubyRegexp.java,1773,"RubyString str = m.str.makeShared(runtime, start, end - start);"
+src/org/jruby/RubyRegexp.java,1793,"return m.str.makeShared(runtime, 0,  m.begin).infectBy(m);"
+src/org/jruby/RubyRegexp.java,1804,"return m.str.makeShared(runtime, m.end, m.str.getByteList().getRealSize() - m.end).infectBy(m);"
+src/org/jruby/RubySymbol.java,79,int length = symbolBytes.getBegin() + symbolBytes.getRealSize();
+src/org/jruby/RubySymbol.java,80,for (int i = symbolBytes.getBegin(); i < length; i++) {
+src/org/jruby/RubySymbol.java,81,if (symbolBytes.getUnsafeBytes()[i] == 0) {
+src/org/jruby/RubySymbol.java,82,"throw runtime.newSyntaxError(""symbol cannot contain '\\0'"");"
+src/org/jruby/parser/Ruby19Parser.java,4045,if (((Node)yyVals[-1+yyTop]) == null) {
+src/org/jruby/parser/Ruby19Parser.java,3246,"support.yyerror(""empty symbol literal"");"
+src/org/jruby/parser/Ruby19Parser.java,3255,if (((Node)yyVals[-1+yyTop]) instanceof DStrNode) {
+src/org/jruby/NativeException.java,50,"super(runtime, rubyClass, cause.getClass().getName() + "": "" + cause.getMessage());"
+src/org/jruby/RubyString.java,2612,"throw context.getRuntime().newArgumentError(""wrong number of arguments (1 for 2)"");"
+src/org/jruby/RubyObjectSpace.java,137,"block.yield(context, arg1);"
+src/org/jruby/java/codegen/RealClassGenerator.java,454,synchronized (ruby.getJRubyClassLoader()) {
+src/org/jruby/java/codegen/RealClassGenerator.java,456,try {
+src/org/jruby/java/codegen/RealClassGenerator.java,457,newClass = ruby.getJRubyClassLoader().loadClass(name);
+src/org/jruby/java/codegen/RealClassGenerator.java,458,} catch (ClassNotFoundException cnfe) {
+src/org/jruby/java/codegen/RealClassGenerator.java,459,"newClass = ruby.getJRubyClassLoader().defineClass(name, cw.toByteArray());"
+src/org/jruby/RubyGlobal.java,71,"super(runtime, valueMap, defaultValue);"
+src/org/jruby/RubyGlobal.java,70,"public StringOnlyRubyHash(Ruby runtime, Map valueMap, IRubyObject defaultValue) {"
+src/org/jruby/RubyIO.java,3654,"f1.transferTo(f2.position(), size, f2);"
+src/org/jruby/ext/ffi/AbstractInvoker.java,97,"refmap.put(m, this);"
+src/org/jruby/java/proxies/ArrayJavaProxy.java,54,public IRubyObject length() {
+src/org/jruby/java/proxies/ArrayJavaProxy.java,55,return getJavaArray().length();

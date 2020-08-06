@@ -1,0 +1,299 @@
+File,Line_number,SRC
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/image/Image.java,157,this.localizedImageResource.setResource(imageResource);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/image/Image.java,166,this.localizedImageResource.setResourceReference(resourceReference);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/image/Image.java,177,"this.localizedImageResource.setResourceReference(resourceReference,parameters);"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/servlet/ServletWebRequest.java,156,"String path = Strings.replaceAll(getPath(), ""%3A"", "":"").toString();"
+jdk-1.4/wicket-datetime/src/main/java/org/apache/wicket/extensions/yui/calendar/DatePicker.java,117,response.write(getComponentMarkupId());
+jdk-1.4/wicket-datetime/src/main/java/org/apache/wicket/extensions/yui/calendar/DatePicker.java,150,String widgetId = getComponentMarkupId();
+jdk-1.4/wicket-datetime/src/main/java/org/apache/wicket/extensions/yui/calendar/DatePicker.java,322,"return component.getMarkupId() + ""Icon"";"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/request/target/coding/MixedParamUrlCodingStrategy.java,183,"params.put(parameterNames[i], pathParts[i]);"
+jdk-1.4/wicket/src/test/java/org/apache/wicket/request/target/coding/MixedParamUrlCodingStrategyTest.java,216,"ValueMap parameterMap = npucs.decodeParameters(""/1/2/3"", urlMap);"
+jdk-1.4/wicket/src/test/java/org/apache/wicket/request/target/coding/MixedParamUrlCodingStrategyTest.java,218,"assertContains(parameterMap, ""a"", ""1"");"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/Component.java,1146,return getSession().getLocale();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/Component.java,1545,return null;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/border/Border.java,262,this.renderHeadFromAssociatedMarkupFile(container);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/MarkupContainer.java,327,public final MarkupStream getAssociatedMarkupStream(final boolean throwException)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/MarkupContainer.java,549,final Object removedChildren = MarkupContainer.this.children;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/MarkupContainer.java,559,MarkupContainer.this.children = removedChildren;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/MarkupContainer.java,583,this.children = null;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/MarkupContainer.java,913,if (this.children == null)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/MarkupContainer.java,915,this.children = child;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/MarkupContainer.java,1028,this.children = null;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/MarkupContainer.java,1044,this.children = c[1];
+jdk-1.4/wicket/src/main/java/org/apache/wicket/MarkupContainer.java,1048,this.children = c[0];
+jdk-1.4/wicket/src/main/java/org/apache/wicket/MarkupContainer.java,1066,this.children = newChildren;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/MarkupContainer.java,1200,final List componentResolvers = this.getApplication().getPageSettings()
+jdk-1.4/wicket/src/main/java/org/apache/wicket/MarkupContainer.java,1480,final boolean hasAssociatedMarkup()
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/panel/Fragment.java,23,import org.apache.wicket.markup.html.WebMarkupContainer;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/panel/Fragment.java,52,public class Fragment extends WebMarkupContainer
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/panel/Fragment.java,213,if (this.markupProvider == null)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/panel/Fragment.java,220,stream = this.markupProvider.getAssociatedMarkupStream(false);
+jdk-1.4/wicket/src/test/java/org/apache/wicket/markup/html/border/ComponentBorderTest.java,42,"executeTest(MarkupComponentBorderTestPage.class, ""MarkupComponentBorderTestPage_ExpectedResult.html"");"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,225,"fullParams.put(""input"", FormComponent.this.getInput());"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,231,"fullParams.put(""name"", FormComponent.this.getId());"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,308,return FormComponent.this.getConvertedInput();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,483,if (isRequired())
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,494,return true;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,498,if (Strings.isEmpty(input))
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,500,return false;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,503,return true;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,964,this.typeName = type == null ? null : type.getName();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,1027,if (this.validators == null)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,1029,this.validators = validator;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,1063,if (this.validators == null)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,1067,if (this.validators instanceof IValidator[])
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,1080,if (this.validators == null)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,1084,if (this.validators instanceof IValidator[])
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,1352,if (!checkRequired())
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,940,public final FormComponent setRequired(final boolean required)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,485,final String input = getInput();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,490,if (input == null && !isInputNullable())
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/FormComponent.java,847,return true;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/Form.java,784,this.defaultButton = button;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/Form.java,970,if (this.formValidators == null)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/Form.java,972,this.formValidators = validator;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/Form.java,992,this.formValidators = validators;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/Form.java,1006,if (this.formValidators == null)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/Form.java,1010,if (this.formValidators instanceof IFormValidator[])
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/Form.java,1024,if (this.formValidators == null)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/Form.java,1028,if (this.formValidators instanceof IFormValidator[])
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/Form.java,1211,return METHOD_POST;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/Form.java,1385,"tag.put(""method"", getMethod());"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/Form.java,1386,"tag.put(""action"", Strings.replaceAll(urlFor(IFormSubmitListener.INTERFACE), ""&"","
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/Form.java,1387,"""&amp;""));"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/Form.java,1433,".append(""\"" id=\"""").append(nameAndId).append(""\"" /></div>"");"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/ajax/form/AjaxFormChoiceComponentUpdatingBehavior.java,71,"response.renderOnLoadJavascript(""attachChoiceHandlers('"" + component.getMarkupId()+ ""', function() {"" + getEventHandler()+ ""});"");"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/MockHttpServletRequest.java,325,if (uploadedFiles != null && uploadedFiles.size() > 0)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/MockHttpServletRequest.java,342,if (uploadedFiles != null && uploadedFiles.size() > 0)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/tester/FormTester.java,557,if (servletRequest.hasUploadedFiles())
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/tester/FormTester.java,559,"requestCycle.setRequest(new MultipartServletWebRequest(servletRequest, workingForm"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/tester/FormTester.java,560,.getMaxSize()));
+jdk-1.4/wicket/src/test/java/org/apache/wicket/util/tester/MockFormFileUploadPage.java,41,public static class MockDomainObjectFileUpload
+jdk-1.4/wicket/src/test/java/org/apache/wicket/util/tester/MockFormPage.java,39,public class MockDomainObject
+jdk-1.4/wicket/src/test/java/org/apache/wicket/markup/html/form/upload/FileUploadFieldTest.java,56,public void testInternalDetach() throws Exception
+jdk-1.4/wicket/src/test/java/org/apache/wicket/markup/html/form/upload/FileUploadFieldTest.java,29,import org.apache.wicket.protocol.http.servlet.MultipartServletWebRequest;
+jdk-1.4/wicket/src/test/java/org/apache/wicket/markup/html/form/upload/FileUploadFieldTest.java,31,import org.apache.wicket.util.lang.Bytes;
+jdk-1.4/wicket/src/test/java/org/apache/wicket/markup/html/form/upload/FileUploadFieldTest.java,99,"servletRequest.addFile(""upload"", tmp, ""text/plain"");"
+jdk-1.4/wicket/src/test/java/org/apache/wicket/markup/html/form/upload/FileUploadFieldTest.java,101,"requestCycle.setRequest(new MultipartServletWebRequest(servletRequest, Bytes.MAX));"
+jdk-1.4/wicket/src/test/java/org/apache/wicket/markup/html/form/upload/FileUploadFieldTest.java,104,field.attach();
+jdk-1.4/wicket/src/test/java/org/apache/wicket/markup/html/form/upload/FileUploadFieldTest.java,107,FileUpload fileUpload = field.getFileUpload();
+jdk-1.4/wicket/src/test/java/org/apache/wicket/markup/html/form/upload/FileUploadFieldTest.java,117,field.detach();
+jdk-1.4/wicket/src/test/java/org/apache/wicket/markup/html/form/upload/FileUploadFieldTest.java,123,fail();
+jdk-1.4/wicket/src/test/java/org/apache/wicket/markup/html/form/upload/MockPageWithFormAndUploadField.java,38,"form = new Form(""form"");"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,478,urlPattern = parser.getInputFromPositionMarker(elem.getPos()).toString();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,474,.toString();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,102,if (this.webApplication != null)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,104,this.webApplication.internalDestroy();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,105,this.webApplication = null;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,173,servletResponse.sendRedirect(redirectUrl);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,396,this.webApplication = factory.createApplication(this);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,399,this.webApplication.setWicketFilter(this);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,404,"filterConfig.getServletContext().setAttribute(contextKey, this.webApplication);"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,410,this.webApplication.internalInit();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,413,this.webApplication.init();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,419,this.webApplication.initializeComponents();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,422,this.webApplication.logStarted();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,122,long lastModified = getLastModified(httpServletRequest);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,212,final WebRequest request = webApplication.newWebRequest(servletRequest);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,244,final WebResponse response = webApplication.newWebResponse(servletResponse);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,252,"RequestCycle cycle = webApplication.newRequestCycle(request, response);"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,682,long getLastModified(final HttpServletRequest request)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,684,final String pathInfo = getRelativePath(request);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketFilter.java,705,resource.setParameters(webRequest.getParameterMap());
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/Loop.java,116,super.onBeforeRender();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/Loop.java,119,removeAll();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/Loop.java,155,final int iterations = getIterations();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/Loop.java,114,protected void onBeforeRender()
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/Loop.java,122,final int iterations = getIterations();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/Loop.java,123,if (iterations > 0)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/Loop.java,126,for (int iteration = 0; iteration < iterations; iteration++)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/Loop.java,129,LoopItem item = newItem(iteration);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/Loop.java,132,add(item);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/Loop.java,133,populateItem(item);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/Session.java,1222,"""Cannot set the attribute: no RequestCycle available"");"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/ajax/AbstractAjaxTimerBehavior.java,64,if (!stopped)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/convert/converters/SqlTimeConverter.java,37,"return new Time(((Date)super.convertToObject(value, locale)).getTime());"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/convert/converters/SqlTimestampConverter.java,28,public class SqlTimestampConverter extends DateConverter
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/convert/converters/SqlTimestampConverter.java,38,"return new Timestamp(((Date)super.convertToObject(value, locale)).getTime());"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/image/resource/DefaultButtonImageResource.java,52,"private static final Map DEFAULT_FONT = new Font(""Helvetica"", Font.BOLD, 16).getAttributes();"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/image/resource/DefaultButtonImageResource.java,192,this.backgroundColorRgb = backgroundColor.getRGB();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/image/resource/DefaultButtonImageResource.java,202,this.colorRgb = color.getRGB();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/image/resource/DefaultButtonImageResource.java,212,this.fontAttributes = font.getAttributes();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/image/resource/DefaultButtonImageResource.java,222,this.textColorRgb = textColor.getRGB();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/ListView.java,531,protected void onBeforeRender()
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/ListView.java,535,if (isVisibleInHierarchy())
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/ListView.java,538,final int size = getViewSize();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/ListView.java,539,if (size > 0)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/ListView.java,541,if (getReuseItems())
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/ListView.java,544,final int maxIndex = firstIndex + size;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/ListView.java,545,for (final Iterator iterator = iterator(); iterator.hasNext();)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/ListView.java,548,final ListItem child = (ListItem)iterator.next();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/ListView.java,549,if (child != null)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/ListView.java,551,final int index = child.getIndex();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/ListView.java,552,if (index < firstIndex || index >= maxIndex)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/ListView.java,554,iterator.remove();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/list/ListView.java,533,super.onBeforeRender();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigation.java,253,this.viewSize = size;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigation.java,281,protected void onBeforeRender()
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigation.java,289,this.setStartIndex();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigation.java,290,super.onBeforeRender();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigation.java,301,return this.startIndex;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigation.java,374,int firstListItem = this.startIndex;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigation.java,407,if ((viewSize != getIterations()) || (this.startIndex != firstListItem))
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigation.java,409,this.modelChanging();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigation.java,412,addStateChange(new StartIndexChange(this.startIndex));
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigation.java,413,this.startIndex = firstListItem;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigation.java,415,"this.setIterations(Math.min(viewSize, pageable.getPageCount()));"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigation.java,417,this.modelChanged();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/repeater/RefreshingView.java,92,protected void onBeforeRender()
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/repeater/RefreshingView.java,96,if (isVisibleInHierarchy())
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/repeater/RefreshingView.java,99,IItemFactory itemFactory = new IItemFactory()
+jdk-1.4/wicket-extensions/src/main/java/org/apache/wicket/extensions/markup/html/form/select/SelectOptions.java,85,protected void onBeforeRender()
+jdk-1.4/wicket-extensions/src/main/java/org/apache/wicket/extensions/breadcrumb/BreadCrumbBar.java,111,protected void onBeforeRender()
+jdk-1.4/wicket-extensions/src/main/java/org/apache/wicket/extensions/breadcrumb/BreadCrumbBar.java,113,super.onBeforeRender();
+jdk-1.5/wicket-jmx/src/main/java/org/apache/wicket/jmx/ResourceSettings.java,102,return (String[])loaders.toArray(new String[loaders.size()]);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/string/StringValue.java,221,this.locale = Locale.getDefault();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/string/StringValue.java,438,return NumberFormat.getNumberInstance(this.locale).parse(text).doubleValue();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/string/StringValue.java,481,"return Duration.valueOf(text, this.locale);"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/link/InlineFrame.java,126,"this(id, null, new IPageLink()"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/link/InlineFrame.java,164,this.pageMapName = pageMap.getName();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/link/InlineFrame.java,227,return PageMap.forName(this.pageMapName);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WicketServlet.java,215,return wicketFilter.getLastModified(servletRequest);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/RequestCycle.java,899,private void detach()
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/tree/AbstractTree.java,313,item.beforeRender();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/tree/AbstractTree.java,629,this.dirtyAll = true;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/tree/AbstractTree.java,1419,this.dirtyAll = false;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/tree/AbstractTree.java,1420,this.dirtyItems.clear();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/tree/AbstractTree.java,1421,this.dirtyItemsCreateDOM.clear();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/tree/AbstractTree.java,852,if (e.getTreePath().getPathCount() == 1 && node.equals(rootItem.getModelObject()))
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/tree/AbstractTree.java,1055,items = Collections.EMPTY_LIST;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/pages/BrowserInfoPage.java,168,RequestCycle requestCycle = getRequestCycle();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/pages/BrowserInfoPage.java,171,requestCycle.setRedirect(false);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/pages/BrowserInfoPage.java,173,Response response = requestCycle.getResponse();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/pages/BrowserInfoPage.java,174,response.reset();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/pages/BrowserInfoPage.java,175,response.redirect(requestCycle.getRequest().getRelativePathPrefixToWicketHandler()
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/pages/BrowserInfoPage.java,176,+ continueTo);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WebRequestCycle.java,25,import org.apache.wicket.RestartResponseAtInterceptPageException;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WebRequestCycle.java,250,throw new RestartResponseAtInterceptPageException(new BrowserInfoPage(getRequest().getRelativePathPrefixToContextRoot() + getRequest().getURL()));
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/servlet/WicketSessionFilter.java,105,private String servletPath;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/servlet/WicketSessionFilter.java,122,"servletPath = filterConfig.getInitParameter(""servletPath"");"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/servlet/WicketSessionFilter.java,124,if (servletPath == null)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/servlet/WicketSessionFilter.java,138,"log.debug(""servlet path set to "" + servletPath);"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/servlet/WicketSessionFilter.java,141,"sessionKey = ""wicket:"" + servletPath + "":"" + Session.SESSION_ATTRIBUTE_NAME;"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/AbstractChoice.java,393,"CharSequence escaped = Strings.escapeMarkup(display, false, true);"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/MarkupParser.java,472,while (pos1 >= 0)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/MarkupParser.java,477,if ((pos2 >= 0) && (pos1 > 0))
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/MarkupParser.java,483,if (rawMarkup.length() >= pos2 + 4)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/MarkupParser.java,485,buf.append(rawMarkup.substring(pos2 + 4));
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/panel/FeedbackPanel.java,127,"this.messageListView = new MessageListView(""messages"");"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/panel/FeedbackPanel.java,261,this.messageListView.setViewSize(maxMessages);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/panel/FeedbackPanel.java,281,messageListView.getModelObject();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/link/PopupCloseLink.java,70,setResponsePage(new ClosePopupPage());
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/string/JavascriptStripper.java,153,if (c == '\'' && prev != '\\')
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/string/JavascriptStripper.java,163,"if (c == '""' && prev != '\\')"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/string/JavascriptStripper.java,173,if (c == '/' && prev != '\\')
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/string/JavascriptStripper.java,61,StringBuffer result = new StringBuffer(original.length() / 2);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/string/JavascriptStripper.java,97,int idx = i - 1;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/string/JavascriptStripper.java,100,char tmp = original.charAt(idx);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/string/JavascriptStripper.java,106,if (tmp == '=' || tmp == '(')
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WebResponse.java,64,this.httpServletResponse = null;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WebResponse.java,128,return httpServletResponse.encodeURL(url.toString());
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/WebResponse.java,185,url = httpServletResponse.encodeRedirectURL(url).toString();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/image/resource/LocalizedImageResource.java,331,"tag.put(""src"", RequestCycle.get().getOriginalResponse().encodeURL(url));"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/request/WebRequestCodingStrategy.java,723,"buffer.append(""&amp;"");"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/validation/FormComponentFeedbackBorder.java,88,public void updateFeedback()
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/form/validation/FormComponentFeedbackIndicator.java,75,public void updateFeedback()
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/lang/PropertyResolver.java,208,.toString();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/lang/PropertyResolver.java,209,int index = expressionBracketsSeperated.indexOf('.');
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/lang/PropertyResolver.java,227,"index = expressionBracketsSeperated.indexOf('.', index + 1);"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/lang/PropertyResolver.java,258,"index = expressionBracketsSeperated.indexOf('.', lastIndex);"
+jdk-1.4/wicket/src/test/java/org/apache/wicket/ajax/AjaxTimerBehaviorTest.java,225,this.duration = updateInterval;
+jdk-1.4/wicket-extensions/src/main/java/org/apache/wicket/extensions/markup/html/tabs/TabbedPanel.java,93,private List tabs;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigationIncrementLink.java,126,int currentPage = pageable.getCurrentPage();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigationIncrementLink.java,127,if (((increment < 0) && isFirst()) || ((increment > 0) && isLast()))
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigationIncrementLink.java,129,return true;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/html/navigation/paging/PagingNavigationIncrementLink.java,132,return false;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/request/AbstractRequestCycleProcessor.java,380,Component component = null;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/AbstractLicenseHeaderHandler.java,83,header += line + LINE_ENDING;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/AbstractLicenseHeaderHandler.java,87,licenseHeader = header.trim();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/AbstractLicenseHeaderHandler.java,106,"String header = """";"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/AbstractLicenseHeaderHandler.java,116,header += lineNumberReader.readLine() + LINE_ENDING;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/AbstractLicenseHeaderHandler.java,138,return header.trim();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/AbstractLicenseHeaderHandler.java,107,FileReader fileReader = null;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/AbstractLicenseHeaderHandler.java,111,fileReader = new FileReader(file);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/AbstractLicenseHeaderHandler.java,112,LineNumberReader lineNumberReader = new LineNumberReader(fileReader);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/AbstractLicenseHeaderHandler.java,125,if (fileReader != null)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/AbstractLicenseHeaderHandler.java,129,fileReader.close();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/XmlLicenseHeaderHandler.java,64,"header = """";"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/XmlLicenseHeaderHandler.java,67,if (header.length() > 0)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/XmlLicenseHeaderHandler.java,69,header += LINE_ENDING;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/XmlLicenseHeaderHandler.java,71,header += headers[i];
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/niceurl/mounted/Page5.java,47,"p1 = """";"
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/niceurl/mounted/Page5.java,51,p1 += array[i];
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/niceurl/mounted/Page5.java,54,"p1 += "", "";"
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/niceurl/mounted/Page5.java,61,"p2 = """";"
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/niceurl/mounted/Page5.java,65,p2 += array[i];
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/niceurl/mounted/Page5.java,68,"p2 += "", "";"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/parser/filter/WicketLinkTagHandler.java,139,autolinkStatus.push(new Boolean(autolinking));
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/convert/converters/CharacterConverter.java,44,final String stringValue = value.toString();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/convert/converters/CharacterConverter.java,45,int length = stringValue.length();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/convert/converters/CharacterConverter.java,52,return new Character(value.toString().charAt(0));
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/io/SerializableChecker.java,347,throw new WicketNotSerializableException(toPrettyPrintedStack(obj.getClass().getName())
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/io/SerializableChecker.java,348,".toString(), exception);"
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/compref/SelectPage.java,109,"public String site = new String(""sd"");"
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/stockquote/StockQuote.java,149,out.write(message.toString().getBytes());
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/ajax/builtin/RatingsPage.java,113,return new Integer(nrOfVotes);
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/ajax/builtin/RatingsPage.java,137,return new Double(rating);
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/ajax/builtin/RatingsPage.java,187,"add(new RatingPanel(""rating2"", new PropertyModel(rating2, ""rating""), new Model(new Integer("
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/ajax/builtin/RatingsPage.java,188,"5)), new PropertyModel(rating2, ""nrOfVotes""), new PropertyModel(this, ""hasVoted""),"
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/ajax/builtin/RatingsPage.java,189,true)
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/compref/DropDownChoicePage.java,43,"private static final List INTEGERS = Arrays.asList(new Integer[] { new Integer(1),"
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/compref/DropDownChoicePage.java,44,"new Integer(2), new Integer(3) });"
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/compref/DropDownChoicePage.java,101,int value = ((Integer)object).intValue();
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/compref/TextFieldPage.java,111,public Integer integer = new Integer(12);
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/debug/LiveSessionsPage.java,92,return new Integer(getRequestLogger().getTotalCreatedSessions());
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/debug/LiveSessionsPage.java,101,return new Integer(getRequestLogger().getPeakSessions());
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/debug/LiveSessionsPage.java,110,return new Integer(getRequestLogger().getPeakSessions());
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/forminput/FormInputModel.java,87,private Double doubleProperty = new Double(20.5);
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/forminput/FormInputModel.java,88,private Integer integerInRangeProperty = new Integer(50);
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/forminput/FormInputModel.java,89,private Integer integerProperty = new Integer(100);
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/forminput/FormInputModel.java,91,private Integer multiply = new Integer(0);
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/library/Book.java,116,"idToBook.put(new Long(book.id), book);"
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/library/Book.java,127,return (Book)idToBook.get(new Long(id));
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/library/EditBook.java,158,"parameters.put(""id"", new Long(book.getId()));"
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/repeater/ContactsDatabase.java,63,Contact c = (Contact)map.get(new Long(id));
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/repeater/ContactsDatabase.java,73,"map.put(new Long(contact.getId()), contact);"
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/repeater/ContactsDatabase.java,148,Contact c = (Contact)map.remove(new Long(contact.getId()));
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/examples/repeater/DetachableContactModel.java,63,return new Long(id).hashCode();
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/spring/common/ContactDaoImpl.java,74,"map.put(new Long(contact.getId()), contact);"
+jdk-1.5/wicket-examples/src/main/java/org/apache/wicket/spring/common/ContactDaoImpl.java,137,map.remove(new Long(contact.getId()));
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/parser/XmlTag.java,488,for (final Iterator iterator = map.keySet().iterator(); iterator.hasNext();)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/parser/XmlTag.java,490,final String key = (String)iterator.next();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/parser/XmlTag.java,491,Object value = map.get(key);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/parser/XmlTag.java,492,"put(key, (value != null) ? value.toString() : null);"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/documentvalidation/HtmlDocumentValidator.java,415,for (Iterator it = expectedAttributes.keySet().iterator(); it.hasNext();)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/documentvalidation/HtmlDocumentValidator.java,448,String name = (String)it.next();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/protocol/http/documentvalidation/HtmlDocumentValidator.java,418,String pattern = (String)expectedAttributes.get(name);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/ApacheLicenseHeaderTestCase.java,264,for (Iterator iter = files.keySet().iterator(); iter.hasNext();)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/ApacheLicenseHeaderTestCase.java,266,ILicenseHeaderHandler licenseHeaderHandler = (ILicenseHeaderHandler)iter.next();
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/license/ApacheLicenseHeaderTestCase.java,271,failString.append(((List)files.get(licenseHeaderHandler)).size());
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/tester/TagTester.java,365,for (Iterator iter = attributeMap.keySet().iterator(); iter.hasNext();)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/util/tester/TagTester.java,369,if (attr.equals(attribute) && value.equals(attributeMap.get(attr)))
+jdk-1.4/wicket/src/test/java/org/apache/wicket/util/tester/WicketTesterTest.java,23,import org.apache.wicket.Component;
+jdk-1.4/wicket/src/test/java/org/apache/wicket/util/tester/WicketTesterTest.java,24,import org.apache.wicket.MockPageWithLink;
+jdk-1.4/wicket/src/test/java/org/apache/wicket/util/tester/WicketTesterTest.java,25,import org.apache.wicket.MockPageWithOneComponent;
+jdk-1.4/wicket/src/test/java/org/apache/wicket/util/tester/WicketTesterTest.java,26,import org.apache.wicket.Page;
+jdk-1.4/wicket/src/test/java/org/apache/wicket/util/tester/WicketTesterTest.java,27,import org.apache.wicket.Session;
+jdk-1.4/wicket/src/main/java/org/apache/wicket/validation/validator/DateValidator.java,62,"return new RangeValidator(minimum, maximum);"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/validation/validator/DateValidator.java,87,return new MinimumValidator(minimum);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/validation/validator/DateValidator.java,112,return new MaximumValidator(maximum);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/validation/validator/DateValidator.java,122,"private RangeValidator(Date minimum, Date maximum)"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/validation/validator/DateValidator.java,132,"map.put(""minimum"", minimum);"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/validation/validator/DateValidator.java,133,"map.put(""maximum"", maximum);"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/validation/validator/DateValidator.java,162,private MinimumValidator(Date minimum)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/validation/validator/DateValidator.java,170,"map.put(""minimum"", minimum);"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/validation/validator/DateValidator.java,197,private MaximumValidator(Date maximum)
+jdk-1.4/wicket/src/main/java/org/apache/wicket/validation/validator/DateValidator.java,205,"map.put(""maximum"", maximum);"
+jdk-1.4/wicket/src/main/java/org/apache/wicket/MetaDataKey.java,58,return obj != null && getClass().isInstance(obj);
+jdk-1.4/wicket/src/main/java/org/apache/wicket/markup/repeater/data/DataViewBase.java,120,return items.hasNext() && (index < max);
+jdk-1.5/wicket-examples/src/test/java/org/apache/wicket/examples/forminput/FormInputTest.java,51,public void test_1()

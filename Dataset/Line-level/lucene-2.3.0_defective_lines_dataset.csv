@@ -1,0 +1,600 @@
+File,Line_number,SRC
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,425,public static final int ALPHANUM          = 0;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,426,public static final int APOSTROPHE        = 1;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,427,public static final int ACRONYM           = 2;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,428,public static final int COMPANY           = 3;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,429,public static final int EMAIL             = 4;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,430,public static final int HOST              = 5;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,431,public static final int NUM               = 6;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,432,public static final int CJ                = 7;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,433,public static final int INTERNAL_LINK     = 8;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,434,public static final int EXTERNAL_LINK     = 9;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,435,public static final int CITATION          = 10;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,436,public static final int CATEGORY         = 11;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,437,public static final int BOLD     = 12;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,438,public static final int ITALICS     = 13;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,439,public static final int BOLD_ITALICS     = 14;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,440,public static final int HEADING     = 15;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,441,public static final int SUB_HEADING     = 16;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,442,public static final int EXTERNAL_LINK_URL = 17;
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,450,public static final String [] TOKEN_TYPES = new String [] {
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,451,"""<ALPHANUM>"","
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,452,"""<APOSTROPHE>"","
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,453,"""<ACRONYM>"","
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,454,"""<COMPANY>"","
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,455,"""<EMAIL>"","
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,456,"""<HOST>"","
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,457,"""<NUM>"","
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,458,"""<CJ>"","
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,459,"WikipediaTokenizer.INTERNAL_LINK,"
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,460,"WikipediaTokenizer.EXTERNAL_LINK,"
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,461,"WikipediaTokenizer.CITATION,"
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,462,"WikipediaTokenizer.CATEGORY,"
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,463,"WikipediaTokenizer.BOLD,"
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,464,"WikipediaTokenizer.ITALICS,"
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,465,"WikipediaTokenizer.BOLD_ITALICS,"
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,466,"WikipediaTokenizer.HEADING,"
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,467,"WikipediaTokenizer.SUB_HEADING,"
+contrib/wikipedia/src/java/org/apache/lucene/wikipedia/analysis/WikipediaTokenizerImpl.java,468,WikipediaTokenizer.EXTERNAL_LINK_URL
+src/java/org/apache/lucene/analysis/standard/StandardTokenizer.java,45,private final StandardTokenizerImpl scanner;
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,286,public static final int ALPHANUM          = 0;
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,287,public static final int APOSTROPHE        = 1;
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,288,public static final int ACRONYM           = 2;
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,289,public static final int COMPANY           = 3;
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,290,public static final int EMAIL             = 4;
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,291,public static final int HOST              = 5;
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,292,public static final int NUM               = 6;
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,293,public static final int CJ                = 7;
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,299,public static final int ACRONYM_DEP       = 8;
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,301,public static final String [] TOKEN_TYPES = new String [] {
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,302,"""<ALPHANUM>"","
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,303,"""<APOSTROPHE>"","
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,304,"""<ACRONYM>"","
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,305,"""<COMPANY>"","
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,306,"""<EMAIL>"","
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,307,"""<HOST>"","
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,308,"""<NUM>"","
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,309,"""<CJ>"","
+src/java/org/apache/lucene/analysis/standard/StandardTokenizerImpl.java,310,"""<ACRONYM_DEP>"""
+src/java/org/apache/lucene/store/FSDirectory.java,440,"return new FSIndexInput(new File(directory, name));"
+src/java/org/apache/lucene/store/FSDirectory.java,604,super.close();
+src/java/org/apache/lucene/store/FSDirectory.java,605,file.close();
+src/java/org/apache/lucene/store/FSDirectory.java,606,isOpen = false;
+src/java/org/apache/lucene/store/FSDirectory.java,480,if (--refCount <= 0) {
+src/java/org/apache/lucene/analysis/CharArraySet.java,69,"int code = getHashCode(text, len);"
+src/java/org/apache/lucene/analysis/CharArraySet.java,178,"private int getHashCode(char[] text, int len) {"
+src/java/org/apache/lucene/analysis/CharArraySet.java,181,for (int i=0; i<len; i++) {
+src/java/org/apache/lucene/analysis/CharArraySet.java,185,for (int i=0; i<len; i++) {
+src/test/org/apache/lucene/analysis/TestCharArraySet.java,20,import java.io.IOException;
+src/test/org/apache/lucene/analysis/TestCharArraySet.java,28,public void testRehash() throws Exception {
+src/test/org/apache/lucene/analysis/TestCharArraySet.java,29,"CharArraySet cas = new CharArraySet(0, true);"
+src/test/org/apache/lucene/analysis/TestCharArraySet.java,30,for(int i=0;i<StopAnalyzer.ENGLISH_STOP_WORDS.length;i++)
+src/test/org/apache/lucene/analysis/TestCharArraySet.java,31,cas.add(StopAnalyzer.ENGLISH_STOP_WORDS[i]);
+src/test/org/apache/lucene/analysis/TestCharArraySet.java,32,"assertEquals(StopAnalyzer.ENGLISH_STOP_WORDS.length, cas.size());"
+src/test/org/apache/lucene/analysis/TestCharArraySet.java,33,for(int i=0;i<StopAnalyzer.ENGLISH_STOP_WORDS.length;i++)
+src/test/org/apache/lucene/analysis/TestCharArraySet.java,34,assertTrue(cas.contains(StopAnalyzer.ENGLISH_STOP_WORDS[i]));
+src/java/org/apache/lucene/index/FieldsReader.java,204,final int docID = startDocID + count + 1;
+src/java/org/apache/lucene/index/FieldsReader.java,198,indexStream.seek(startDocID * 8L);
+src/java/org/apache/lucene/index/FieldsReader.java,238,if (binary == true) {
+src/java/org/apache/lucene/index/FieldsReader.java,243,"doc.add(new LazyField(fi.name, Field.Store.COMPRESS, toRead, pointer));"
+src/java/org/apache/lucene/index/FieldsReader.java,246,"doc.add(new LazyField(fi.name, Field.Store.YES, toRead, pointer));"
+src/java/org/apache/lucene/index/FieldsReader.java,260,"f = new LazyField(fi.name, store, toRead, pointer);"
+src/java/org/apache/lucene/index/FieldsReader.java,269,"f = new LazyField(fi.name, store, index, termVector, length, pointer);"
+src/java/org/apache/lucene/index/FieldsReader.java,388,"public LazyField(String name, Field.Store store, int toRead, long pointer) {"
+src/java/org/apache/lucene/index/FieldsReader.java,395,"public LazyField(String name, Field.Store store, Field.Index index, Field.TermVector termVector, int toRead, long pointer) {"
+src/java/org/apache/lucene/index/FieldsReader.java,441,return fieldsData instanceof Reader ? (Reader) fieldsData : null;
+src/java/org/apache/lucene/index/FieldsReader.java,449,return fieldsData instanceof TokenStream ? (TokenStream) fieldsData : null;
+src/java/org/apache/lucene/index/FieldsReader.java,458,if (fieldsData == null) {
+src/java/org/apache/lucene/index/FieldsReader.java,459,IndexInput localFieldsStream = getFieldStream();
+src/java/org/apache/lucene/index/FieldsReader.java,460,try {
+src/java/org/apache/lucene/index/FieldsReader.java,461,localFieldsStream.seek(pointer);
+src/java/org/apache/lucene/index/FieldsReader.java,462,if (isCompressed) {
+src/java/org/apache/lucene/index/FieldsReader.java,463,final byte[] b = new byte[toRead];
+src/java/org/apache/lucene/index/FieldsReader.java,464,"localFieldsStream.readBytes(b, 0, b.length);"
+src/java/org/apache/lucene/index/FieldsReader.java,465,"fieldsData = new String(uncompress(b), ""UTF-8"");"
+src/java/org/apache/lucene/index/FieldsReader.java,466,} else {
+src/java/org/apache/lucene/index/FieldsReader.java,468,char[] chars = new char[toRead];
+src/java/org/apache/lucene/index/FieldsReader.java,469,"localFieldsStream.readChars(chars, 0, toRead);"
+src/java/org/apache/lucene/index/FieldsReader.java,470,fieldsData = new String(chars);
+src/java/org/apache/lucene/index/FieldsReader.java,59,private ThreadLocal fieldsStreamTL = new ThreadLocal();
+src/java/org/apache/lucene/index/FieldsReader.java,132,IndexInput localFieldsStream = (IndexInput) fieldsStreamTL.get();
+src/java/org/apache/lucene/index/FieldsReader.java,133,if (localFieldsStream != null) {
+src/java/org/apache/lucene/index/FieldsReader.java,134,localFieldsStream.close();
+src/java/org/apache/lucene/index/FieldsReader.java,135,fieldsStreamTL.set(null);
+src/java/org/apache/lucene/index/ConcurrentMergeScheduler.java,170,"message(""  consider merge "" + merge.segString(dir));"
+src/java/org/apache/lucene/index/ConcurrentMergeScheduler.java,276,mergeThreads.remove(this);
+src/java/org/apache/lucene/index/ConcurrentMergeScheduler.java,120,} catch (InterruptedException e) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,153,private boolean aborting;                       // True while abort is running
+src/java/org/apache/lucene/index/DocumentsWriter.java,326,aborting = true;
+src/java/org/apache/lucene/index/DocumentsWriter.java,341,assert ae == null || aborting;
+src/java/org/apache/lucene/index/DocumentsWriter.java,364,abortedFiles = files();
+src/java/org/apache/lucene/index/DocumentsWriter.java,367,final int numField = fieldInfos.size();
+src/java/org/apache/lucene/index/DocumentsWriter.java,368,for (int i=0;i<numField;i++) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,369,FieldInfo fi = fieldInfos.fieldInfo(i);
+src/java/org/apache/lucene/index/DocumentsWriter.java,370,if (fi.isIndexed && !fi.omitNorms) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,371,BufferedNorms n = norms[i];
+src/java/org/apache/lucene/index/DocumentsWriter.java,372,if (n != null) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,373,n.out.reset();
+src/java/org/apache/lucene/index/DocumentsWriter.java,374,n.reset();
+src/java/org/apache/lucene/index/DocumentsWriter.java,383,} catch (IOException ioe) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,390,} catch (IOException ioe) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,397,} catch (IOException ioe) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,406,} catch (IOException ioe) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,412,for(int i=0;i<threadStates.length;i++) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,413,ThreadState state = threadStates[i];
+src/java/org/apache/lucene/index/DocumentsWriter.java,414,if (state.localFieldsWriter != null) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,415,state.localFieldsWriter.close();
+src/java/org/apache/lucene/index/DocumentsWriter.java,416,state.localFieldsWriter = null;
+src/java/org/apache/lucene/index/DocumentsWriter.java,448,aborting = false;
+src/java/org/apache/lucene/index/DocumentsWriter.java,483,return aborting;
+src/java/org/apache/lucene/index/DocumentsWriter.java,1416,writeVectors(fieldInfo);
+src/java/org/apache/lucene/index/DocumentsWriter.java,1417,success = true;
+src/java/org/apache/lucene/index/DocumentsWriter.java,1418,} finally {
+src/java/org/apache/lucene/index/DocumentsWriter.java,1419,if (!success) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,1424,numVectorFields = 0;
+src/java/org/apache/lucene/index/DocumentsWriter.java,1425,tvfLocal.reset();
+src/java/org/apache/lucene/index/DocumentsWriter.java,1773,postingsHashMask = newSize-1;
+src/java/org/apache/lucene/index/DocumentsWriter.java,1788,int hashPos = code & postingsHashMask;
+src/java/org/apache/lucene/index/DocumentsWriter.java,1794,hashPos = code & postingsHashMask;
+src/java/org/apache/lucene/index/DocumentsWriter.java,2335,while(!closed && (!state.isIdle || pauseThreads != 0 || flushPending || aborting))
+src/java/org/apache/lucene/index/DocumentsWriter.java,2557,if (aborting) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,3005,private synchronized void getPostings(Posting[] postings) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,3019,numBytesAlloc += (postings.length - numToCopy) * POSTING_NUM_BYTE;
+src/java/org/apache/lucene/index/DocumentsWriter.java,3021,for(int i=numToCopy;i<postings.length;i++)
+src/java/org/apache/lucene/index/DocumentsWriter.java,3026,"private synchronized void recyclePostings(Posting[] postings, int numPostings) {"
+src/java/org/apache/lucene/index/DocumentsWriter.java,3029,if (postingsFreeCount + numPostings > postingsFreeList.length) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,3030,final int newSize = (int) (1.25 * (postingsFreeCount + numPostings));
+src/java/org/apache/lucene/index/DocumentsWriter.java,3031,Posting[] newArray = new Posting[newSize];
+src/java/org/apache/lucene/index/DocumentsWriter.java,3032,"System.arraycopy(postingsFreeList, 0, newArray, 0, postingsFreeCount);"
+src/java/org/apache/lucene/index/DocumentsWriter.java,3033,postingsFreeList = newArray;
+src/java/org/apache/lucene/index/DocumentsWriter.java,261,"infoStream.println(""\ncloseDocStore: "" + flushedFiles.size() + "" files to flush to segment "" + docStoreSegment);"
+src/java/org/apache/lucene/index/DocumentsWriter.java,1111,final ByteBlockPool postingsPool = new ByteBlockPool();
+src/java/org/apache/lucene/index/DocumentsWriter.java,1112,final ByteBlockPool vectorsPool = new ByteBlockPool();
+src/java/org/apache/lucene/index/DocumentsWriter.java,2891,buffer = buffers[1+bufferUpto] = getByteBlock();
+src/java/org/apache/lucene/index/DocumentsWriter.java,3050,synchronized byte[] getByteBlock() {
+src/java/org/apache/lucene/index/DocumentsWriter.java,3059,numBytesUsed += BYTE_BLOCK_SIZE;
+src/java/org/apache/lucene/index/DocumentsWriter.java,2369,if (!state.doFlushAfter)
+src/java/org/apache/lucene/index/DocumentsWriter.java,2370,state.doFlushAfter = timeToFlushDeletes();
+src/java/org/apache/lucene/index/DocumentsWriter.java,479,} catch (InterruptedException e) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,2476,} catch (InterruptedException e) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,2464,} catch (InterruptedException e) {
+src/java/org/apache/lucene/index/DocumentsWriter.java,1980,for(int i=start;i<end;i++)
+src/java/org/apache/lucene/index/DocumentsWriter.java,556,for(int i=0;i<size;i++)
+src/java/org/apache/lucene/index/DocumentsWriter.java,3065,for(int i=start;i<end;i++)
+src/java/org/apache/lucene/index/TermInfosWriter.java,114,if (lastFieldNumber != fieldNumber)
+src/java/org/apache/lucene/index/TermInfosWriter.java,115,return fieldInfos.fieldName(lastFieldNumber).compareTo(fieldInfos.fieldName(fieldNumber));
+src/java/org/apache/lucene/index/TermInfosWriter.java,143,"assert compareToLastTerm(fieldNumber, termText, termTextStart, termTextLength) < 0 || (isIndex && termTextLength == 0 && lastTermTextLength == 0);"
+src/java/org/apache/lucene/store/RAMInputStream.java,65,switchCurrentBuffer();
+src/java/org/apache/lucene/store/RAMInputStream.java,74,switchCurrentBuffer();
+src/java/org/apache/lucene/store/RAMInputStream.java,86,private final void switchCurrentBuffer() throws IOException {
+src/java/org/apache/lucene/store/RAMInputStream.java,89,"throw new IOException(""Read past EOF"");"
+src/java/org/apache/lucene/store/RAMInputStream.java,106,switchCurrentBuffer();
+src/test/org/apache/lucene/index/TestFieldsReader.java,163,String value = field.stringValue();
+src/java/org/apache/lucene/index/SegmentMerger.java,319,"fieldsWriter.addDocument(reader.document(j, fieldSelectorMerge));"
+src/java/org/apache/lucene/index/SegmentMerger.java,359,termVectorsWriter.addAllDocVectors(reader.getTermFreqVectors(docNum));
+contrib/spellchecker/src/java/org/apache/lucene/search/spell/SpellChecker.java,301,if (reader == null) {
+contrib/spellchecker/src/java/org/apache/lucene/search/spell/SpellChecker.java,302,reader = IndexReader.open(spellIndex);
+contrib/spellchecker/src/java/org/apache/lucene/search/spell/SpellChecker.java,304,"return reader.docFreq(new Term(F_WORD, word)) > 0;"
+src/java/org/apache/lucene/queryParser/QueryParser.java,1340,"jj_la1_0 = new int[] {0x180,0x180,0xe00,0xe00,0x1f69f80,0x48000,0x10000,0x1f69000,0x1348000,0x80000,0x80000,0x10000,0x18000000,0x2000000,0x18000000,0x10000,0x80000000,0x20000000,0x80000000,0x10000,0x80000,0x10000,0x1f68000,};"
+src/java/org/apache/lucene/queryParser/QueryParser.java,1343,"jj_la1_1 = new int[] {0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x0,0x1,0x0,0x1,0x0,0x0,0x0,0x0,};"
+src/java/org/apache/lucene/queryParser/QueryParser.java,1492,boolean[] la1tokens = new boolean[33];
+src/java/org/apache/lucene/queryParser/QueryParser.java,1493,for (int i = 0; i < 33; i++) {
+src/java/org/apache/lucene/queryParser/QueryParser.java,1494,la1tokens[i] = false;
+src/java/org/apache/lucene/queryParser/QueryParser.java,1512,for (int i = 0; i < 33; i++) {
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,12,int AND = 7;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,13,int OR = 8;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,14,int NOT = 9;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,15,int PLUS = 10;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,16,int MINUS = 11;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,17,int LPAREN = 12;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,18,int RPAREN = 13;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,19,int COLON = 14;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,20,int STAR = 15;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,21,int CARAT = 16;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,22,int QUOTED = 17;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,23,int TERM = 18;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,24,int FUZZY_SLOP = 19;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,25,int PREFIXTERM = 20;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,26,int WILDTERM = 21;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,27,int RANGEIN_START = 22;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,28,int RANGEEX_START = 23;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,29,int NUMBER = 24;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,30,int RANGEIN_TO = 25;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,31,int RANGEIN_END = 26;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,32,int RANGEIN_QUOTED = 27;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,33,int RANGEIN_GOOP = 28;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,34,int RANGEEX_TO = 29;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,35,int RANGEEX_END = 30;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,36,int RANGEEX_QUOTED = 31;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,37,int RANGEEX_GOOP = 32;
+src/java/org/apache/lucene/queryParser/QueryParserConstants.java,51,"""<token of kind 6>"","
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,52,"return jjStartNfaWithStates_3(0, 15, 36);"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,58,"return jjStopAtPos(0, 14);"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,60,"return jjStopAtPos(0, 22);"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,62,"return jjStopAtPos(0, 16);"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,64,"return jjStopAtPos(0, 23);"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,128,if (kind > 21)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,129,kind = 21;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,135,if (kind > 21)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,136,kind = 21;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,141,if (kind > 6)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,142,kind = 6;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,148,if (kind > 9)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,149,kind = 9;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,153,if (kind > 18)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,154,kind = 18;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,159,if (kind > 20)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,160,kind = 20;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,166,if (curChar == 38 && kind > 7)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,167,kind = 7;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,174,if (curChar == 33 && kind > 9)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,175,kind = 9;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,187,if (curChar == 34 && kind > 17)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,188,kind = 17;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,193,if (kind > 19)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,194,kind = 19;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,204,if (kind > 19)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,205,kind = 19;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,209,if (curChar == 42 && kind > 20)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,210,kind = 20;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,215,if (kind > 21)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,216,kind = 21;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,220,if (kind > 21)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,221,kind = 21;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,227,if (kind > 18)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,228,kind = 18;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,234,if (kind > 18)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,235,kind = 18;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,239,if (kind > 18)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,240,kind = 18;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,264,if (kind > 21)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,265,kind = 21;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,274,if (kind > 18)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,275,kind = 18;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,282,if (kind > 19)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,283,kind = 19;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,288,if (kind > 21)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,289,kind = 21;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,302,if (curChar == 68 && kind > 7)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,303,kind = 7;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,314,if (curChar == 82 && kind > 8)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,315,kind = 8;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,322,if (curChar == 124 && kind > 8)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,323,kind = 8;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,330,if (curChar == 84 && kind > 9)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,331,kind = 9;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,342,"jjAddStates(0, 2);"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,344,case 17:
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,346,jjstateSet[jjnewStateCnt++] = 16;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,351,if (kind > 19)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,352,kind = 19;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,358,if (kind > 21)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,359,kind = 21;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,365,if (kind > 21)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,366,kind = 21;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,374,if (kind > 21)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,375,kind = 21;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,381,if (kind > 18)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,382,kind = 18;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,388,if (kind > 18)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,389,kind = 18;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,397,if (kind > 18)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,398,kind = 18;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,436,if (kind > 21)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,437,kind = 21;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,443,if (kind > 21)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,444,kind = 21;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,449,if (kind > 18)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,450,kind = 18;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,456,"jjAddStates(0, 2);"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,461,if (kind > 21)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,462,kind = 21;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,468,if (kind > 18)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,469,kind = 18;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,476,if (kind > 18)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,477,kind = 18;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,507,if ((active0 & 0x20000000L) != 0L)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,509,jjmatchedKind = 32;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,534,return jjMoveStringLiteralDfa1_1(0x20000000L);
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,536,"return jjStopAtPos(0, 30);"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,551,if ((active0 & 0x20000000L) != 0L)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,552,"return jjStartNfaWithStates_1(1, 29, 6);"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,581,if (kind > 32)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,582,kind = 32;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,587,if (kind > 6)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,588,kind = 6;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,606,if (curChar == 34 && kind > 31)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,607,kind = 31;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,612,if (kind > 32)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,613,kind = 32;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,631,if (kind > 32)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,632,kind = 32;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,661,if (kind > 32)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,662,kind = 32;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,712,if (kind > 24)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,713,kind = 24;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,723,if (kind > 24)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,724,kind = 24;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,775,if ((active0 & 0x2000000L) != 0L)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,777,jjmatchedKind = 28;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,802,return jjMoveStringLiteralDfa1_2(0x2000000L);
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,804,"return jjStopAtPos(0, 26);"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,819,if ((active0 & 0x2000000L) != 0L)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,820,"return jjStartNfaWithStates_2(1, 25, 6);"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,849,if (kind > 28)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,850,kind = 28;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,855,if (kind > 6)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,856,kind = 6;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,874,if (curChar == 34 && kind > 27)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,875,kind = 27;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,880,if (kind > 28)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,881,kind = 28;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,899,if (kind > 28)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,900,kind = 28;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,929,if (kind > 28)
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,930,kind = 28;
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,955,"15, 17, 18, 29, 32, 23, 33, 30, 20, 21, 32, 23, 33, 31, 34, 27,"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,971,""""", null, null, null, null, null, null, null, null, null, ""\53"", ""\55"", ""\50"","
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,972,"""\51"", ""\72"", ""\52"", ""\136"", null, null, null, null, null, ""\133"", ""\173"", null,"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,973,"""\124\117"", ""\135"", null, null, ""\124\117"", ""\175"", null, null, };"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,981,"-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0, -1, -1, -1, -1, -1, 2, 1, 3,"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,982,"-1, 3, -1, -1, -1, 3, -1, -1,"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,985,"0x1ffffff81L,"
+src/java/org/apache/lucene/queryParser/QueryParserTokenManager.java,988,"0x40L,"
+src/java/org/apache/lucene/index/MultiReader.java,70,this.subReaders = subReaders;
+src/java/org/apache/lucene/index/IndexWriter.java,1177,if (doClose)
+src/java/org/apache/lucene/index/IndexWriter.java,1186,synchronized private void waitForClose() {
+src/java/org/apache/lucene/index/IndexWriter.java,1187,while(!closed && closing) {
+src/java/org/apache/lucene/index/IndexWriter.java,3315,try {
+src/java/org/apache/lucene/index/IndexWriter.java,2063,wait();
+src/java/org/apache/lucene/index/IndexWriter.java,2064,} catch (InterruptedException ie) {
+src/java/org/apache/lucene/index/IndexWriter.java,1971,"throw new IllegalStateException(""abort() can only be called when IndexWriter was opened with autoCommit=false"");"
+src/java/org/apache/lucene/index/IndexWriter.java,1976,if (!closing) {
+src/java/org/apache/lucene/index/IndexWriter.java,1977,doClose = true;
+src/java/org/apache/lucene/index/IndexWriter.java,1978,closing = true;
+src/java/org/apache/lucene/index/IndexWriter.java,3155,} else
+src/java/org/apache/lucene/index/IndexWriter.java,1980,doClose = false;
+src/java/org/apache/lucene/index/IndexWriter.java,1983,if (doClose) {
+src/java/org/apache/lucene/index/IndexWriter.java,2011,closeInternal(false);
+src/java/org/apache/lucene/index/IndexWriter.java,2264,} else
+src/java/org/apache/lucene/index/IndexWriter.java,2013,waitForClose();
+src/java/org/apache/lucene/index/IndexWriter.java,2858,if (success && !merge.isAborted() && !closed && !closing)
+src/java/org/apache/lucene/index/IndexWriter.java,2859,"updatePendingMerges(merge.maxNumSegmentsOptimize, merge.optimize);"
+src/java/org/apache/lucene/index/IndexWriter.java,3252,} finally {
+src/java/org/apache/lucene/index/IndexWriter.java,2861,runningMerges.remove(merge);
+src/java/org/apache/lucene/index/SegmentReader.java,52,ThreadLocal termVectorsLocal = new ThreadLocal();
+src/java/org/apache/lucene/index/IndexFileDeleter.java,142,String[] files = directory.list();
+src/java/org/apache/lucene/index/IndexFileDeleter.java,143,if (files == null)
+src/java/org/apache/lucene/index/IndexFileDeleter.java,144,"throw new IOException(""cannot read directory "" + directory + "": list() returned null"");"
+src/java/org/apache/lucene/index/IndexFileDeleter.java,303,String[] files = directory.list();
+src/java/org/apache/lucene/index/IndexFileDeleter.java,304,if (files == null)
+src/java/org/apache/lucene/index/IndexFileDeleter.java,305,"throw new IOException(""cannot read directory "" + directory + "": list() returned null"");"
+src/java/org/apache/lucene/index/SegmentInfo.java,572,String[] allFiles = dir.list();
+src/java/org/apache/lucene/index/SegmentInfo.java,573,if (allFiles == null)
+src/java/org/apache/lucene/index/SegmentInfo.java,574,"throw new IOException(""cannot read directory "" + dir + "": list() returned null"");"
+src/java/org/apache/lucene/index/SegmentInfo.java,577,if (fileName.length() > prefixLength && Character.isDigit(fileName.charAt(prefixLength)) && fileName.startsWith(prefix)) {
+src/java/org/apache/lucene/index/SegmentInfos.java,516,files = directory.list();
+src/java/org/apache/lucene/index/SegmentInfos.java,518,files = fileDirectory.list();
+src/java/org/apache/lucene/index/SegmentInfos.java,564,} catch (InterruptedException e) {
+src/java/org/apache/lucene/store/Directory.java,171,final String[] files = src.list();
+src/java/org/apache/lucene/store/Directory.java,173,if (files == null)
+src/java/org/apache/lucene/store/Directory.java,174,"throw new IOException(""cannot read directory "" + src + "": list() returned null"");"
+src/java/org/apache/lucene/store/Directory.java,176,byte[] buf = new byte[BufferedIndexOutput.BUFFER_SIZE];
+src/java/org/apache/lucene/store/Directory.java,177,for (int i = 0; i < files.length; i++) {
+src/java/org/apache/lucene/store/Directory.java,178,IndexOutput os = null;
+src/java/org/apache/lucene/store/Directory.java,179,IndexInput is = null;
+src/java/org/apache/lucene/store/Directory.java,182,os = dest.createOutput(files[i]);
+src/java/org/apache/lucene/store/Directory.java,184,is = src.openInput(files[i]);
+src/java/org/apache/lucene/store/Directory.java,186,long len = is.length();
+src/java/org/apache/lucene/store/Directory.java,187,long readCount = 0;
+src/java/org/apache/lucene/store/Directory.java,188,while (readCount < len) {
+src/java/org/apache/lucene/store/Directory.java,189,int toRead = readCount + BufferedIndexOutput.BUFFER_SIZE > len ? (int)(len - readCount) : BufferedIndexOutput.BUFFER_SIZE;
+src/java/org/apache/lucene/store/Directory.java,190,"is.readBytes(buf, 0, toRead);"
+src/java/org/apache/lucene/store/Directory.java,191,"os.writeBytes(buf, toRead);"
+src/java/org/apache/lucene/store/Directory.java,192,readCount += toRead;
+src/java/org/apache/lucene/store/Directory.java,196,try {
+src/java/org/apache/lucene/store/Directory.java,197,if (os != null)
+src/java/org/apache/lucene/store/Directory.java,198,os.close();
+src/java/org/apache/lucene/store/Directory.java,199,} finally {
+src/java/org/apache/lucene/store/Directory.java,200,if (is != null)
+src/java/org/apache/lucene/store/Directory.java,201,is.close();
+src/java/org/apache/lucene/store/Directory.java,205,if(closeDirSrc)
+src/java/org/apache/lucene/store/Directory.java,206,src.close();
+src/test/org/apache/lucene/index/TestBackwardsCompatibility.java,367,String[] actual = dir.list();
+src/test/org/apache/lucene/index/TestDeletionPolicy.java,296,int preCount = dir.list().length;
+src/test/org/apache/lucene/index/TestDeletionPolicy.java,299,int postCount = dir.list().length;
+src/test/org/apache/lucene/index/TestIndexFileDeleter.java,77,String[] files = dir.list();
+src/test/org/apache/lucene/index/TestIndexFileDeleter.java,154,String[] filesPre = dir.list();
+src/test/org/apache/lucene/index/TestIndexFileDeleter.java,161,String[] files2 = dir.list();
+src/test/org/apache/lucene/index/TestIndexReader.java,855,String[] startFiles = dir.list();
+src/test/org/apache/lucene/index/TestIndexReader.java,859,String[] endFiles = dir.list();
+src/test/org/apache/lucene/index/TestIndexReader.java,596,public void testLastModified() throws IOException {
+src/test/org/apache/lucene/index/TestIndexReader.java,622,while(true) {
+src/test/org/apache/lucene/index/TestIndexReader.java,623,try {
+src/test/org/apache/lucene/index/TestIndexReader.java,624,Thread.sleep(1000);
+src/test/org/apache/lucene/index/TestIndexReader.java,625,break;
+src/test/org/apache/lucene/index/TestIndexReader.java,626,} catch (InterruptedException ie) {
+src/test/org/apache/lucene/index/TestIndexReader.java,627,Thread.currentThread().interrupt();
+src/test/org/apache/lucene/index/TestIndexWriter.java,161,String[] files = dirs[i].list();
+src/test/org/apache/lucene/index/TestIndexWriter.java,202,String[] files = startDir.list();
+src/test/org/apache/lucene/index/TestIndexWriter.java,526,String[] startFiles = dir.list();
+src/test/org/apache/lucene/index/TestIndexWriter.java,530,String[] endFiles = dir.list();
+src/test/org/apache/lucene/index/TestIndexWriter.java,695,String[] files = dir.list();
+src/test/org/apache/lucene/index/TestIndexWriter.java,975,String[] files = dir.list();
+src/test/org/apache/lucene/index/TestIndexWriter.java,1253,int lastNumFile = dir.list().length;
+src/test/org/apache/lucene/index/TestIndexWriter.java,1258,int numFile = dir.list().length;
+src/test/org/apache/lucene/index/TestIndexWriter.java,1977,public void testDocumentsWriterExceptionThreads() throws IOException {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2037,while (true)
+src/test/org/apache/lucene/index/TestIndexWriter.java,2038,try {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2039,threads[t].join();
+src/test/org/apache/lucene/index/TestIndexWriter.java,2040,break;
+src/test/org/apache/lucene/index/TestIndexWriter.java,2041,} catch (InterruptedException ie) {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2042,Thread.currentThread().interrupt();
+src/test/org/apache/lucene/index/TestIndexWriter.java,2093,public void testVariableSchema() throws IOException {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2214,while(true) {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2215,try {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2216,t1.join();
+src/test/org/apache/lucene/index/TestIndexWriter.java,2217,break;
+src/test/org/apache/lucene/index/TestIndexWriter.java,2218,} catch (InterruptedException ie) {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2219,Thread.currentThread().interrupt();
+src/test/org/apache/lucene/index/TestIndexWriter.java,2297,public void testCloseWithThreads() throws IOException {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2328,while(true) {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2329,try {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2332,threads[i].join();
+src/test/org/apache/lucene/index/TestIndexWriter.java,2333,break;
+src/test/org/apache/lucene/index/TestIndexWriter.java,2334,} catch (InterruptedException ie) {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2335,Thread.currentThread().interrupt();
+src/test/org/apache/lucene/index/TestIndexWriter.java,2387,public void testImmediateDiskFullWithThreads() throws IOException {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2412,while(true) {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2413,try {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2416,threads[i].join();
+src/test/org/apache/lucene/index/TestIndexWriter.java,2417,break;
+src/test/org/apache/lucene/index/TestIndexWriter.java,2418,} catch (InterruptedException ie) {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2419,Thread.currentThread().interrupt();
+src/test/org/apache/lucene/index/TestIndexWriter.java,2422,if (threads[i].isAlive())
+src/test/org/apache/lucene/index/TestIndexWriter.java,2423,"fail(""thread seems to be hung"");"
+src/test/org/apache/lucene/index/TestIndexWriter.java,2424,else
+src/test/org/apache/lucene/index/TestIndexWriter.java,2425,"assertTrue(""hit unexpected Throwable"", threads[i].error == null);"
+src/test/org/apache/lucene/index/TestIndexWriter.java,2486,public void _testMultipleThreadsFailure(MockRAMDirectory.Failure failure) throws IOException {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2509,try {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2510,Thread.sleep(10);
+src/test/org/apache/lucene/index/TestIndexWriter.java,2511,} catch (InterruptedException ie) {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2512,Thread.currentThread().interrupt();
+src/test/org/apache/lucene/index/TestIndexWriter.java,2519,while(true) {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2520,try {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2521,threads[i].join();
+src/test/org/apache/lucene/index/TestIndexWriter.java,2522,break;
+src/test/org/apache/lucene/index/TestIndexWriter.java,2523,} catch (InterruptedException ie) {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2524,Thread.currentThread().interrupt();
+src/test/org/apache/lucene/index/TestIndexWriter.java,2527,if (threads[i].isAlive())
+src/test/org/apache/lucene/index/TestIndexWriter.java,2528,"fail(""thread seems to be hung"");"
+src/test/org/apache/lucene/index/TestIndexWriter.java,2529,else
+src/test/org/apache/lucene/index/TestIndexWriter.java,2530,"assertTrue(""hit unexpected Throwable"", threads[i].error == null);"
+src/test/org/apache/lucene/index/TestIndexWriter.java,2569,public void testIOExceptionDuringAbortWithThreads() throws IOException {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2575,public void testIOExceptionDuringAbortWithThreadsOnlyOnce() throws IOException {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2610,public void testIOExceptionDuringCloseDocStoreWithThreads() throws IOException {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2615,public void testIOExceptionDuringCloseDocStoreWithThreadsOnlyOnce() throws IOException {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2651,public void testIOExceptionDuringWriteSegmentWithThreads() throws IOException {
+src/test/org/apache/lucene/index/TestIndexWriter.java,2656,public void testIOExceptionDuringWriteSegmentWithThreadsOnlyOnce() throws IOException {
+src/test/org/apache/lucene/index/TestIndexWriterDelete.java,750,String[] startFiles = dir.list();
+src/test/org/apache/lucene/index/TestIndexWriterDelete.java,754,String[] endFiles = dir.list();
+src/test/org/apache/lucene/index/TestIndexWriterMergePolicy.java,242,String[] files = writer.getDirectory().list();
+contrib/memory/src/java/org/apache/lucene/index/memory/MemoryIndex.java,845,Info info = getInfo(term.field());
+contrib/memory/src/java/org/apache/lucene/index/memory/MemoryIndex.java,846,current = info == null ? null : info.getPositions(term.text());
+contrib/memory/src/java/org/apache/lucene/index/memory/MemoryIndex.java,847,hasNext = (current != null);
+contrib/memory/src/java/org/apache/lucene/index/memory/MemoryIndex.java,848,cursor = 0;
+contrib/memory/src/java/org/apache/lucene/index/memory/MemoryIndex.java,862,int freq = current != null ? numPositions(current) : 0;
+src/java/org/apache/lucene/index/MultiSegmentReader.java,610,return reader.termDocs();
+src/java/org/apache/lucene/index/ParallelReader.java,526,public ParallelTermDocs(Term term) throws IOException { seek(term); }
+src/java/org/apache/lucene/index/SegmentTermDocs.java,48,this.deletedDocs = parent.deletedDocs;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,21,import org.apache.lucene.search.Explanation;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,22,import org.apache.lucene.search.Query;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,23,import org.apache.lucene.search.Scorer;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,24,import org.apache.lucene.search.Searcher;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,25,import org.apache.lucene.search.Similarity;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,26,import org.apache.lucene.search.Weight;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,43,final IndexReader reader;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,44,int id;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,45,final int maxId;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,48,"MatchAllScorer(IndexReader reader, Similarity similarity, Weight w) {"
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,50,this.reader = reader;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,51,id = -1;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,52,maxId = reader.maxDoc() - 1;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,61,return id;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,64,public boolean next() {
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,65,while (id < maxId) {
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,66,id++;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,67,if (!reader.isDeleted(id)) {
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,68,return true;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,71,return false;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,78,public boolean skipTo(int target) {
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,79,id = target - 1;
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,80,return next();
+src/java/org/apache/lucene/search/MatchAllDocsQuery.java,116,public Scorer scorer(IndexReader reader) {
+src/test/org/apache/lucene/index/TestParallelReader.java,127,Directory dir2 = getDir1();
+src/test/org/apache/lucene/index/TestParallelReader.java,151,Directory dir2 = getDir1();
+src/java/org/apache/lucene/search/function/ValueSourceQuery.java,133,for(;;) {
+src/java/org/apache/lucene/search/function/ValueSourceQuery.java,134,++doc;
+src/java/org/apache/lucene/search/function/ValueSourceQuery.java,135,if (doc>=maxDoc) {
+src/java/org/apache/lucene/search/function/ValueSourceQuery.java,136,return false;
+src/java/org/apache/lucene/search/function/ValueSourceQuery.java,138,if (reader.isDeleted(doc)) {
+src/java/org/apache/lucene/search/function/ValueSourceQuery.java,139,continue;
+src/java/org/apache/lucene/search/function/ValueSourceQuery.java,141,return true;
+src/java/org/apache/lucene/search/function/ValueSourceQuery.java,148,return doc;
+src/java/org/apache/lucene/search/function/ValueSourceQuery.java,153,return qWeight * vals.floatVal(doc);
+src/java/org/apache/lucene/search/function/ValueSourceQuery.java,158,doc=target-1;
+src/java/org/apache/lucene/search/function/ValueSourceQuery.java,159,return next();
+contrib/spellchecker/src/test/org/apache/lucene/search/spell/TestSpellChecker.java,80,"assertEquals(1, similar.length);"
+contrib/spellchecker/src/test/org/apache/lucene/search/spell/TestSpellChecker.java,84,"assertEquals(1, similar.length);"
+contrib/spellchecker/src/test/org/apache/lucene/search/spell/TestSpellChecker.java,104,"assertEquals(0, similar.length);"
+contrib/spellchecker/src/test/org/apache/lucene/search/spell/TestSpellChecker.java,100,"assertEquals(1, similar.length);"
+src/test/org/apache/lucene/search/spans/TestBasics.java,32,import org.apache.lucene.search.*;
+src/java/org/apache/lucene/search/FilterManager.java,199,} catch (InterruptedException e) {
+src/java/org/apache/lucene/search/ParallelMultiSearcher.java,79,; // TODO: what should we do with this???
+src/java/org/apache/lucene/search/ParallelMultiSearcher.java,132,; // TODO: what should we do with this???
+src/java/org/apache/lucene/store/RAMDirectory.java,150,} catch (InterruptedException e) {}
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,52,public void testSnapshotDeletionPolicy() throws IOException {
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,66,private void runTest(Directory dir) throws IOException {
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,142,try {
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,106,Thread.sleep(20);
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,92,} catch (InterruptedException ie) {
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,93,Thread.currentThread().interrupt();
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,54,try {
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,115,t.join();
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,107,} catch (InterruptedException ie) {
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,108,Thread.currentThread().interrupt();
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,138,"public void backupIndex(Directory dir, SnapshotDeletionPolicy dp) throws IOException {"
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,170,"private void readFile(Directory dir, String name) throws IOException {"
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,189,try {
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,190,Thread.sleep(1);
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,191,} catch (InterruptedException ie) {
+src/test/org/apache/lucene/TestSnapshotDeletionPolicy.java,192,Thread.currentThread().interrupt();
+src/test/org/apache/lucene/index/TestIndexModifier.java,136,public void testIndexWithThreads() throws IOException {
+src/test/org/apache/lucene/index/TestIndexModifier.java,142,private void testIndexInternal(int maxWait) throws IOException {
+src/test/org/apache/lucene/index/TestIndexModifier.java,159,try {
+src/test/org/apache/lucene/index/TestIndexModifier.java,160,Thread.sleep(100);
+src/test/org/apache/lucene/index/TestIndexModifier.java,161,} catch (InterruptedException e) {
+src/test/org/apache/lucene/index/TestIndexModifier.java,162,throw new RuntimeException(e);
+src/test/org/apache/lucene/index/TestIndexModifier.java,259,} catch (InterruptedException e) {
+src/test/org/apache/lucene/index/TestIndexModifier.java,260,throw new RuntimeException(e);
+src/test/org/apache/lucene/index/TestIndexReaderReopen.java,637,try {
+src/test/org/apache/lucene/index/TestIndexReaderReopen.java,638,synchronized(this) {
+src/test/org/apache/lucene/index/TestIndexReaderReopen.java,639,wait(1000);
+src/test/org/apache/lucene/index/TestIndexReaderReopen.java,641,} catch (InterruptedException e) {}
+src/test/org/apache/lucene/index/TestIndexReaderReopen.java,656,try {
+src/test/org/apache/lucene/index/TestIndexReaderReopen.java,657,synchronized(this) {
+src/test/org/apache/lucene/index/TestIndexReaderReopen.java,658,wait(100);
+src/test/org/apache/lucene/index/TestIndexReaderReopen.java,660,} catch (InterruptedException e) {}
+src/test/org/apache/lucene/index/TestIndexReaderReopen.java,673,try {
+src/test/org/apache/lucene/index/TestIndexReaderReopen.java,674,wait(15000);
+src/test/org/apache/lucene/index/TestIndexReaderReopen.java,675,} catch(InterruptedException e) {}
+src/test/org/apache/lucene/index/TestPayloads.java,471,public void testThreadSafety() throws IOException {
+src/test/org/apache/lucene/index/TestPayloads.java,500,try {
+src/test/org/apache/lucene/index/TestPayloads.java,501,ingesters[i].join();
+src/test/org/apache/lucene/index/TestPayloads.java,502,} catch (InterruptedException e) {}
+src/test/org/apache/lucene/search/TestMultiThreadTermVectors.java,60,public void test() {
+src/test/org/apache/lucene/search/TestMultiThreadTermVectors.java,86,"public void testTermPositionVectors(final IndexReader reader, int threadCount) {"
+src/test/org/apache/lucene/search/TestMultiThreadTermVectors.java,110,} catch (InterruptedException ie) {}
+src/test/org/apache/lucene/store/TestLockFactory.java,315,public void testStressLocks() throws IOException {
+src/test/org/apache/lucene/store/TestLockFactory.java,323,public void testStressLocksNativeFSLockFactory() throws IOException {
+src/test/org/apache/lucene/store/TestLockFactory.java,327,"public void _testStressLocks(LockFactory lockFactory, String indexDirName) throws IOException {"
+src/test/org/apache/lucene/store/TestLockFactory.java,341,try {
+src/test/org/apache/lucene/store/TestLockFactory.java,342,Thread.sleep(1000);
+src/test/org/apache/lucene/store/TestLockFactory.java,343,} catch (InterruptedException e) {
+src/java/org/apache/lucene/search/function/DocValues.java,117,private float minVal;
+src/java/org/apache/lucene/search/function/DocValues.java,118,private float maxVal;
+src/java/org/apache/lucene/search/function/DocValues.java,119,private float avgVal;
+src/java/org/apache/lucene/search/function/DocValues.java,138,"minVal = Math.min(minVal,val);"
+src/java/org/apache/lucene/search/function/DocValues.java,139,"maxVal = Math.max(maxVal,val);"
+src/java/org/apache/lucene/search/function/DocValues.java,141,avgVal = sum / n;
+contrib/analyzers/src/java/org/apache/lucene/analysis/cjk/CJKTokenizer.java,72,"private String tokenType = ""word"";"
+contrib/analyzers/src/java/org/apache/lucene/analysis/cjk/CJKTokenizer.java,110,int start = offset;
+contrib/analyzers/src/java/org/apache/lucene/analysis/cjk/CJKTokenizer.java,112,while (true) {
+contrib/analyzers/src/java/org/apache/lucene/analysis/cjk/CJKTokenizer.java,165,"} else if (tokenType == ""double"") {"
+contrib/analyzers/src/java/org/apache/lucene/analysis/cjk/CJKTokenizer.java,186,"tokenType = ""single"";"
+contrib/analyzers/src/java/org/apache/lucene/analysis/cjk/CJKTokenizer.java,206,"tokenType = ""double"";"
+contrib/analyzers/src/java/org/apache/lucene/analysis/cjk/CJKTokenizer.java,208,"if (tokenType == ""single"") {"
+contrib/analyzers/src/java/org/apache/lucene/analysis/cjk/CJKTokenizer.java,216,"tokenType = ""double"";"
+src/java/org/apache/lucene/search/spans/SpanOrQuery.java,211,return queue.size() != 0;
+src/java/org/apache/lucene/search/BooleanQuery.java,463,&& this.getMinimumNumberShouldMatch() == other.getMinimumNumberShouldMatch();
+src/java/org/apache/lucene/search/BooleanQuery.java,469,+ getMinimumNumberShouldMatch();

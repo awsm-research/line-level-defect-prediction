@@ -1,0 +1,497 @@
+File,Line_number,SRC
+src/main/java/org/apache/hadoop/hbase/util/HBaseFsck.java,36,import java.util.concurrent.SynchronousQueue;
+src/main/java/org/apache/hadoop/hbase/util/HBaseFsck.java,220,"executor = new ThreadPoolExecutor(1, numThreads,"
+src/main/java/org/apache/hadoop/hbase/util/HBaseFsck.java,222,new SynchronousQueue<Runnable>());
+src/main/java/org/apache/hadoop/hbase/util/HBaseFsck.java,2492,"FIRST_REGION_STARTKEY_NOT_EMPTY, DUPE_STARTKEYS,"
+src/main/java/org/apache/hadoop/hbase/util/HBaseFsck.java,2993,"System.err.println(""   -repairHoles      Shortcut for -fixAssignments -fixMeta -fixHdfsHoles -fixHdfsOrphans"");"
+src/main/java/org/apache/hadoop/hbase/util/HBaseFsck.java,674,"LOG.error(""Unable to read .tableinfo from "" + hbaseRoot, ioe);"
+src/main/java/org/apache/hadoop/hbase/util/HBaseFsck.java,675,throw ioe;
+src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java,1121,if (rs.isSplitting() || rs.isSplit()) {
+src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java,336,"void joinCluster(final Set<ServerName> onlineServers) throws IOException,"
+src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java,348,"Map<ServerName, List<Pair<HRegionInfo, Result>>> deadServers = rebuildUserRegions(onlineServers);"
+src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java,2452,"Map<ServerName, List<Pair<HRegionInfo, Result>>> rebuildUserRegions("
+src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java,2453,final Set<ServerName> onlineServers)
+src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java,2509,"regions.put(regionInfo, regionLocation);"
+src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java,2510,"addToServers(regionLocation, regionInfo);"
+src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java,2240,"Map<HRegionInfo, ServerName> allRegions ="
+src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java,2241,"MetaReader.fullScan(catalogTracker, this.zkTable.getDisabledTables(), true);"
+src/main/java/org/apache/hadoop/hbase/master/AssignmentManager.java,1611,"LOG.debug(""Assigning region "" + state.getRegion().getRegionNameAsString() +"
+src/main/java/org/apache/hadoop/hbase/master/handler/ServerShutdownHandler.java,293,if (rit != null && !rit.isClosing() && !rit.isPendingClose()) {
+src/main/java/org/apache/hadoop/hbase/regionserver/wal/HLogSplitter.java,456,int n = 0;
+src/main/java/org/apache/hadoop/hbase/regionserver/wal/HLogSplitter.java,457,"for (Map.Entry<byte[], Object> logWritersEntry : logWriters.entrySet()) {"
+src/main/java/org/apache/hadoop/hbase/regionserver/wal/HLogSplitter.java,458,Object o = logWritersEntry.getValue();
+src/main/java/org/apache/hadoop/hbase/regionserver/wal/HLogSplitter.java,459,long t1 = EnvironmentEdgeManager.currentTimeMillis();
+src/main/java/org/apache/hadoop/hbase/regionserver/wal/HLogSplitter.java,460,if ((t1 - last_report_at) > period) {
+src/main/java/org/apache/hadoop/hbase/regionserver/wal/HLogSplitter.java,461,last_report_at = t;
+src/main/java/org/apache/hadoop/hbase/regionserver/wal/HLogSplitter.java,462,if ((progress_failed == false) && (reporter != null) &&
+src/main/java/org/apache/hadoop/hbase/regionserver/wal/HLogSplitter.java,463,(reporter.progress() == false)) {
+src/main/java/org/apache/hadoop/hbase/regionserver/wal/HLogSplitter.java,464,progress_failed = true;
+src/main/java/org/apache/hadoop/hbase/regionserver/wal/HLogSplitter.java,488,if (fs.exists(wap.p)) {
+src/main/java/org/apache/hadoop/hbase/regionserver/wal/HLogSplitter.java,489,"if (!fs.rename(wap.p, dst)) {"
+src/main/java/org/apache/hadoop/hbase/regionserver/wal/HLogSplitter.java,490,"throw new IOException(""Failed renaming "" + wap.p + "" to "" + dst);"
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,522,"splitLogAfterStartup(this.fileSystemManager, onlineServers);"
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,538,this.assignmentManager.joinCluster(onlineServers);
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,575,"protected void splitLogAfterStartup(final MasterFileSystem mfs,"
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,576,Set<ServerName> onlineServers) {
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,577,mfs.splitLogAfterStartup(onlineServers);
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,343,finishInitialization(startupStatus);
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,466,private void finishInitialization(MonitoredTask status)
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,480,"this.fileSystemManager = new MasterFileSystem(this, this, metrics);"
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,498,"status.setStatus(""Initializing master coprocessors"");"
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,499,"this.cpHost = new MasterCoprocessorHost(this, this.conf);"
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,502,"status.setStatus(""Initializing master service threads"");"
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,503,startServiceThreads();
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,517,this.assignmentManager.startTimeOutMonitor();
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,560,if (this.cpHost != null) {
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,1732,try {
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,563,this.cpHost.postStartMaster();
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,564,} catch (IOException ioe) {
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,565,"LOG.error(""Coprocessor postStartMaster() hook failed"", ioe);"
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,1427,initializeZKBasedSystemTrackers();
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,525,assignRootAndMeta(status);
+src/main/java/org/apache/hadoop/hbase/master/HMaster.java,1433,assignmentManager.processDeadServersAndRegionsInTransition();
+src/main/java/org/apache/hadoop/hbase/master/MasterFileSystem.java,189,void splitLogAfterStartup(final Set<ServerName> onlineServers) {
+src/main/java/org/apache/hadoop/hbase/master/MasterFileSystem.java,84,MasterMetrics metrics)
+src/main/java/org/apache/hadoop/hbase/master/MasterFileSystem.java,106,this.splitLogManager.finishInitialization();
+src/main/java/org/apache/hadoop/hbase/master/ServerManager.java,194,throw new PleaseHoldException(message);
+src/main/java/org/apache/hadoop/hbase/master/ServerManager.java,242,if (this.deadservers.cleanPreviousInstance(serverName)) {
+src/main/java/org/apache/hadoop/hbase/master/ServerManager.java,566,"getLong(""hbase.master.wait.on.regionservers.interval"", 1500);"
+src/main/java/org/apache/hadoop/hbase/master/ServerManager.java,568,"getLong(""hbase.master.wait.on.regionservers.timeout"", 4500);"
+src/main/java/org/apache/hadoop/hbase/master/ServerManager.java,569,final int minToStart = this.master.getConfiguration().
+src/main/java/org/apache/hadoop/hbase/master/ServerManager.java,570,"getInt(""hbase.master.wait.on.regionservers.mintostart"", 1);"
+src/main/java/org/apache/hadoop/hbase/master/ServerManager.java,571,final int maxToStart = this.master.getConfiguration().
+src/main/java/org/apache/hadoop/hbase/master/ServerManager.java,572,"getInt(""hbase.master.wait.on.regionservers.maxtostart"", Integer.MAX_VALUE);"
+src/main/java/org/apache/hadoop/hbase/master/ServerManager.java,585,(lastCountChange+interval > now || count < minToStart)
+src/test/java/org/apache/hadoop/hbase/regionserver/TestRSKilledWhenMasterInitializing.java,98,"protected void splitLogAfterStartup(MasterFileSystem mfs,"
+src/test/java/org/apache/hadoop/hbase/regionserver/TestRSKilledWhenMasterInitializing.java,99,Set<ServerName> onlineServers) {
+src/test/java/org/apache/hadoop/hbase/regionserver/TestRSKilledWhenMasterInitializing.java,100,"super.splitLogAfterStartup(mfs, onlineServers);"
+src/test/java/org/apache/hadoop/hbase/regionserver/TestRSKilledWhenMasterInitializing.java,67,"TESTUTIL.getConfiguration().setClass(HConstants.MASTER_IMPL,"
+src/test/java/org/apache/hadoop/hbase/regionserver/TestRSKilledWhenMasterInitializing.java,68,"TestingMaster.class, HMaster.class);"
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java,737,"cleanZK(server, this.parent.getRegionInfo());"
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java,830,"private static void cleanZK(final Server server, final HRegionInfo hri) {"
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java,854,"private static int createNodeSplitting(final ZooKeeperWatcher zkw,"
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java,855,"final HRegionInfo region, final ServerName serverName)"
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java,856,"throws KeeperException, IOException {"
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java,915,"private static int transitionNodeSplitting(final ZooKeeperWatcher zkw,"
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java,916,"final HRegionInfo parent,"
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java,917,"final ServerName serverName, final int version)"
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java,918,"throws KeeperException, IOException {"
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java,87,"private static final String SPLITDIR = ""splits"";"
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java,418,} while (this.znodeVersion != -1);
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitTransaction.java,452,"transitionZKNode(server, regions.getFirst(), regions.getSecond());"
+src/main/java/org/apache/hadoop/hbase/io/HbaseObjectWritable.java,475,"writeObject(out, list.get(i),"
+src/main/java/org/apache/hadoop/hbase/io/HbaseObjectWritable.java,476,"list.get(i).getClass(), conf);"
+src/main/java/org/apache/hadoop/hbase/zookeeper/ZKUtil.java,719,if ((node.equals(zkw.rootServerZNode) == true) ||
+src/main/java/org/apache/hadoop/hbase/zookeeper/ZKUtil.java,721,(node.equals(zkw.clusterIdZNode) == true)) {
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java,173,"static final String MERGEDIR = ""merges"";"
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java,2135,if (walEdit.size() > 0 &&
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java,2136,(this.regionInfo.isMetaRegion() ||
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java,2137,!this.htableDescriptor.isDeferredLogFlush())) {
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java,2138,this.log.sync(txid);
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java,4395,this.log.sync(txid); // sync the transaction log outside the rowlock
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java,4510,this.log.sync(txid); // sync the transaction log outside the rowlock
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java,4607,this.log.sync(txid); // sync the transaction log outside the rowlock
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java,2009,"OperationStatusCode.SANITY_CHECK_FAILURE, dnrioe.getMessage());"
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java,2548,long now) throws DoNotRetryIOException {
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegion.java,2557,"throw new DoNotRetryIOException(""Timestamp for KV out of range """
+src/main/java/org/apache/hadoop/hbase/master/SplitLogManager.java,185,public void finishInitialization() {
+src/main/java/org/apache/hadoop/hbase/master/SplitLogManager.java,186,"Threads.setDaemonThreadRunning(timeoutMonitor.getThread(), serverName +"
+src/main/java/org/apache/hadoop/hbase/master/SplitLogManager.java,187,""".splitLogManagerTimeoutMonitor"");"
+src/test/java/org/apache/hadoop/hbase/master/TestCatalogJanitor.java,151,"this.mfs = new MasterFileSystem(server, this, null);"
+src/main/java/org/apache/hadoop/hbase/master/CatalogJanitor.java,104,void scan() throws IOException {
+src/main/java/org/apache/hadoop/hbase/master/CatalogJanitor.java,129,"if (cleanParent(e.getKey(), e.getValue())) cleaned++;"
+src/main/java/org/apache/hadoop/hbase/master/CatalogJanitor.java,132,"LOG.info(""Scanned "" + count.get() + "" catalog row(s) and gc'd "" + cleaned +"
+src/main/java/org/apache/hadoop/hbase/master/CatalogJanitor.java,135,"LOG.debug(""Scanned "" + count.get() + "" catalog row(s) and gc'd "" + cleaned +"
+src/main/java/org/apache/hadoop/hbase/util/InfoServer.java,128,"return index == -1? p: p.substring(0, index);"
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2116,int lcolumnoffset = ROW_LENGTH_SIZE + FAMILY_LENGTH_SIZE +
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2117,rowlength + loffset;
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2118,int rcolumnoffset = ROW_LENGTH_SIZE + FAMILY_LENGTH_SIZE +
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2119,rowlength + roffset;
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2120,int lcolumnlength = llength - TIMESTAMP_TYPE_SIZE -
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2121,(lcolumnoffset - loffset);
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2122,int rcolumnlength = rlength - TIMESTAMP_TYPE_SIZE -
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2123,(rcolumnoffset - roffset);
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2151,"common = Math.max(0, commonPrefix -"
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2152,rowlength - ROW_LENGTH_SIZE - FAMILY_LENGTH_SIZE);
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2153,"common = Math.min(common, Math.min(lcolumnlength, rcolumnlength));"
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2156,final int comparisonResult = Bytes.compareTo(
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2157,"left, lcolumnoffset + common, lcolumnlength - common,"
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2158,"right, rcolumnoffset + common, rcolumnlength - common);"
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2159,if (comparisonResult != 0) {
+src/main/java/org/apache/hadoop/hbase/KeyValue.java,2160,return comparisonResult;
+src/main/java/org/apache/hadoop/hbase/regionserver/KeyValueHeap.java,345,"if (nextKV == null || comparator.compare(curKV, nextKV) <= 0) {"
+src/main/java/org/apache/hadoop/hbase/HColumnDescriptor.java,534,String compressionType;
+src/main/java/org/apache/hadoop/hbase/HColumnDescriptor.java,535,switch (type) {
+src/main/java/org/apache/hadoop/hbase/HColumnDescriptor.java,536,"case LZO: compressionType = ""LZO""; break;"
+src/main/java/org/apache/hadoop/hbase/HColumnDescriptor.java,537,"case GZ: compressionType = ""GZ""; break;"
+src/main/java/org/apache/hadoop/hbase/HColumnDescriptor.java,538,"case SNAPPY: compressionType = ""SNAPPY""; break;"
+src/main/java/org/apache/hadoop/hbase/HColumnDescriptor.java,539,"default: compressionType = ""NONE""; break;"
+src/main/java/org/apache/hadoop/hbase/HColumnDescriptor.java,541,"return setValue(COMPRESSION, compressionType);"
+src/main/java/org/apache/hadoop/hbase/HColumnDescriptor.java,614,String compressionType;
+src/main/java/org/apache/hadoop/hbase/HColumnDescriptor.java,615,switch (type) {
+src/main/java/org/apache/hadoop/hbase/HColumnDescriptor.java,616,"case LZO: compressionType = ""LZO""; break;"
+src/main/java/org/apache/hadoop/hbase/HColumnDescriptor.java,617,"case GZ: compressionType = ""GZ""; break;"
+src/main/java/org/apache/hadoop/hbase/HColumnDescriptor.java,618,"case SNAPPY: compressionType = ""SNAPPY""; break;"
+src/main/java/org/apache/hadoop/hbase/HColumnDescriptor.java,619,"default: compressionType = ""NONE""; break;"
+src/main/java/org/apache/hadoop/hbase/HColumnDescriptor.java,621,"return setValue(COMPRESSION_COMPACT, compressionType);"
+src/main/java/org/apache/hadoop/hbase/ipc/HBaseClient.java,575,Call call = calls.remove(id);
+src/main/java/org/apache/hadoop/hbase/ipc/HBaseClient.java,225,public Connection(ConnectionId remoteId) throws IOException {
+src/main/java/org/apache/hadoop/hbase/ipc/HBaseClient.java,255,protected synchronized boolean addCall(Call call) {
+src/main/java/org/apache/hadoop/hbase/ipc/HBaseClient.java,256,if (shouldCloseConnection.get())
+src/main/java/org/apache/hadoop/hbase/ipc/HBaseClient.java,257,return false;
+src/main/java/org/apache/hadoop/hbase/ipc/HBaseClient.java,258,"calls.put(call.id, call);"
+src/main/java/org/apache/hadoop/hbase/ipc/HBaseClient.java,259,notify();
+src/main/java/org/apache/hadoop/hbase/ipc/HBaseClient.java,260,return true;
+src/main/java/org/apache/hadoop/hbase/ipc/HBaseClient.java,1031,do {
+src/main/java/org/apache/hadoop/hbase/ipc/HBaseClient.java,1032,synchronized (connections) {
+src/main/java/org/apache/hadoop/hbase/ipc/HBaseClient.java,1033,connection = connections.get(remoteId);
+src/main/java/org/apache/hadoop/hbase/ipc/HBaseClient.java,1034,if (connection == null) {
+src/main/java/org/apache/hadoop/hbase/ipc/HBaseClient.java,1035,connection = new Connection(remoteId);
+src/main/java/org/apache/hadoop/hbase/ipc/HBaseClient.java,1036,"connections.put(remoteId, connection);"
+src/main/java/org/apache/hadoop/hbase/ipc/HBaseClient.java,1039,} while (!connection.addCall(call));
+src/test/java/org/apache/hadoop/hbase/regionserver/TestEndToEndSplitTransaction.java,106,"split.transitionZKNode(server, regions.getFirst(), regions.getSecond());"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,108,"table.coprocessorExec(AggregateProtocol.class, scan.getStartRow(), scan"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,109,".getStopRow(), new Batch.Call<AggregateProtocol, R>() {"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,102,@Override
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,111,public R call(AggregateProtocol instance) throws IOException {
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,112,"return instance.getMax(ci, scan);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,114,"}, aMaxCallBack);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,159,"table.coprocessorExec(AggregateProtocol.class, scan.getStartRow(), scan"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,160,".getStopRow(), new Batch.Call<AggregateProtocol, R>() {"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,110,@Override
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,163,public R call(AggregateProtocol instance) throws IOException {
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,164,"return instance.getMin(ci, scan);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,166,"}, minCallBack);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,93,"HTable table = new HTable(conf, tableName);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,201,"table.coprocessorExec(AggregateProtocol.class, scan.getStartRow(), scan"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,202,".getStopRow(), new Batch.Call<AggregateProtocol, Long>() {"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,152,@Override
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,204,public Long call(AggregateProtocol instance) throws IOException {
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,205,"return instance.getRowNum(ci, scan);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,207,"}, rowNum);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,157,"HTable table = new HTable(conf, tableName);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,237,"table.coprocessorExec(AggregateProtocol.class, scan.getStartRow(), scan"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,238,".getStopRow(), new Batch.Call<AggregateProtocol, S>() {"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,162,@Override
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,240,public S call(AggregateProtocol instance) throws IOException {
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,241,"return instance.getSum(ci, scan);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,243,"}, sumCallBack);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,200,"HTable table = new HTable(conf, tableName);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,274,"table.coprocessorExec(AggregateProtocol.class, scan.getStartRow(), scan"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,275,".getStopRow(), new Batch.Call<AggregateProtocol, Pair<S, Long>>() {"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,194,@Override
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,277,"public Pair<S, Long> call(AggregateProtocol instance) throws IOException {"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,278,"return instance.getAvg(ci, scan);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,280,"}, avgCallBack);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,236,"HTable table = new HTable(conf, tableName);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,337,"table.coprocessorExec(AggregateProtocol.class, scan.getStartRow(), scan"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,338,".getStopRow(),"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,339,"new Batch.Call<AggregateProtocol, Pair<List<S>, Long>>() {"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,203,@Override
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,341,"public Pair<List<S>, Long> call(AggregateProtocol instance)"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,342,throws IOException {
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,343,"return instance.getStd(ci, scan);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,346,"}, stdCallback);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,273,"HTable table = new HTable(conf, tableName);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,412,"table.coprocessorExec(AggregateProtocol.class, scan.getStartRow(), scan"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,413,".getStopRow(),"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,414,"new Batch.Call<AggregateProtocol, List<S>>() {"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,415,@Override
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,416,public List<S> call(AggregateProtocol instance)
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,417,throws IOException {
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,418,"return instance.getMedian(ci, scan);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,421,"}, stdCallback);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,463,"HTable table = new HTable(conf, tableName);"
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,464,int cacheSize = scan2.getCaching();
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,465,if (!scan2.getCacheBlocks() || scan2.getCaching() < 2) {
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,466,scan2.setCacheBlocks(true);
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,467,cacheSize = 5;
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,468,scan2.setCaching(cacheSize);
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,470,ResultScanner scanner = table.getScanner(scan2);
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,471,Result[] results = null;
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,472,byte[] qualifier = quals.pollFirst();
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,474,byte[] weightQualifier = weighted ? quals.pollLast() : qualifier;
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,475,R value = null;
+src/main/java/org/apache/hadoop/hbase/client/coprocessor/AggregationClient.java,498,scanner.close();
+src/main/java/org/apache/hadoop/hbase/regionserver/Store.java,550,sf.createReader();
+src/main/java/org/apache/hadoop/hbase/regionserver/Store.java,533,if (!srcFs.equals(fs)) {
+src/test/java/org/apache/hadoop/hbase/HBaseTestingUtility.java,1492,"assertTrue(""Timed out waiting for table "" + Bytes.toStringBinary(table),"
+src/test/java/org/apache/hadoop/hbase/HBaseTestingUtility.java,1493,System.currentTimeMillis() - startWait < timeoutMillis);
+src/test/java/org/apache/hadoop/hbase/HBaseTestingUtility.java,980,"public int loadRegion(final HRegion r, final byte[] f)"
+src/test/java/org/apache/hadoop/hbase/HBaseTestingUtility.java,627,"conf.setInt(""hbase.master.wait.on.regionservers.mintostart"", numSlaves);"
+src/test/java/org/apache/hadoop/hbase/HBaseTestingUtility.java,628,"conf.setInt(""hbase.master.wait.on.regionservers.maxtostart"", numSlaves);"
+src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java,82,private final List<String> otherRegionServers;
+src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java,418,refreshRegionServersList(path);
+src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java,429,boolean cont = refreshRegionServersList(path);
+src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java,445,refreshRegionServersList(path);
+src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java,448,private boolean refreshRegionServersList(String path) {
+src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java,452,List<String> newRsList = (zkHelper.getRegisteredRegionServers());
+src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java,453,if (newRsList == null) {
+src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java,454,return false;
+src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java,455,} else {
+src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java,456,synchronized (otherRegionServers) {
+src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java,457,otherRegionServers.clear();
+src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java,458,otherRegionServers.addAll(newRsList);
+src/main/java/org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java,461,return true;
+src/test/java/org/apache/hadoop/hbase/TestZooKeeper.java,213,@Test
+src/test/java/org/apache/hadoop/hbase/TestZooKeeper.java,298,"zk.setACL(""/"", ZooDefs.Ids.CREATOR_ALL_ACL, -1);"
+src/test/java/org/apache/hadoop/hbase/TestZooKeeper.java,299,"zk.create(aclZnode, null, ZooDefs.Ids.CREATOR_ALL_ACL, CreateMode.PERSISTENT);"
+src/test/java/org/apache/hadoop/hbase/TestZooKeeper.java,300,zk.close();
+src/test/java/org/apache/hadoop/hbase/PerformanceEvaluation.java,606,"TextOutputFormat.setOutputPath(job, new Path(inputDir,""outputs""));"
+src/test/java/org/apache/hadoop/hbase/PerformanceEvaluation.java,630,"Path subdir = new Path(PERF_EVAL_DIR, formatter.format(new Date()));"
+src/test/java/org/apache/hadoop/hbase/PerformanceEvaluation.java,631,fs.mkdirs(subdir);
+src/test/java/org/apache/hadoop/hbase/PerformanceEvaluation.java,632,"Path inputFile = new Path(subdir, ""input.txt"");"
+src/test/java/org/apache/hadoop/hbase/PerformanceEvaluation.java,657,return subdir;
+src/main/java/org/apache/hadoop/hbase/filter/FilterList.java,73,this.filters = rowFilters;
+src/main/java/org/apache/hadoop/hbase/filter/FilterList.java,82,this.filters = Arrays.asList(rowFilters);
+src/main/java/org/apache/hadoop/hbase/filter/FilterList.java,101,this.filters = rowFilters;
+src/main/java/org/apache/hadoop/hbase/filter/FilterList.java,112,this.filters = Arrays.asList(rowFilters);
+src/main/java/org/apache/hadoop/hbase/util/hbck/OfflineMetaRepair.java,42,private static final Log LOG = LogFactory.getLog(HBaseFsck.class.getName());
+src/main/java/org/apache/hadoop/hbase/thrift/ThriftServerRunner.java,200,if (numChosen != 1) {
+src/main/java/org/apache/hadoop/hbase/thrift/ThriftServerRunner.java,204,"LOG.info(""Setting thrift server to "" + chosenType.option);"
+src/main/java/org/apache/hadoop/hbase/client/HTable.java,1270,"final Map<byte[],R> results = new TreeMap<byte[],R>("
+src/main/java/org/apache/hadoop/hbase/client/HTable.java,1271,Bytes.BYTES_COMPARATOR);
+src/main/java/org/apache/hadoop/hbase/util/EnvironmentEdgeManager.java,48,static void reset() {
+src/main/java/org/apache/hadoop/hbase/util/EnvironmentEdgeManager.java,58,static void injectEdge(EnvironmentEdge edge) {
+src/main/java/org/apache/hadoop/hbase/client/RetriesExhaustedWithDetailsException.java,126,if (t instanceof NoSuchColumnFamilyException) {
+src/main/java/org/apache/hadoop/hbase/metrics/MetricsMBeanBase.java,74,if (metric instanceof MetricsRate || metric instanceof MetricsString) {
+src/main/java/org/apache/hadoop/hbase/io/HalfStoreFileReader.java,144,"if (getComparator().compare(key, offset, length, splitkey, 0,"
+src/main/java/org/apache/hadoop/hbase/io/HalfStoreFileReader.java,145,splitkey.length) < 0) {
+src/main/java/org/apache/hadoop/hbase/io/HalfStoreFileReader.java,222,"if (getComparator().compare(key, offset, length, splitkey, 0,"
+src/main/java/org/apache/hadoop/hbase/io/HalfStoreFileReader.java,218,splitkey.length) < 0) {
+src/main/java/org/apache/hadoop/hbase/replication/ReplicationZookeeper.java,241,if (ke instanceof ConnectionLossException
+src/main/java/org/apache/hadoop/hbase/replication/ReplicationZookeeper.java,242,|| ke instanceof SessionExpiredException) {
+src/main/java/org/apache/hadoop/hbase/replication/ReplicationZookeeper.java,243,LOG.warn(
+src/main/java/org/apache/hadoop/hbase/replication/ReplicationZookeeper.java,244,"""Lost the ZooKeeper connection for peer "" + peer.getClusterKey(),"
+src/main/java/org/apache/hadoop/hbase/replication/ReplicationZookeeper.java,245,ke);
+src/main/java/org/apache/hadoop/hbase/replication/ReplicationZookeeper.java,774,try {
+src/main/java/org/apache/hadoop/hbase/replication/ReplicationZookeeper.java,247,peer.reloadZkWatcher();
+src/main/java/org/apache/hadoop/hbase/replication/ReplicationZookeeper.java,248,} catch(IOException io) {
+src/main/java/org/apache/hadoop/hbase/replication/ReplicationZookeeper.java,249,LOG.warn(
+src/main/java/org/apache/hadoop/hbase/replication/ReplicationZookeeper.java,250,"""Creation of ZookeeperWatcher failed for peer """
+src/main/java/org/apache/hadoop/hbase/replication/ReplicationZookeeper.java,251,"+ peer.getClusterKey(), io);"
+src/main/java/org/apache/hadoop/hbase/util/FSTableDescriptors.java,161,"HTableDescriptor htd = getTableDescriptor(this.fs, this.rootdir, tablename);"
+src/main/java/org/apache/hadoop/hbase/util/FSTableDescriptors.java,256,"private static FileStatus getTableInfoPath(final FileSystem fs,"
+src/main/java/org/apache/hadoop/hbase/util/FSTableDescriptors.java,373,"return getTableDescriptor(fs, hbaseRootDir, Bytes.toString(tableName));"
+src/main/java/org/apache/hadoop/hbase/util/FSTableDescriptors.java,377,"Path hbaseRootDir, String tableName) {"
+src/main/java/org/apache/hadoop/hbase/util/FSTableDescriptors.java,379,try {
+src/main/java/org/apache/hadoop/hbase/util/FSTableDescriptors.java,380,"htd = getTableDescriptor(fs, FSUtils.getTablePath(hbaseRootDir, tableName));"
+src/main/java/org/apache/hadoop/hbase/util/FSTableDescriptors.java,381,} catch (NullPointerException e) {
+src/main/java/org/apache/hadoop/hbase/util/FSTableDescriptors.java,382,"LOG.debug(""Exception during readTableDecriptor. Current table name = "" +"
+src/main/java/org/apache/hadoop/hbase/util/FSTableDescriptors.java,383,"tableName , e);"
+src/main/java/org/apache/hadoop/hbase/util/FSTableDescriptors.java,384,} catch (IOException ioe) {
+src/main/java/org/apache/hadoop/hbase/util/FSTableDescriptors.java,385,"LOG.debug(""Exception during readTableDecriptor. Current table name = "" +"
+src/main/java/org/apache/hadoop/hbase/util/FSTableDescriptors.java,386,"tableName , ioe);"
+src/main/java/org/apache/hadoop/hbase/util/FSTableDescriptors.java,395,if (status == null) return null;
+src/test/java/org/apache/hadoop/hbase/regionserver/TestHRegion.java,506,} catch (DoNotRetryIOException e) {
+src/test/java/org/apache/hadoop/hbase/regionserver/TestHRegion.java,547,assertEquals((i == 5) ? OperationStatusCode.SANITY_CHECK_FAILURE :
+src/test/java/org/apache/hadoop/hbase/regionserver/TestHRegion.java,585,assertEquals((i == 5) ? OperationStatusCode.SANITY_CHECK_FAILURE :
+src/test/java/org/apache/hadoop/hbase/regionserver/TestHRegion.java,602,assertEquals((i == 5) ? OperationStatusCode.SANITY_CHECK_FAILURE :
+src/test/java/org/apache/hadoop/hbase/regionserver/TestHRegion.java,1175,} catch (DoNotRetryIOException ioe) {
+src/examples/thrift/DemoClient.java,176,"mutations.add(new Mutation(false, ByteBuffer.wrap(bytes(""entry:foo"")), ByteBuffer.wrap(invalid)));"
+src/examples/thrift/DemoClient.java,177,"client.mutateRow(ByteBuffer.wrap(t), ByteBuffer.wrap(bytes(""foo"")), mutations);"
+src/examples/thrift/DemoClient.java,181,"mutations.add(new Mutation(false, ByteBuffer.wrap(bytes(""entry:"")), ByteBuffer.wrap(bytes(""""))));"
+src/examples/thrift/DemoClient.java,182,"client.mutateRow(ByteBuffer.wrap(t), ByteBuffer.wrap(bytes("""")), mutations);"
+src/examples/thrift/DemoClient.java,186,"mutations.add(new Mutation(false, ByteBuffer.wrap(bytes(""entry:foo"")), ByteBuffer.wrap(valid)));"
+src/examples/thrift/DemoClient.java,187,"client.mutateRow(ByteBuffer.wrap(t), ByteBuffer.wrap(valid), mutations);"
+src/examples/thrift/DemoClient.java,193,"mutations.add(new Mutation(false, ByteBuffer.wrap(bytes(""entry:foo"")), ByteBuffer.wrap(invalid)));"
+src/examples/thrift/DemoClient.java,194,"client.mutateRow(ByteBuffer.wrap(t), ByteBuffer.wrap(invalid), mutations);"
+src/examples/thrift/DemoClient.java,202,"int scanner = client.scannerOpen(ByteBuffer.wrap(t), ByteBuffer.wrap(bytes("""")), columnNames);"
+src/examples/thrift/DemoClient.java,223,"mutations.add(new Mutation(false, ByteBuffer.wrap(bytes(""unused:"")), ByteBuffer.wrap(bytes(""DELETE_ME""))));"
+src/examples/thrift/DemoClient.java,224,"client.mutateRow(ByteBuffer.wrap(t), ByteBuffer.wrap(row), mutations);"
+src/examples/thrift/DemoClient.java,225,"printRow(client.getRow(ByteBuffer.wrap(t), ByteBuffer.wrap(row)));"
+src/examples/thrift/DemoClient.java,226,"client.deleteAllRow(ByteBuffer.wrap(t), ByteBuffer.wrap(row));"
+src/examples/thrift/DemoClient.java,229,"mutations.add(new Mutation(false, ByteBuffer.wrap(bytes(""entry:num"")), ByteBuffer.wrap(bytes(""0""))));"
+src/examples/thrift/DemoClient.java,230,"mutations.add(new Mutation(false, ByteBuffer.wrap(bytes(""entry:foo"")), ByteBuffer.wrap(bytes(""FOO""))));"
+src/examples/thrift/DemoClient.java,231,"client.mutateRow(ByteBuffer.wrap(t), ByteBuffer.wrap(row), mutations);"
+src/examples/thrift/DemoClient.java,232,"printRow(client.getRow(ByteBuffer.wrap(t), ByteBuffer.wrap(row)));"
+src/examples/thrift/DemoClient.java,244,"client.mutateRow(ByteBuffer.wrap(t), ByteBuffer.wrap(row), mutations);"
+src/examples/thrift/DemoClient.java,245,"printRow(client.getRow(ByteBuffer.wrap(t), ByteBuffer.wrap(row)));"
+src/examples/thrift/DemoClient.java,248,"mutations.add(new Mutation(false, ByteBuffer.wrap(bytes(""entry:num"")), ByteBuffer.wrap(bytes(Integer.toString(i)))));"
+src/examples/thrift/DemoClient.java,249,"mutations.add(new Mutation(false, ByteBuffer.wrap(bytes(""entry:sqr"")), ByteBuffer.wrap(bytes(Integer.toString(i * i)))));"
+src/examples/thrift/DemoClient.java,250,"client.mutateRow(ByteBuffer.wrap(t), ByteBuffer.wrap(row), mutations);"
+src/examples/thrift/DemoClient.java,251,"printRow(client.getRow(ByteBuffer.wrap(t), ByteBuffer.wrap(row)));"
+src/examples/thrift/DemoClient.java,268,"client.mutateRowTs(ByteBuffer.wrap(t), ByteBuffer.wrap(row), mutations, 1); // shouldn't override latest"
+src/examples/thrift/DemoClient.java,269,"printRow(client.getRow(ByteBuffer.wrap(t), ByteBuffer.wrap(row)));"
+src/examples/thrift/DemoClient.java,271,"List<TCell> versions = client.getVer(ByteBuffer.wrap(t), ByteBuffer.wrap(row), ByteBuffer.wrap(bytes(""entry:num"")), 10);"
+src/examples/thrift/DemoClient.java,279,"List<TCell> result = client.get(ByteBuffer.wrap(t), ByteBuffer.wrap(row), ByteBuffer.wrap(bytes(""entry:foo"")));"
+src/examples/thrift/DemoClient.java,299,"scanner = client.scannerOpenWithStop(ByteBuffer.wrap(t), ByteBuffer.wrap(bytes(""00020"")), ByteBuffer.wrap(bytes(""00040"")),"
+src/examples/thrift/DemoClient.java,300,columnNames);
+src/main/java/org/apache/hadoop/hbase/executor/ExecutorService.java,107,"return this.toString() + ""-"" + serverName;"
+src/test/java/org/apache/hadoop/hbase/replication/TestMultiSlaveReplication.java,176,"checkRow(row, 1, htable2, htable3);"
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegionServer.java,372,"HConstants.HBASE_CHECKSUM_VERIFICATION, true);"
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegionServer.java,921,"for (Map.Entry<String, RegionScanner> e : this.scanners.entrySet()) {"
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegionServer.java,923,e.getValue().close();
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegionServer.java,2474,RegionScanner s = scanners.remove(this.scannerName);
+src/main/java/org/apache/hadoop/hbase/regionserver/HRegionServer.java,2438,if (s != null) {
+src/main/java/org/apache/hadoop/hbase/io/hfile/HFileReaderV1.java,687,"ByteBuffer buf = getMetaBlock(HFileWriterV1.BLOOM_FILTER_META_KEY, true);"
+src/test/java/org/apache/hadoop/hbase/regionserver/TestSplitTransaction.java,36,import org.apache.hadoop.hbase.*;
+src/test/java/org/apache/hadoop/hbase/regionserver/TestSplitTransaction.java,186,"final int rowcount = TEST_UTIL.loadRegion(this.parent, CF);"
+src/main/java/org/apache/hadoop/hbase/client/ClientScanner.java,291,if (cause == null || (!(cause instanceof NotServingRegionException)
+src/main/java/org/apache/hadoop/hbase/client/ClientScanner.java,292,&& !(cause instanceof RegionServerStoppedException))) {
+src/main/java/org/apache/hadoop/hbase/util/JVMClusterUtil.java,84,server = hrsc.getConstructor(Configuration.class).newInstance(c);
+src/test/java/org/apache/hadoop/hbase/master/TestMasterFailover.java,311,"conf.setInt(""hbase.master.wait.on.regionservers.mintostart"", 3);"
+src/test/java/org/apache/hadoop/hbase/master/TestMasterFailover.java,312,"conf.setInt(""hbase.master.wait.on.regionservers.maxtostart"", 3);"
+src/test/java/org/apache/hadoop/hbase/master/TestMasterFailover.java,611,"conf.setInt(""hbase.master.wait.on.regionservers.mintostart"", 1);"
+src/test/java/org/apache/hadoop/hbase/master/TestMasterFailover.java,612,"conf.setInt(""hbase.master.wait.on.regionservers.maxtostart"", 2);"
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitLogWorker.java,81,private Object grabTaskLock = new Object();
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitLogWorker.java,250,if (attemptToOwnTask(true) == false) {
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitLogWorker.java,271,if (attemptToOwnTask(false) == false) {
+src/main/java/org/apache/hadoop/hbase/regionserver/SplitLogWorker.java,564,PREEMPTED();
+src/test/java/org/apache/hadoop/hbase/master/TestDistributedLogSplitting.java,258,tot_wkr_final_transistion_failed.get() + tot_wkr_task_done.get() +
+src/test/java/org/apache/hadoop/hbase/master/TestDistributedLogSplitting.java,252,tot_wkr_final_transistion_failed.get() + tot_wkr_task_done.get() +
+src/test/java/org/apache/hadoop/hbase/master/TestDistributedLogSplitting.java,266,"""tot_wkr_final_transistion_failed, tot_wkr_task_done, "" +"
+src/main/java/org/apache/hadoop/hbase/thrift/generated/AlreadyExists.java,229,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/BatchMutation.java,317,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/ColumnDescriptor.java,733,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,4568,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,4921,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,5298,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,5651,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,6028,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,6443,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,6843,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,7196,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,7561,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,7914,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,8204,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,4589,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,9043,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,4942,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,9938,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,5319,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,10913,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,11459,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,11922,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,12275,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,12910,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,13503,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,14287,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,14917,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,15772,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,16435,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,17064,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,17616,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,18336,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,18961,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,19664,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,20253,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,21035,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,21697,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,22336,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,22920,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,23650,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,24307,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,25020,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,25641,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,26433,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,27127,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,27847,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,28454,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,29216,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,29860,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,30467,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,31033,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,31714,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,32315,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,32971,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,33564,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,34277,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,34791,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,35500,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,36051,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,36605,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,37078,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,5672,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,6049,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,6474,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,6864,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,39297,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,7217,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,40597,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,7582,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,41374,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,42023,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,42703,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,7935,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,44077,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,44720,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,45571,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,46255,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,47147,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,47706,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,8215,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,49122,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,49153,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,50218,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,8593,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,8624,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,9064,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,9480,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,50670,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,51082,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,9511,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,9959,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,10370,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Hbase.java,51113,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/IOError.java,230,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/IllegalArgument.java,229,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/Mutation.java,432,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/TCell.java,303,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/TRegionInfo.java,625,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/TRowResult.java,322,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift/generated/TScan.java,558,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/TColumn.java,369,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/TColumnIncrement.java,371,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/TColumnValue.java,490,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/TDelete.java,591,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/TGet.java,562,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,1683,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,1714,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,2130,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,2161,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,2614,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,2645,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,3058,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,3089,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,3578,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,3609,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,4074,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,4105,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,4598,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,4629,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,4983,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,5004,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,5768,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,5839,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,6370,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,6401,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,6874,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,6905,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,7291,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,7312,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,7740,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,7771,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,8125,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,8146,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,8594,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,8625,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,9090,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/THBaseService.java,14361,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/TIOError.java,224,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/TIllegalArgument.java,223,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/TIncrement.java,424,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/TPut.java,495,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/TResult.java,317,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/TScan.java,624,return 0;
+src/main/java/org/apache/hadoop/hbase/thrift2/generated/TTimeRange.java,287,return 0;
+src/main/java/org/apache/hadoop/hbase/rest/client/RemoteHTable.java,88,sb.append(Bytes.toStringBinary(name));
+src/main/java/org/apache/hadoop/hbase/rest/client/RemoteHTable.java,119,sb.append(Bytes.toStringBinary((byte[])e.getKey()));
+src/main/java/org/apache/hadoop/hbase/rest/client/RemoteHTable.java,103,sb.append(Bytes.toStringBinary((byte[])e.getKey()));
+src/main/java/org/apache/hadoop/hbase/rest/client/RemoteHTable.java,108,sb.append(Bytes.toStringBinary((byte[])o));
+src/main/java/org/apache/hadoop/hbase/rest/client/RemoteHTable.java,236,sb.append(Bytes.toStringBinary(name));
+src/main/java/org/apache/hadoop/hbase/rest/client/RemoteHTable.java,313,sb.append(Bytes.toStringBinary(name));
+src/main/java/org/apache/hadoop/hbase/rest/client/RemoteHTable.java,371,sb.append(Bytes.toStringBinary(name));
+src/main/java/org/apache/hadoop/hbase/rest/client/RemoteHTable.java,315,sb.append(Bytes.toStringBinary(put.getRow()));
+src/main/java/org/apache/hadoop/hbase/rest/client/RemoteHTable.java,440,sb.append(Bytes.toStringBinary(name));
+src/main/java/org/apache/hadoop/hbase/rest/client/RemoteHTable.java,90,sb.append(Bytes.toStringBinary(row));

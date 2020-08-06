@@ -1,0 +1,273 @@
+File,Line_number,SRC
+src/main/org/codehaus/groovy/ant/Groovyc.java,661,"} else if (key.indexOf(""nowarn"") != -1) {"
+src/main/org/codehaus/groovy/ant/Groovyc.java,662,"jointOptions.add(""-Fnowarn"" + e.getValue());"
+src/main/org/codehaus/groovy/ant/Groovyc.java,673,"jointOptions.add(""-J"" + key + ""="" + e.getValue());"
+src/test/org/codehaus/groovy/classgen/JO.java,22,"ASMifierClassVisitor.main(new String[]{""target/test-classes/spectralnorm.class""});"
+src/main/org/codehaus/groovy/classgen/Verifier.java,793,if (!mr.isDerivedFrom(testmr)) {
+src/main/org/codehaus/groovy/classgen/Verifier.java,50,private ClassNode classNode;
+src/main/org/codehaus/groovy/classgen/Verifier.java,147,if (!node.isDerivedFromGroovyObject()) {
+src/main/org/codehaus/groovy/classgen/Verifier.java,148,node.addInterface(ClassHelper.make(GroovyObject.class));
+src/main/org/codehaus/groovy/classgen/Verifier.java,150,PropertyNode metaClassProperty =
+src/main/org/codehaus/groovy/classgen/Verifier.java,151,"node.addProperty(""metaClass"", ACC_PUBLIC, ClassHelper.METACLASS_TYPE, new BytecodeExpression() {"
+src/main/org/codehaus/groovy/classgen/Verifier.java,158,"mv.visitFieldInsn(GETFIELD, classInternalName,""metaClass"",""Lgroovy/lang/MetaClass;"");"
+src/main/org/codehaus/groovy/classgen/Verifier.java,161,public ClassNode getType() {
+src/main/org/codehaus/groovy/classgen/Verifier.java,162,return ClassHelper.METACLASS_TYPE;
+src/main/org/codehaus/groovy/classgen/Verifier.java,164,"}, null, null);"
+src/main/org/codehaus/groovy/classgen/Verifier.java,165,metaClassProperty.setSynthetic(true);
+src/main/org/codehaus/groovy/classgen/Verifier.java,166,FieldNode metaClassField = metaClassProperty.getField();
+src/main/org/codehaus/groovy/classgen/Verifier.java,167,metaClassField.setModifiers(metaClassField.getModifiers() | ACC_TRANSIENT);
+src/main/org/codehaus/groovy/classgen/Verifier.java,169,List getMetaClassCode = new LinkedList();
+src/main/org/codehaus/groovy/classgen/Verifier.java,170,getMetaClassCode.add( new BytecodeInstruction(){
+src/main/org/codehaus/groovy/classgen/Verifier.java,171,public void visit(MethodVisitor mv) {
+src/main/org/codehaus/groovy/classgen/Verifier.java,172,Label nullLabel = new Label();
+src/main/org/codehaus/groovy/classgen/Verifier.java,174,"mv.visitVarInsn(ALOAD, 0);"
+src/main/org/codehaus/groovy/classgen/Verifier.java,175,"mv.visitFieldInsn(GETFIELD, classInternalName,""metaClass"",""Lgroovy/lang/MetaClass;"");"
+src/main/org/codehaus/groovy/classgen/Verifier.java,120,mv.visitInsn(DUP);
+src/main/org/codehaus/groovy/classgen/Verifier.java,177,"mv.visitJumpInsn(IFNULL, nullLabel);"
+src/main/org/codehaus/groovy/classgen/Verifier.java,178,mv.visitInsn(ARETURN);
+src/main/org/codehaus/groovy/classgen/Verifier.java,180,mv.visitLabel(nullLabel);
+src/main/org/codehaus/groovy/classgen/Verifier.java,181,mv.visitInsn(POP);
+src/main/org/codehaus/groovy/classgen/Verifier.java,182,"mv.visitVarInsn(ALOAD, 0);"
+src/main/org/codehaus/groovy/classgen/Verifier.java,183,mv.visitInsn(DUP);
+src/main/org/codehaus/groovy/classgen/Verifier.java,184,"mv.visitMethodInsn(INVOKEVIRTUAL,classInternalName,""$getStaticMetaClass"",""()Lgroovy/lang/MetaClass;"");"
+src/main/org/codehaus/groovy/classgen/Verifier.java,185,"mv.visitFieldInsn(PUTFIELD, classInternalName,""metaClass"",""Lgroovy/lang/MetaClass;"");"
+src/main/org/codehaus/groovy/classgen/Verifier.java,186,"mv.visitVarInsn(ALOAD, 0);"
+src/main/org/codehaus/groovy/classgen/Verifier.java,187,"mv.visitFieldInsn(GETFIELD, classInternalName,""metaClass"",""Lgroovy/lang/MetaClass;"");"
+src/main/org/codehaus/groovy/classgen/Verifier.java,188,mv.visitInsn(ARETURN);
+src/main/org/codehaus/groovy/classgen/Verifier.java,191,node.addSyntheticMethod(
+src/main/org/codehaus/groovy/classgen/Verifier.java,192,"""getMetaClass"","
+src/main/org/codehaus/groovy/classgen/Verifier.java,193,"ACC_PUBLIC,"
+src/main/org/codehaus/groovy/classgen/Verifier.java,194,"ClassHelper.make(MetaClass.class),"
+src/main/org/codehaus/groovy/classgen/Verifier.java,195,"Parameter.EMPTY_ARRAY,"
+src/main/org/codehaus/groovy/classgen/Verifier.java,196,"ClassNode.EMPTY_ARRAY,"
+src/main/org/codehaus/groovy/classgen/Verifier.java,197,new BytecodeSequence(getMetaClassCode)
+src/main/org/codehaus/groovy/classgen/Verifier.java,203,ClassNode superClass = node.getSuperClass();
+src/main/org/codehaus/groovy/classgen/Verifier.java,204,boolean addDelegateObject =
+src/main/org/codehaus/groovy/classgen/Verifier.java,205,(node instanceof InnerClassNode && superClass.equals(ClassHelper.CLOSURE_TYPE))
+src/main/org/codehaus/groovy/classgen/Verifier.java,206,|| superClass.equals(ClassHelper.GSTRING_TYPE);
+src/main/org/codehaus/groovy/classgen/Verifier.java,209,if (!addDelegateObject) {
+src/main/org/codehaus/groovy/classgen/Verifier.java,224,"""invokeMethod"","
+src/main/org/codehaus/groovy/classgen/Verifier.java,225,"ACC_PUBLIC,"
+src/main/org/codehaus/groovy/classgen/Verifier.java,226,"ClassHelper.OBJECT_TYPE,"
+src/main/org/codehaus/groovy/classgen/Verifier.java,227,new Parameter[] {
+src/main/org/codehaus/groovy/classgen/Verifier.java,228,"new Parameter(ClassHelper.STRING_TYPE, ""method""),"
+src/main/org/codehaus/groovy/classgen/Verifier.java,229,"new Parameter(ClassHelper.OBJECT_TYPE, ""arguments"")"
+src/main/org/codehaus/groovy/classgen/Verifier.java,231,"ClassNode.EMPTY_ARRAY,"
+src/main/org/codehaus/groovy/classgen/Verifier.java,232,new BytecodeSequence(invokeMethodCode)
+src/main/org/codehaus/groovy/classgen/Verifier.java,236,if (!node.isScript()) {
+src/main/org/codehaus/groovy/classgen/Verifier.java,249,"""getProperty"","
+src/main/org/codehaus/groovy/classgen/Verifier.java,250,"ACC_PUBLIC|ACC_SYNTHETIC,"
+src/main/org/codehaus/groovy/classgen/Verifier.java,251,"ClassHelper.OBJECT_TYPE,"
+src/main/org/codehaus/groovy/classgen/Verifier.java,252,"new Parameter[] { new Parameter(ClassHelper.STRING_TYPE, ""property"")},"
+src/main/org/codehaus/groovy/classgen/Verifier.java,253,"ClassNode.EMPTY_ARRAY,"
+src/main/org/codehaus/groovy/classgen/Verifier.java,254,new BytecodeSequence(getPropertyCode)
+src/main/org/codehaus/groovy/classgen/Verifier.java,270,"""setProperty"","
+src/main/org/codehaus/groovy/classgen/Verifier.java,271,"ACC_PUBLIC,"
+src/main/org/codehaus/groovy/classgen/Verifier.java,272,"ClassHelper.VOID_TYPE,"
+src/main/org/codehaus/groovy/classgen/Verifier.java,273,new Parameter[] {
+src/main/org/codehaus/groovy/classgen/Verifier.java,274,"new Parameter(ClassHelper.STRING_TYPE, ""property""),"
+src/main/org/codehaus/groovy/classgen/Verifier.java,275,"new Parameter(ClassHelper.OBJECT_TYPE, ""value"")"
+src/main/org/codehaus/groovy/classgen/Verifier.java,277,"ClassNode.EMPTY_ARRAY,"
+src/main/org/codehaus/groovy/classgen/Verifier.java,278,new BytecodeSequence(setPropertyCode)
+src/main/org/codehaus/groovy/classgen/Verifier.java,92,while (node.getField(_myClassFieldName) != null)
+src/main/org/codehaus/groovy/classgen/Verifier.java,665,"return name.substring(0, 1).toUpperCase() + name.substring(1, name.length());"
+src/main/org/codehaus/groovy/classgen/Verifier.java,304,"Modifier.PUBLIC | Modifier.STATIC,"
+src/main/org/codehaus/groovy/classgen/Verifier.java,315,"Modifier.PUBLIC | Modifier.STATIC,"
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,46,"t = traverse((GroovySourceAST)t,l,null);"
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,52,"t = traverse((GroovySourceAST)t,null,itr);"
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,64,if (t == null) { return t; }
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,67,if (l != null) {
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,68,"l.add(new LineColumn(t.getLine(),t.getColumn()));"
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,72,if (itr != null && itr.hasNext()) {
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,73,LineColumn lc = (LineColumn)itr.next();
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,74,if (t.getLineLast() == 0) {
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,75,int nextLine = lc.getLine();
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,76,int nextColumn = lc.getColumn();
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,77,if (nextLine < t.getLine() || (nextLine == t.getLine() && nextColumn < t.getColumn())) {
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,78,nextLine = t.getLine();
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,79,nextColumn = t.getColumn();
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,81,t.setLineLast(nextLine);
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,82,t.setColumnLast(nextColumn);
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,88,GroovySourceAST child = (GroovySourceAST)t.getFirstChild();
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,89,if (child != null) {
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,90,"traverse(child,l,itr);"
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,93,GroovySourceAST sibling = (GroovySourceAST)t.getNextSibling();
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,94,if (sibling != null) {
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,95,"traverse(sibling,l,itr);"
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,33,public AntlrASTProcessSnippets(SourceBuffer sourceBuffer) {
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,34,this.sourceBuffer = sourceBuffer;
+src/main/org/codehaus/groovy/antlr/AntlrASTProcessSnippets.java,63,"private AST traverse(GroovySourceAST t,List l,Iterator itr) {"
+src/main/org/codehaus/groovy/antlr/AntlrParserPlugin.java,93,AntlrASTProcessor snippets = new AntlrASTProcessSnippets(sourceBuffer);
+src/main/org/codehaus/groovy/antlr/AntlrParserPlugin.java,744,else {
+src/main/org/codehaus/groovy/antlr/AntlrParserPlugin.java,745,fieldNode.setModifiers(modifiers);
+src/test/org/codehaus/groovy/antlr/treewalker/LineColumnTest.java,57,AntlrASTProcessor snippets = new AntlrASTProcessSnippets(sourceBuffer);
+src/main/org/codehaus/groovy/ast/ClassNode.java,718,return implementsInterface(GroovyObject.class.getName());
+src/main/org/codehaus/groovy/ast/ClassNode.java,725,public boolean implementsInterface(String name) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,728,if (node.declaresInterface(name)) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,741,public boolean declaresInterface(String name) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,745,if (interfaces[i].getName().equals(name)) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,1029,return false;
+src/main/org/codehaus/groovy/ast/ClassNode.java,361,for (Iterator methIt = getAllDeclaredMethods().iterator(); methIt.hasNext();) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,362,MethodNode method = (MethodNode) methIt.next();
+src/main/org/codehaus/groovy/ast/ClassNode.java,400,for (Iterator iter = ifaceMethodsMap.keySet().iterator(); iter.hasNext();) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,401,String methSig = (String) iter.next();
+src/main/org/codehaus/groovy/ast/ClassNode.java,410,for (Iterator iter = getMethods().iterator(); iter.hasNext();) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,411,MethodNode method = (MethodNode) iter.next();
+src/main/org/codehaus/groovy/ast/ClassNode.java,473,for (Iterator iter = getProperties().iterator(); iter.hasNext();) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,474,PropertyNode pn = (PropertyNode) iter.next();
+src/main/org/codehaus/groovy/ast/ClassNode.java,594,public FieldNode getField(String name) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,678,List answer = new ArrayList(getDeclaredMethods(name));
+src/main/org/codehaus/groovy/ast/ClassNode.java,679,ClassNode parent = getSuperClass();
+src/main/org/codehaus/groovy/ast/ClassNode.java,680,if (parent!=null) answer.addAll(parent.getMethods(name));
+src/main/org/codehaus/groovy/ast/ClassNode.java,688,List list = getDeclaredMethods(name);
+src/main/org/codehaus/groovy/ast/ClassNode.java,689,for (Iterator iter = list.iterator(); iter.hasNext();) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,690,MethodNode method = (MethodNode) iter.next();
+src/main/org/codehaus/groovy/ast/ClassNode.java,832,for (Iterator iter = getProperties().iterator(); iter.hasNext();) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,833,PropertyNode pn = (PropertyNode) iter.next();
+src/main/org/codehaus/groovy/ast/ClassNode.java,837,for (Iterator iter = getFields().iterator(); iter.hasNext();) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,838,FieldNode fn = (FieldNode) iter.next();
+src/main/org/codehaus/groovy/ast/ClassNode.java,842,for (Iterator iter = getDeclaredConstructors().iterator(); iter.hasNext();) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,843,ConstructorNode cn = (ConstructorNode) iter.next();
+src/main/org/codehaus/groovy/ast/ClassNode.java,847,for (Iterator iter = getMethods().iterator(); iter.hasNext();) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,848,MethodNode mn = (MethodNode) iter.next();
+src/main/org/codehaus/groovy/ast/ClassNode.java,854,for (Iterator iter = getDeclaredMethods(getterName).iterator(); iter.hasNext();) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,855,MethodNode method = (MethodNode) iter.next();
+src/main/org/codehaus/groovy/ast/ClassNode.java,868,for (Iterator iter = getDeclaredMethods(setterName).iterator(); iter.hasNext();) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,869,MethodNode method = (MethodNode) iter.next();
+src/main/org/codehaus/groovy/ast/ClassNode.java,940,for (Iterator iter = getDeclaredMethods(name).iterator(); iter.hasNext();) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,941,MethodNode method = (MethodNode) iter.next();
+src/main/org/codehaus/groovy/ast/ClassNode.java,967,for (Iterator iter = node.getDeclaredMethods(name).iterator(); iter.hasNext();) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,968,MethodNode method = (MethodNode) iter.next();
+src/main/org/codehaus/groovy/ast/ClassNode.java,1018,for (Iterator iter = getDeclaredMethods(name).iterator(); iter.hasNext();) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,1019,MethodNode method = (MethodNode) iter.next();
+src/main/org/codehaus/groovy/ast/ClassNode.java,273,"addField(""$ownClass"", ACC_STATIC|ACC_PUBLIC|ACC_FINAL|ACC_SYNTHETIC, ClassHelper.CLASS_Type, new ClassExpression(this)).setSynthetic(true);"
+src/main/org/codehaus/groovy/ast/ClassNode.java,293,if (!lazyInitDone) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,294,lazyClassInit();
+src/main/org/codehaus/groovy/ast/ClassNode.java,305,if (!lazyInitDone) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,306,lazyClassInit();
+src/main/org/codehaus/groovy/ast/ClassNode.java,329,if (!lazyInitDone) lazyClassInit();
+src/main/org/codehaus/groovy/ast/ClassNode.java,435,if (!lazyInitDone) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,436,lazyClassInit();
+src/main/org/codehaus/groovy/ast/ClassNode.java,666,if (!lazyInitDone) lazyClassInit();
+src/main/org/codehaus/groovy/ast/ClassNode.java,770,if (!lazyInitDone) {
+src/main/org/codehaus/groovy/ast/ClassNode.java,771,lazyClassInit();
+src/main/org/codehaus/groovy/classgen/AnnotationVisitor.java,91,"return node.implementsInterface(""java.lang.annotation.Annotation"");"
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,248,if (!classNode.declaresInterface(ClassHelper.GENERATED_CLOSURE_Type.getName())) {
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,707,"} else if (type.implementsInterface(""java.lang.annotation.Annotation"")) {"
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,1397,if (forceCast || (type != null && !expType.isDerivedFrom(type) && !expType.implementsInterface(type.getName()))) {
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,1696,if (isStaticMethod() && !classNode.declaresInterface(ClassHelper.GENERATED_CLOSURE_Type.getName())) {
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,2496,if (classNode.declaresInterface(ClassHelper.GENERATED_CLOSURE_Type.getName())) {
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,3886,if (rightHandType == null || !rightHandType.isDerivedFrom(type) || !rightHandType.implementsInterface(type.getName())) {
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,1717,visitFieldExpression(new FieldExpression(classNode.getField(name)));
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,1725,FieldNode field = classNode.getField(name);
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,1757,"visitFieldExpression(new FieldExpression(classNode.getField(""owner"")));"
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,2698,field = classNode.getSuperClass().getField(name);
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,2700,field = classNode.getField(name);
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,3104,FieldNode fn = classNode.getField(staticFieldName);
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,4138,FieldNode field = classNode.getField(variableName);
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,4280,field = classNode.getField(varExp.getName());
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,4283,field = classNode.getField(fieldExp.getFieldName());
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,4287,if (possibleField != null) field = classNode.getField(possibleField);
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,4394,return compileStack.containsVariable(name) || classNode.getField(name) != null;
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,4461,FieldNode field = classNode.getField(varExp.getName());
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,919,loop.getBooleanExpression().visit(this);
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,920,"mv.visitJumpInsn(IFEQ, breakLabel);"
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,3731,"parameters = new Parameter[]{new Parameter(ClassHelper.OBJECT_TYPE, ""it"", ConstantExpression.NULL)};"
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,2418,"if (methodName != null && isThisExpression && isFieldOrVariable(methodName) && !classNode.hasPossibleMethod(methodName, arguments)) {"
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,756,"fieldNode.getModifiers(),"
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,759,"signature, //fieldValue,  //br  all the sudden that one cannot init the field here. init is done in static initilizer and instace intializer."
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,571,"classNode.addMethod(name, Opcodes.ACC_PUBLIC & Opcodes.ACC_SYNTHETIC, method.getReturnType(), parameters, null, null);"
+src/main/org/codehaus/groovy/classgen/AsmClassGenerator.java,3737,"InnerClassNode answer = new InnerClassNode(outerClass, name, 0, ClassHelper.CLOSURE_TYPE); // closures are local inners and not public"
+src/main/org/codehaus/groovy/control/GenericsVisitor.java,88,if (cnType.isInterface() && nType.declaresInterface(cnType.getName())) continue;
+src/main/groovy/xml/dom/DOMCategory.java,43,return null;
+src/main/org/codehaus/groovy/runtime/GroovyCategorySupport.java,161,Class loop = thisClass;
+src/main/org/codehaus/groovy/runtime/GroovyCategorySupport.java,163,loop = thisClass.getSuperclass();
+src/main/org/codehaus/groovy/runtime/GroovyCategorySupport.java,164,if (loop == thatClass) {
+src/main/org/codehaus/groovy/runtime/GroovyCategorySupport.java,165,return -1;
+src/main/org/codehaus/groovy/runtime/GroovyCategorySupport.java,168,loop = thatClass;
+src/main/org/codehaus/groovy/runtime/GroovyCategorySupport.java,169,while (loop != null && loop != Object.class) {
+src/main/org/codehaus/groovy/runtime/GroovyCategorySupport.java,170,loop = thatClass.getSuperclass();
+src/main/org/codehaus/groovy/runtime/GroovyCategorySupport.java,171,if (loop == thisClass) {
+src/main/org/codehaus/groovy/runtime/GroovyCategorySupport.java,172,return 1;
+src/main/org/codehaus/groovy/runtime/GroovyCategorySupport.java,175,return 0;
+src/main/org/codehaus/groovy/runtime/DefaultGroovyMethods.java,7388,"return eachLine(newReader(self), closure);"
+src/main/org/codehaus/groovy/runtime/DefaultGroovyMethods.java,7399,"public static Object eachLine(String self, Closure closure) {"
+src/main/org/codehaus/groovy/runtime/DefaultGroovyMethods.java,7400,"each(readLines(self), closure);"
+src/main/org/codehaus/groovy/runtime/DefaultGroovyMethods.java,7401,return self;
+src/main/org/codehaus/groovy/runtime/DefaultGroovyMethods.java,7416,"return eachLine(new InputStreamReader(stream, charset), closure);"
+src/main/org/codehaus/groovy/runtime/DefaultGroovyMethods.java,7430,"return eachLine(new InputStreamReader(stream), closure);"
+src/main/org/codehaus/groovy/runtime/DefaultGroovyMethods.java,7442,"return eachLine(url.openConnection().getInputStream(), closure);"
+src/main/org/codehaus/groovy/runtime/DefaultGroovyMethods.java,7455,"return eachLine(new InputStreamReader(url.openConnection().getInputStream(), charset), closure);"
+src/main/org/codehaus/groovy/runtime/DefaultGroovyMethods.java,7469,int count = 0;
+src/main/org/codehaus/groovy/runtime/DefaultGroovyMethods.java,7525,BufferedReader br /* = null */;
+src/main/org/codehaus/groovy/ast/PropertyNode.java,30,private final FieldNode field;
+src/main/org/codehaus/groovy/tools/javac/JavaStubGenerator.java,509,if (java5 &&
+src/main/org/codehaus/groovy/tools/javac/JavaStubGenerator.java,510,!type.isGenericsPlaceHolder() &&
+src/main/org/codehaus/groovy/tools/javac/JavaStubGenerator.java,511,!ClassHelper.isCachedType(type)
+src/main/groovy/util/XmlNodePrinter.java,218,out.print(InvokerHelper.toString(value));
+src/main/groovy/lang/ObjectRange.java,239,int result = from.compareTo(value);
+src/main/groovy/lang/ObjectRange.java,240,return result == 0 || result < 0 && to.compareTo(value) >= 0;
+src/main/groovy/lang/ObjectRange.java,251,if (from instanceof Integer && to instanceof Integer
+src/main/groovy/lang/ObjectRange.java,252,|| from instanceof Long && to instanceof Long) {
+src/main/groovy/lang/ObjectRange.java,254,size = 0;
+src/main/groovy/lang/ObjectRange.java,255,int fromNum = ((Number) from).intValue();
+src/main/groovy/lang/ObjectRange.java,256,int toNum = ((Number) to).intValue();
+src/main/groovy/lang/ObjectRange.java,257,size = toNum - fromNum + 1;
+src/main/groovy/lang/ObjectRange.java,276,while (to.compareTo(value) >= 0) {
+src/main/groovy/lang/ObjectRange.java,279,if (first.compareTo(value) >= 0) break; // handle back to beginning due to modulo incrementing
+src/main/groovy/lang/ObjectRange.java,345,while (value.compareTo(to) <= 0) {
+src/main/groovy/lang/ObjectRange.java,349,if (value.compareTo(first) <= 0) return;
+src/main/groovy/lang/ObjectRange.java,356,while (value.compareTo(from) >= 0) {
+src/main/groovy/lang/ObjectRange.java,360,if (value.compareTo(first) >= 0) return;
+src/main/groovy/lang/ObjectRange.java,97,if (from instanceof Float) {
+src/main/groovy/lang/ObjectRange.java,98,from = new Double(((Float) from).doubleValue());
+src/main/groovy/lang/ObjectRange.java,100,if (to instanceof Float) {
+src/main/groovy/lang/ObjectRange.java,263,size = toNum - fromNum + 1;
+src/main/groovy/lang/ObjectRange.java,270,size = sizeNum.intValue();
+src/main/org/codehaus/groovy/ast/InnerClassNode.java,55,return outerClass.getField(name);
+src/main/org/codehaus/groovy/classgen/ClassCompletionVerifier.java,298,if (currentClass.getField(node.getName()) != node) {
+src/main/org/codehaus/groovy/control/OptimizerVisitor.java,67,field = currentClass.getField(name);
+src/main/org/codehaus/groovy/control/StaticImportVisitor.java,173,FieldNode field = currentClass.getField(pe.getPropertyAsString());
+src/main/org/codehaus/groovy/control/StaticImportVisitor.java,243,Iterator it = importedClasses.keySet().iterator();
+src/main/org/codehaus/groovy/control/StaticImportVisitor.java,244,while (it.hasNext()) {
+src/main/org/codehaus/groovy/control/StaticImportVisitor.java,245,String className = (String) it.next();
+src/main/org/codehaus/groovy/control/StaticImportVisitor.java,284,Iterator it = importPackages.keySet().iterator();
+src/main/org/codehaus/groovy/control/StaticImportVisitor.java,285,while (it.hasNext()) {
+src/main/org/codehaus/groovy/control/StaticImportVisitor.java,286,String className = (String) it.next();
+src/main/org/codehaus/groovy/runtime/ScriptBytecodeAdapter.java,608,int ito = ((Integer) to).intValue();
+src/main/org/codehaus/groovy/runtime/ScriptBytecodeAdapter.java,609,int ifrom = ((Integer) from).intValue();
+src/main/org/codehaus/groovy/runtime/ScriptBytecodeAdapter.java,621,} else {
+src/main/org/codehaus/groovy/runtime/ScriptBytecodeAdapter.java,622,if (!inclusive) {
+src/main/org/codehaus/groovy/runtime/ScriptBytecodeAdapter.java,623,"if (compareEqual(from, to)) {"
+src/main/org/codehaus/groovy/runtime/ScriptBytecodeAdapter.java,624,return new EmptyRange((Comparable) from);
+src/main/org/codehaus/groovy/runtime/ScriptBytecodeAdapter.java,626,"if (compareGreaterThan(from, to)) {"
+src/main/org/codehaus/groovy/runtime/ScriptBytecodeAdapter.java,627,"to = invokeMethod0(ScriptBytecodeAdapter.class, to, ""next"");"
+src/main/org/codehaus/groovy/runtime/ScriptBytecodeAdapter.java,628,} else {
+src/main/org/codehaus/groovy/runtime/ScriptBytecodeAdapter.java,629,"to = invokeMethod0(ScriptBytecodeAdapter.class, to, ""previous"");"
+src/main/groovy/util/GroovyTestCase.java,208,"return ""TestScript"" + getMethodName() + (counter++) + "".groovy"";"
+src/main/groovy/lang/ExpandoMetaClass.java,1045,if(name.length() > 0 && Character.isUpperCase(name.charAt(0))) return true;
+src/main/groovy/lang/ExpandoMetaClass.java,1049,if(name.length() > 0 && Character.isUpperCase(name.charAt(0))) return true;
+src/main/groovy/lang/ExpandoMetaClass.java,1075,if(Character.isUpperCase(prop.charAt(0)) && (prop.length() > 1 && Character.isUpperCase(prop.charAt(1)))) {
+src/main/groovy/lang/ExpandoMetaClass.java,1078,else if(Character.isDigit(prop.charAt(0))) {
+src/main/groovy/lang/ExpandoMetaClass.java,1079,return prop;
+src/main/groovy/lang/ExpandoMetaClass.java,1081,else {
+src/main/groovy/lang/ExpandoMetaClass.java,1082,"return Character.toLowerCase(prop.charAt(0)) + (prop.length() > 1 ? prop.substring(1) : """");"
+src/main/groovy/lang/ExpandoMetaClass.java,1108,if(name.length() > 0 && Character.isUpperCase(name.charAt(0))) return true;
+src/main/groovy/lang/MetaClassImpl.java,1967,final int len = methodName.length() - 3;
+src/main/groovy/lang/MetaClassImpl.java,1968,char[] pn = new char[len];
+src/main/groovy/lang/MetaClassImpl.java,1969,"methodName.getChars(3, 3 + len, pn, 0);"
+src/main/groovy/lang/MetaClassImpl.java,1970,pn[0] = Character.toLowerCase(pn[0]);
+src/main/groovy/lang/MetaClassImpl.java,1971,String propName = new String(pn);
+src/main/org/codehaus/groovy/classgen/VariableScopeVisitor.java,195,"String s = pname.substring(0, 1).toLowerCase();"
+src/main/org/codehaus/groovy/classgen/VariableScopeVisitor.java,196,String rest = pname.substring(1);
+src/main/org/codehaus/groovy/classgen/VariableScopeVisitor.java,197,pname = s + rest;
+src/main/org/codehaus/groovy/runtime/MetaClassHelper.java,383,public static String capitalize(String property) {
+src/main/org/codehaus/groovy/runtime/MetaClassHelper.java,384,"return property.substring(0, 1).toUpperCase() + property.substring(1, property.length());"
+src/test/org/codehaus/groovy/classgen/CapitalizeTest.java,60,"assertEquals(""FOo"", Verifier.capitalize(""fOo""));"
+src/test/org/codehaus/groovy/classgen/CapitalizeTest.java,61,"assertEquals(""FOO"", Verifier.capitalize(""fOO""));"
+src/main/org/codehaus/groovy/classgen/EnumVisitor.java,70,"FieldNode values = new FieldNode(""$VALUES"",PRIVATE_FS,enumArray,enumClass,null);"
+src/main/org/codehaus/groovy/ast/AnnotationNode.java,157,public static final String targetToName(int target) {
+src/main/org/codehaus/groovy/classgen/ExtendedVerifier.java,64,"visitAnnotations(node, AnnotationNode.METHOD_TARGET);"
+src/main/groovy/lang/IntRange.java,328,value = value + step;
+src/main/groovy/lang/IntRange.java,334,value = value + step;
+src/main/groovy/util/BuilderSupport.java,148,closure.call();

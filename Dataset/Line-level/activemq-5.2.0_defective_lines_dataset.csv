@@ -1,0 +1,174 @@
+File,Line_number,SRC
+activemq-core/src/test/java/org/apache/activemq/bugs/DurableConsumerTest.java,57,public void testConsumer() throws Exception{
+activemq-core/src/main/java/org/apache/activemq/broker/TransportConnector.java,244,da.registerService(getConnectUri().toString());
+activemq-core/src/main/java/org/apache/activemq/transport/discovery/DiscoveryTransport.java,74,next.add(new URI[] {uri});
+activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,929,return (Service[]) services.toArray();
+activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,399,return masterConnector != null && masterConnector.isSlave();
+activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,428,"if (!started.compareAndSet(false, true)) {"
+activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,483,if (isUseJmx() && masterConnector != null) {
+activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,484,registerFTConnectorMBean(masterConnector);
+activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,493,stop();
+activemq-core/src/main/java/org/apache/activemq/broker/BrokerService.java,465,getManagementContext().start();
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,173,"messageExpired(createConnectionContext(), message);"
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,94,private final ReentrantLock dispatchLock = new ReentrantLock();
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,217,dispatchLock.lock();
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,179,try {
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,266,dispatchLock.lock();
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,355,try {
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,999,dispatchLock.lock();
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,218,try {
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,461,} finally {
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,252,dispatchLock.unlock();
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,969,dispatchLock.lock();
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,1148,try {
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,1077,} finally {
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,977,dispatchLock.unlock();
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,1164,dispatchLock.lock();
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,1165,try{
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,267,try {
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,659,} finally {
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,314,dispatchLock.unlock();
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,1217,dispatchLock.lock();
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,1218,try {
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,1240,} finally {
+activemq-core/src/main/java/org/apache/activemq/broker/region/Queue.java,1241,dispatchLock.unlock();
+activemq-core/src/test/java/org/apache/activemq/transport/discovery/DiscoveryTransportBrokerTest.java,94,if (connector.getServer().getConnectURI().equals(ft.getConnectedTransportURI())) {
+activemq-core/src/main/java/org/apache/activemq/network/ConduitBridge.java,68,ds.add(info.getConsumerId());
+activemq-core/src/main/java/org/apache/activemq/network/ConduitBridge.java,65,if (filter.matches(ds.getLocalInfo().getDestination())) {
+activemq-core/src/main/java/org/apache/activemq/store/kahadaptor/KahaReferenceStoreAdapter.java,153,"rc = new KahaReferenceStore(this, getMapReferenceContainer(destination, ""queue-data""),"
+activemq-core/src/main/java/org/apache/activemq/advisory/AdvisoryBroker.java,199,"fireAdvisory(context, topic, info);"
+activemq-core/src/main/java/org/apache/activemq/advisory/AdvisoryBroker.java,79,"connections.put(info.getConnectionId(), info);"
+activemq-core/src/main/java/org/apache/activemq/advisory/AdvisoryBroker.java,331,"public void isFull(ConnectionContext context,Destination destination,Usage usage) {"
+activemq-core/src/main/java/org/apache/activemq/advisory/AdvisoryBroker.java,332,"super.isFull(context,destination, usage);"
+activemq-core/src/main/java/org/apache/activemq/advisory/AdvisoryBroker.java,345,try {
+activemq-core/src/main/java/org/apache/activemq/advisory/AdvisoryBroker.java,334,ActiveMQTopic topic = AdvisorySupport.getFullAdvisoryTopic(destination.getActiveMQDestination());
+activemq-core/src/main/java/org/apache/activemq/advisory/AdvisoryBroker.java,347,ActiveMQMessage advisoryMessage = new ActiveMQMessage();
+activemq-core/src/main/java/org/apache/activemq/advisory/AdvisoryBroker.java,336,"advisoryMessage.setStringProperty(AdvisorySupport.MSG_PROPERTY_USAGE_NAME, usage.getName());"
+activemq-core/src/main/java/org/apache/activemq/advisory/AdvisoryBroker.java,337,"fireAdvisory(context, topic,null,null,advisoryMessage);"
+activemq-core/src/main/java/org/apache/activemq/advisory/AdvisoryBroker.java,351,} catch (Exception e) {
+activemq-core/src/main/java/org/apache/activemq/advisory/AdvisoryBroker.java,339,"LOG.warn(""Failed to fire message is full advisory"");"
+activemq-core/src/main/java/org/apache/activemq/broker/jmx/ManagementContext.java,387,"rmiServer = ""localhost:"" + rmiServerPort;"
+activemq-core/src/main/java/org/apache/activemq/broker/jmx/ManagementContext.java,389,"String serviceURL = ""service:jmx:rmi://"" + rmiServer + ""/jndi/rmi://localhost:"" + connectorPort + connectorPath;"
+activemq-core/src/main/java/org/apache/activemq/filter/DestinationFilter.java,63,return new PrefixDestinationFilter(paths);
+activemq-core/src/main/java/org/apache/activemq/filter/DestinationFilter.java,68,return new WildcardDestinationFilter(paths);
+activemq-core/src/main/java/org/apache/activemq/filter/PrefixDestinationFilter.java,37,public PrefixDestinationFilter(String[] prefixes) {
+activemq-core/src/main/java/org/apache/activemq/filter/WildcardDestinationFilter.java,37,public WildcardDestinationFilter(String[] prefixes) {
+activemq-core/src/test/java/org/apache/activemq/test/JmsSendReceiveTestSupport.java,168,"assertEquals(""Not enough messages received"", data.length, receivedMessages.size());"
+activemq-core/src/main/java/org/apache/activemq/TransactionContext.java,573,this.connection.asyncSendPacket(info);
+activemq-web/src/main/java/org/apache/activemq/web/LocalBrokerFacade.java,71,Queue regionQueue = (Queue)i.next();
+activemq-web/src/main/java/org/apache/activemq/web/LocalBrokerFacade.java,72,regionQueue.purge();
+activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,218,broker.stop();
+activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,393,"throw new IllegalStateException(""Cannot prepare a transaction that had not been started: """
+activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,228,if (TRANSPORTLOG.isDebugEnabled()) {
+activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,229,"TRANSPORTLOG.debug(""Transport failed: "" + e, e);"
+activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1177,"LOG.info(""Created Duplex Bridge back to "" + info.getBrokerName());"
+activemq-core/src/main/java/org/apache/activemq/broker/TransportConnection.java,1180,"LOG.error(""Creating duplex network bridge"", e);"
+activemq-core/src/main/java/org/apache/activemq/broker/ft/MasterConnector.java,141,"LOG.error(""Failed to start network bridge: "" + e, e);"
+activemq-core/src/main/java/org/apache/activemq/broker/ft/MasterConnector.java,169,remoteBroker.oneway(brokerInfo);
+activemq-core/src/main/java/org/apache/activemq/broker/ft/MasterConnector.java,174,"if (!started.compareAndSet(true, false)) {"
+activemq-core/src/main/java/org/apache/activemq/broker/ft/MasterConnector.java,227,"LOG.info(""Network connection between "" + localBroker + "" and "" + remoteBroker + "" shutdown: "" + error.getMessage(), error);"
+activemq-core/src/main/java/org/apache/activemq/broker/ft/MasterConnector.java,228,ServiceSupport.dispose(this);
+activemq-ra/src/main/java/org/apache/activemq/ra/ManagedConnectionProxy.java,20,import java.util.Iterator;
+activemq-ra/src/main/java/org/apache/activemq/ra/ManagedConnectionProxy.java,51,private ArrayList<ManagedSessionProxy> sessions = new ArrayList<ManagedSessionProxy>();
+activemq-ra/src/main/java/org/apache/activemq/ra/ManagedConnectionProxy.java,76,for (Iterator<ManagedSessionProxy> iter = sessions.iterator(); iter.hasNext();) {
+activemq-ra/src/main/java/org/apache/activemq/ra/ManagedConnectionProxy.java,77,ManagedSessionProxy p = iter.next();
+activemq-ra/src/main/java/org/apache/activemq/ra/ManagedConnectionProxy.java,78,try {
+activemq-ra/src/main/java/org/apache/activemq/ra/ManagedConnectionProxy.java,79,p.cleanup();
+activemq-ra/src/main/java/org/apache/activemq/ra/ManagedConnectionProxy.java,80,} catch (JMSException ignore) {
+activemq-ra/src/main/java/org/apache/activemq/ra/ManagedConnectionProxy.java,82,iter.remove();
+activemq-ra/src/main/java/org/apache/activemq/ra/ManagedConnectionProxy.java,116,ManagedSessionProxy p = new ManagedSessionProxy(session);
+activemq-ra/src/main/java/org/apache/activemq/ra/ManagedConnectionProxy.java,118,sessions.add(p);
+activemq-ra/src/main/java/org/apache/activemq/ra/ManagedSessionProxy.java,59,public ManagedSessionProxy(ActiveMQSession session) {
+activemq-xmpp/src/test/java/org/apache/activemq/transport/xmpp/XmppTest.java,47,"XMPPConnection con = new XMPPConnection(""localhost"", 61222);"
+activemq-xmpp/src/test/java/org/apache/activemq/transport/xmpp/XmppTest.java,49,"Chat chat = con.createChat(""test@localhost"");"
+activemq-core/src/main/java/org/apache/activemq/broker/region/cursors/FilePendingMessageCursor.java,142,getDiskList().clear();
+activemq-core/src/main/java/org/apache/activemq/broker/region/cursors/FilePendingMessageCursor.java,387,"LOG.error(""Caught an IO Exception getting the DiskList "",e);"
+activemq-core/src/main/java/org/apache/activemq/broker/jmx/BrokerView.java,43,final ManagedRegionBroker broker;
+activemq-core/src/main/java/org/apache/activemq/jndi/ReadOnlyContext.java,98,this.bindings = bindings;
+activemq-core/src/main/java/org/apache/activemq/jndi/ReadOnlyContext.java,376,private Iterator i = bindings.entrySet().iterator();
+activemq-core/src/main/java/org/apache/activemq/jndi/ReadOnlyContext.java,241,} catch (NamingException e) {
+activemq-core/src/main/java/org/apache/activemq/state/ConnectionStateTracker.java,74,private class RemoveTransactionAction implements Runnable {
+activemq-core/src/main/java/org/apache/activemq/state/ConnectionStateTracker.java,81,public void run() {
+activemq-core/src/main/java/org/apache/activemq/state/Tracked.java,23,private Runnable runnable;
+activemq-core/src/main/java/org/apache/activemq/state/Tracked.java,25,public Tracked(Runnable runnable) {
+activemq-core/src/main/java/org/apache/activemq/state/Tracked.java,26,this.runnable = runnable;
+activemq-core/src/main/java/org/apache/activemq/state/Tracked.java,29,public void onResponses() {
+activemq-core/src/main/java/org/apache/activemq/state/Tracked.java,30,if (runnable != null) {
+activemq-core/src/main/java/org/apache/activemq/state/Tracked.java,31,runnable.run();
+activemq-core/src/main/java/org/apache/activemq/state/Tracked.java,32,runnable = null;
+activemq-core/src/main/java/org/apache/activemq/state/Tracked.java,37,return runnable != null;
+activemq-core/src/main/java/org/apache/activemq/transport/stomp/JmsFrameTranslator.java,105,ActiveMQObjectMessage msg = (ActiveMQObjectMessage) message.copy();
+activemq-core/src/main/java/org/apache/activemq/transport/stomp/JmsFrameTranslator.java,123,return command;
+activemq-core/src/main/java/org/apache/activemq/transport/stomp/LegacyFrameTranslator.java,26,import org.apache.activemq.command.ActiveMQBytesMessage;
+activemq-core/src/main/java/org/apache/activemq/transport/stomp/LegacyFrameTranslator.java,27,import org.apache.activemq.command.ActiveMQDestination;
+activemq-core/src/main/java/org/apache/activemq/transport/stomp/LegacyFrameTranslator.java,28,import org.apache.activemq.command.ActiveMQMessage;
+activemq-core/src/main/java/org/apache/activemq/transport/stomp/LegacyFrameTranslator.java,29,import org.apache.activemq.command.ActiveMQTextMessage;
+activemq-core/src/main/java/org/apache/activemq/transport/stomp/Stomp.java,121,"JMS_BYTE, JMS_OBJECT_XML, JMS_OBJECT_JSON, JMS_MAP_XML, JMS_MAP_JSON;"
+activemq-core/src/main/java/org/apache/activemq/transport/stomp/StompSubscription.java,81,if (transformation != null) {
+activemq-core/src/main/java/org/apache/activemq/network/DemandForwardingBridgeSupport.java,238,try {
+activemq-core/src/main/java/org/apache/activemq/network/DemandForwardingBridgeSupport.java,222,triggerRemoteStartBridge();
+activemq-core/src/main/java/org/apache/activemq/network/DemandForwardingBridgeSupport.java,223,} catch (IOException e) {
+activemq-core/src/main/java/org/apache/activemq/network/DemandForwardingBridgeSupport.java,224,"LOG.warn(""Caught exception from remote start"", e);"
+activemq-core/src/main/java/org/apache/activemq/network/DemandForwardingBridgeSupport.java,1006,NetworkBridgeListener l = this.networkBridgeListener;
+activemq-core/src/main/java/org/apache/activemq/network/DemandForwardingBridgeSupport.java,1007,if (l != null) {
+activemq-core/src/main/java/org/apache/activemq/network/DemandForwardingBridgeSupport.java,228,l.onStart(this);
+activemq-core/src/main/java/org/apache/activemq/network/DemandForwardingBridgeSupport.java,286,setupStaticDestinations();
+activemq-core/src/main/java/org/apache/activemq/network/DemandForwardingBridgeSupport.java,208,} catch (Exception e) {
+activemq-core/src/main/java/org/apache/activemq/network/DemandForwardingBridgeSupport.java,240,} catch (Exception e) {
+activemq-core/src/main/java/org/apache/activemq/network/DemandForwardingBridgeSupport.java,265,protected void startLocalBridge() throws Exception {
+activemq-core/src/main/java/org/apache/activemq/network/DemandForwardingBridgeSupport.java,277,localBroker.oneway(localConnectionInfo);
+activemq-core/src/main/java/org/apache/activemq/network/DemandForwardingBridgeSupport.java,313,"remoteConnectionInfo.setClientId(""NC_"" + configuration.getBrokerName() + ""_outbound"");"
+activemq-core/src/main/java/org/apache/activemq/network/DemandForwardingBridgeSupport.java,749,public ActiveMQDestination[] getStaticallyIncludedDestinations() {
+activemq-core/src/main/java/org/apache/activemq/broker/region/PrefetchSubscription.java,263,"LOG.error(""Could not correlate acknowledgment with dispatched message: """
+activemq-core/src/test/java/org/apache/activemq/JMSMessageTest.java,50,public int deliveryMode;
+activemq-core/src/test/java/org/apache/activemq/JMSMessageTest.java,53,public byte destinationType;
+activemq-core/src/test/java/org/apache/activemq/JMSMessageTest.java,55,public String connectURL;
+activemq-core/src/main/java/org/apache/activemq/network/LdapNetworkConnector.java,277,public String getName() {
+activemq-core/src/main/java/org/apache/activemq/network/LdapNetworkConnector.java,279,String name = super.getName();
+activemq-core/src/main/java/org/apache/activemq/network/LdapNetworkConnector.java,280,if (name == null) {
+activemq-core/src/main/java/org/apache/activemq/network/LdapNetworkConnector.java,281,"name = this.getClass().getName() + "" ["" + ldapURI.toString() + ""]"";"
+activemq-core/src/main/java/org/apache/activemq/network/LdapNetworkConnector.java,282,super.setName(name);
+activemq-core/src/main/java/org/apache/activemq/network/LdapNetworkConnector.java,284,return name;
+activemq-core/src/main/java/org/apache/activemq/network/MulticastNetworkConnector.java,144,public String getName() {
+activemq-core/src/main/java/org/apache/activemq/network/MulticastNetworkConnector.java,145,String name = super.getName();
+activemq-core/src/main/java/org/apache/activemq/network/MulticastNetworkConnector.java,146,if(name == null) {
+activemq-core/src/main/java/org/apache/activemq/network/MulticastNetworkConnector.java,147,name = remoteTransport.toString();
+activemq-core/src/main/java/org/apache/activemq/network/MulticastNetworkConnector.java,148,super.setName(name);
+activemq-core/src/main/java/org/apache/activemq/network/MulticastNetworkConnector.java,150,return name;
+activemq-core/src/main/java/org/apache/activemq/network/NetworkBridgeConfiguration.java,38,private String name = null;
+activemq-core/src/main/java/org/apache/activemq/network/NetworkConnector.java,208,"LOG.info(""Network Connector "" + getName() + "" Started"");"
+activemq-core/src/main/java/org/apache/activemq/network/NetworkConnector.java,212,"LOG.info(""Network Connector "" + getName() + "" Stopped"");"
+activemq-core/src/main/java/org/apache/activemq/transport/InactivityMonitor.java,225,"throw new InactivityIOException(""Channel was inactive for too long: ""+next.getRemoteAddress());"
+activemq-core/src/test/java/org/apache/activemq/usecases/BrokerQueueNetworkWithDisconnectTest.java,45,public boolean useDuplexNetworkBridge;
+activemq-core/src/test/java/org/apache/activemq/usecases/BrokerQueueNetworkWithDisconnectTest.java,144,socketProxy = new SocketProxy(remoteURI);
+activemq-core/src/test/java/org/apache/activemq/usecases/BrokerQueueNetworkWithDisconnectTest.java,145,"DiscoveryNetworkConnector connector = new DiscoveryNetworkConnector(new URI(""static:("" + socketProxy.getUrl()"
+activemq-core/src/test/java/org/apache/activemq/usecases/BrokerQueueNetworkWithDisconnectTest.java,146,"+ ""?wireFormat.maxInactivityDuration=1000&wireFormat.maxInactivityDurationInitalDelay=1000)?useExponentialBackOff=false""));"
+activemq-core/src/test/java/org/apache/activemq/util/SocketProxy.java,48,public List<Connection> connections = new LinkedList<Connection>();
+activemq-core/src/test/java/org/apache/activemq/util/SocketProxy.java,81,List<Connection> connections;
+activemq-core/src/test/java/org/apache/activemq/util/SocketProxy.java,83,connections = new ArrayList<Connection>(this.connections);
+activemq-core/src/test/java/org/apache/activemq/util/SocketProxy.java,86,for (Connection con : connections) {
+activemq-core/src/test/java/org/apache/activemq/util/SocketProxy.java,112,for (Connection con : connections) {
+activemq-core/src/test/java/org/apache/activemq/util/SocketProxy.java,124,for (Connection con : connections) {
+activemq-core/src/test/java/org/apache/activemq/util/SocketProxy.java,131,private void closeConnection(Connection c) {
+activemq-core/src/test/java/org/apache/activemq/util/SocketProxy.java,145,public class Connection {
+activemq-core/src/test/java/org/apache/activemq/util/SocketProxy.java,152,"public Connection(Socket socket, URI target) throws Exception {"
+activemq-core/src/test/java/org/apache/activemq/util/SocketProxy.java,221,close();
+activemq-core/src/test/java/org/apache/activemq/util/SocketProxy.java,264,"connections.add(new Connection(source, target));"
+activemq-core/src/main/java/org/apache/activemq/transport/tcp/TcpTransportFactory.java,129,"LOG.warn(""path isn't a valid local location for TcpTransport to use"", e);"
+activemq-core/src/main/java/org/apache/activemq/ActiveMQQueueSession.java,301,return next.equals(arg0);
+activemq-core/src/main/java/org/apache/activemq/ActiveMQTopicSession.java,301,return next.equals(arg0);
+activemq-core/src/main/java/org/apache/activemq/ActiveMQConnectionFactory.java,341,Map map = URISupport.parseQuery(this.brokerURL.getQuery());
+activemq-core/src/main/java/org/apache/activemq/ActiveMQConnectionFactory.java,342,"if (buildFromMap(IntrospectionSupport.extractProperties(map, ""jms.""))) {"
+activemq-core/src/main/java/org/apache/activemq/ActiveMQConnectionFactory.java,354,"if (buildFromMap(IntrospectionSupport.extractProperties(data.getParameters(), ""jms.""))) {"
+activemq-core/src/main/java/org/apache/activemq/util/URISupport.java,107,if (uri != null) {
+activemq-core/src/main/java/org/apache/activemq/util/URISupport.java,265,public static String createQueryString(Map options) throws URISyntaxException {
+activemq-core/src/main/java/org/apache/activemq/util/URISupport.java,270,for (Iterator iter = options.keySet().iterator(); iter.hasNext();) {
+activemq-core/src/main/java/org/apache/activemq/util/URISupport.java,296,"public static URI createRemainingURI(URI originalURI, Map params) throws URISyntaxException {"
+activemq-core/src/main/java/org/apache/activemq/transport/tcp/TcpTransport.java,475,"LOG.debug(""Caught exception closing socket"",e);"
+activemq-core/src/main/java/org/apache/activemq/transport/tcp/TcpTransport.java,476,}finally {
+activemq-core/src/main/java/org/apache/activemq/transport/tcp/TcpTransport.java,482,"latch.await(1,TimeUnit.SECONDS);"
+activemq-core/src/main/java/org/apache/activemq/transport/tcp/TcpTransport.java,483,}else {
+activemq-core/src/main/java/org/apache/activemq/ActiveMQConnection.java,2120,"if (text.equals(""shutdown"")) {"
+activemq-core/src/main/java/org/apache/activemq/ActiveMQConnection.java,1248,if(jmsEx !=null) {
+activemq-core/src/main/java/org/apache/activemq/ActiveMQConnection.java,1249,throw jmsEx;
+activemq-web/src/main/java/org/apache/activemq/web/DestinationFacade.java,108,if (jmsDestination == null) {

@@ -1,0 +1,263 @@
+File,Line_number,SRC
+components/camel-spring/src/main/java/org/apache/camel/spring/SpringRouteBuilder.java,33,public abstract class SpringRouteBuilder extends RouteBuilder {
+camel-core/src/test/java/org/apache/camel/component/dataset/DataSetSedaTest.java,31,public void test() throws Exception {
+camel-core/src/test/java/org/apache/camel/component/dataset/DataSetSedaTest.java,32,"MockEndpoint endpoint = getMockEndpoint(""dataset:foo"");"
+components/camel-amqp/src/test/java/org/apache/camel/component/amqp/AMQPRouteTest.java,64,TransportConnection.createVMBroker(1);
+camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java,78,"private final Map<String, Endpoint> endpoints = new HashMap<String, Endpoint>();"
+camel-core/src/main/java/org/apache/camel/impl/DefaultCamelContext.java,640,return null;
+camel-core/src/main/java/org/apache/camel/management/CamelNamingStrategy.java,51,"protected String hostName = ""locahost"";"
+components/camel-jaxb/src/test/java/org/apache/camel/example/DataFormatTest.java,49,"DataFormat jaxb = new JaxbDataFormat(""org.apache.camel.example"");"
+components/camel-jaxb/src/test/java/org/apache/camel/example/DataFormatTest.java,52,marshal(jaxb).
+components/camel-jaxb/src/test/java/org/apache/camel/example/DataFormatTest.java,56,unmarshal(jaxb).
+components/camel-spring/src/main/java/org/apache/camel/spring/CamelBeanPostProcessor.java,74,if (bean instanceof CamelContextAware) {
+components/camel-spring/src/main/java/org/apache/camel/spring/handler/CamelNamespaceHandler.java,105,"registerParser(elementName, parser);"
+components/camel-spring/src/main/java/org/apache/camel/spring/handler/CamelNamespaceHandler.java,131,"protected Object parseUsingJaxb(Element element, ParserContext parserContext) {"
+components/camel-spring/src/main/java/org/apache/camel/spring/handler/CamelNamespaceHandler.java,193,"Object value = parseUsingJaxb(element, parserContext);"
+components/camel-spring/src/main/java/org/apache/camel/spring/handler/CamelNamespaceHandler.java,244,injectNamespaces(element);
+components/camel-spring/src/main/java/org/apache/camel/spring/handler/CamelNamespaceHandler.java,254,protected void injectNamespaces(Element element) {
+components/camel-spring/src/main/java/org/apache/camel/spring/handler/CamelNamespaceHandler.java,270,injectNamespaces(childElement);
+components/camel-spring/src/main/java/org/apache/camel/spring/handler/CamelNamespaceHandler.java,141,"throw new BeanDefinitionStoreException(""Failed to parse JAXB element: "" + e, e);"
+components/camel-spring/src/main/java/org/apache/camel/spring/handler/CamelNamespaceHandler.java,189,"element.setAttribute(""id"", contextId);"
+components/camel-spring/src/main/java/org/apache/camel/spring/handler/CamelNamespaceHandler.java,147,jaxbContext = createJaxbContext();
+components/camel-spring/src/test/java/org/apache/camel/spring/CamelContextAwareTest.java,25,protected CamelContextAwareBean bean;
+components/camel-spring/src/test/java/org/apache/camel/spring/CamelContextAwareTest.java,35,"bean = getMandatoryBean(CamelContextAwareBean.class, ""bean"");"
+camel-core/src/main/java/org/apache/camel/util/UnsafeUriCharactersEncoder.java,63,try {
+camel-core/src/main/java/org/apache/camel/util/UnsafeUriCharactersEncoder.java,65,"byte[] bytes = s.getBytes(""UTF8"");"
+camel-core/src/main/java/org/apache/camel/util/UnsafeUriCharactersEncoder.java,66,for (int i = 0;;) {
+camel-core/src/main/java/org/apache/camel/util/UnsafeUriCharactersEncoder.java,67,if (unsafeCharacters.get(bytes[i])) {
+camel-core/src/main/java/org/apache/camel/util/UnsafeUriCharactersEncoder.java,76,StringBuffer sb = new StringBuffer();
+camel-core/src/main/java/org/apache/camel/util/UnsafeUriCharactersEncoder.java,77,for (byte b : bytes) {
+camel-core/src/main/java/org/apache/camel/util/UnsafeUriCharactersEncoder.java,78,if (unsafeCharacters.get(b)) {
+camel-core/src/main/java/org/apache/camel/util/UnsafeUriCharactersEncoder.java,79,"appendEscape(sb, b);"
+camel-core/src/main/java/org/apache/camel/util/UnsafeUriCharactersEncoder.java,80,} else {
+camel-core/src/main/java/org/apache/camel/util/UnsafeUriCharactersEncoder.java,81,sb.append((char)b);
+camel-core/src/main/java/org/apache/camel/util/UnsafeUriCharactersEncoder.java,32,"'D', 'E', 'F'};"
+camel-core/src/test/java/org/apache/camel/util/UnsafeCharactersEncoderTest.java,26,String result = UnsafeUriCharactersEncoder.encode(beforeEncoding);
+camel-core/src/test/java/org/apache/camel/util/UnsafeCharactersEncoderTest.java,27,"assertEquals(""Get the wrong encoding result"", result, afterEncoding);"
+camel-core/src/test/java/org/apache/camel/util/UnsafeCharactersEncoderTest.java,32,String result = UnsafeUriCharactersEncoder.encode(noEncoding);
+camel-core/src/test/java/org/apache/camel/util/UnsafeCharactersEncoderTest.java,33,"assertEquals(""Get the wrong encoding result"", result, noEncoding);"
+camel-core/src/main/java/org/apache/camel/impl/DefaultRouteContext.java,102,return route.resolveEndpoint(uri);
+components/camel-jetty/src/test/java/org/apache/camel/component/jetty/HttpToFileTest.java,47,String content = IOConverter.toString(file);
+camel-core/src/test/java/org/apache/camel/converter/ConverterTest.java,150,"assertNotNull(""Cannot find resource!"");"
+camel-core/src/test/java/org/apache/camel/converter/ConverterTest.java,151,File file = new File(resource.getFile());
+camel-core/src/main/java/org/apache/camel/builder/xml/XPathBuilder.java,211,"getNamespaceContext().add(prefix, uri);"
+camel-core/src/main/java/org/apache/camel/builder/xml/XPathBuilder.java,307,getNamespaceContext().setNamespaces(namespaces);
+camel-core/src/main/java/org/apache/camel/builder/xml/XPathBuilder.java,342,return headerFunction;
+camel-core/src/main/java/org/apache/camel/builder/xml/XPathBuilder.java,384,return outHeaderFunction;
+camel-core/src/test/java/org/apache/camel/component/log/LogRouteTest.java,44,"fail(""Shoudl have failed!"");"
+camel-core/src/main/java/org/apache/camel/component/bean/BeanProcessor.java,64,"String description = methodObject != null ? "" "" + methodObject : """";"
+camel-core/src/main/java/org/apache/camel/component/bean/BeanProcessor.java,65,"return ""BeanProcessor["" + beanHolder + description + ""]"";"
+camel-core/src/main/java/org/apache/camel/component/bean/BeanProcessor.java,147,return beanHolder.getProcessor();
+camel-core/src/main/java/org/apache/camel/component/bean/BeanProcessor.java,186,ServiceHelper.startService(getProcessor());
+camel-core/src/main/java/org/apache/camel/component/bean/BeanProcessor.java,190,ServiceHelper.stopService(getProcessor());
+camel-core/src/test/java/org/apache/camel/issues/ExceptionTest.java,44,exceptionEndpoint.expectedMessageCount(1);
+camel-core/src/test/java/org/apache/camel/issues/ExceptionTest.java,56,"exceptionEndpoint.expectedBodiesReceived(""<handled/>"");"
+camel-core/src/test/java/org/apache/camel/issues/ExceptionTest.java,68,exceptionEndpoint.expectedMessageCount(1);
+camel-core/src/main/java/org/apache/camel/component/dataset/DataSetEndpoint.java,72,"return new DataSetConsumer(this, processor);"
+camel-core/src/main/java/org/apache/camel/component/seda/SedaEndpoint.java,61,"return new SedaConsumer(this, processor);"
+camel-core/src/main/java/org/apache/camel/component/timer/TimerEndpoint.java,63,"return new TimerConsumer(this, processor);"
+camel-core/src/main/java/org/apache/camel/impl/DefaultPollingEndpoint.java,49,"DefaultScheduledPollConsumer result = new DefaultScheduledPollConsumer(this, processor);"
+camel-core/src/main/java/org/apache/camel/impl/ProcessorEndpoint.java,73,"return new ProcessorPollingConsumer(this, getProcessor());"
+components/camel-cxf/src/main/java/org/apache/camel/component/cxf/CxfEndpoint.java,77,"return new CxfConsumer(this, processor);"
+components/camel-http/src/main/java/org/apache/camel/component/http/HttpEndpoint.java,68,return new HttpPollingConsumer(this);
+components/camel-irc/src/main/java/org/apache/camel/component/irc/IrcEndpoint.java,86,"return new IrcConsumer(this, processor, component.getIRCConnection(configuration));"
+components/camel-irc/src/main/java/org/apache/camel/component/irc/IrcEndpoint.java,31,private IrcBinding binding;
+components/camel-jcr/src/main/java/org/apache/camel/component/jcr/JcrEndpoint.java,86,return false;
+components/camel-jetty/src/main/java/org/apache/camel/component/jetty/JettyHttpEndpoint.java,52,"return new HttpConsumer(this, processor);"
+components/camel-jms/src/main/java/org/apache/camel/component/jms/JmsEndpoint.java,114,"return new JmsPollingConsumer(this, template);"
+components/camel-mina/src/main/java/org/apache/camel/component/mina/MinaEndpoint.java,74,"return new MinaConsumer(this, processor);"
+components/camel-quartz/src/main/java/org/apache/camel/component/quartz/QuartzEndpoint.java,139,"return new QuartzConsumer(this, processor);"
+components/camel-rmi/src/main/java/org/apache/camel/component/rmi/RmiEndpoint.java,69,"return new RmiConsumer(this, processor);"
+components/camel-spring-integration/src/main/java/org/apache/camel/component/spring/integration/SpringIntegrationEndpoint.java,63,"return new SpringIntegrationConsumer(this, processor);"
+components/camel-spring/src/main/java/org/apache/camel/component/event/EventEndpoint.java,73,"return new EventConsumer(this, processor);"
+components/camel-spring/src/main/java/org/apache/camel/component/event/EventEndpoint.java,42,"public EventEndpoint(String endpointUri, EventComponent component) {"
+components/camel-xmpp/src/main/java/org/apache/camel/component/xmpp/XmppEndpoint.java,82,"return new XmppConsumer(this, processor);"
+components/camel-xmpp/src/main/java/org/apache/camel/component/xmpp/XmppEndpoint.java,51,private String participant;
+components/camel-xmpp/src/main/java/org/apache/camel/component/xmpp/XmppEndpoint.java,41,private XMPPConnection connection;
+components/camel-groovy/src/main/java/org/apache/camel/language/groovy/GroovyExpression.java,19,import java.util.AbstractMap;
+components/camel-groovy/src/main/java/org/apache/camel/language/groovy/GroovyExpression.java,20,import java.util.Collections;
+components/camel-groovy/src/main/java/org/apache/camel/language/groovy/GroovyExpression.java,21,import java.util.Set;
+camel-core/src/main/java/org/apache/camel/processor/validation/SchemaValidationException.java,86,"buffer.append("" fatal errors: "");"
+camel-core/src/main/java/org/apache/camel/processor/validation/SchemaValidationException.java,87,buffer.append(fatalErrors);
+camel-core/src/main/java/org/apache/camel/processor/validation/SchemaValidationException.java,90,"buffer.append("" errors: "");"
+camel-core/src/main/java/org/apache/camel/processor/validation/SchemaValidationException.java,91,buffer.append(errors);
+camel-core/src/main/java/org/apache/camel/processor/ChoiceProcessor.java,39,"public ChoiceProcessor(List<FilterProcessor> filters, Processor otherwise) {"
+camel-core/src/main/java/org/apache/camel/processor/ChoiceProcessor.java,63,for (FilterProcessor processor : filters) {
+camel-core/src/main/java/org/apache/camel/processor/ChoiceProcessor.java,70,builder.append(processor.getPredicate().toString());
+camel-core/src/main/java/org/apache/camel/processor/ChoiceProcessor.java,71,"builder.append("": "");"
+camel-core/src/main/java/org/apache/camel/processor/ChoiceProcessor.java,72,builder.append(processor.getProcessor());
+camel-core/src/main/java/org/apache/camel/processor/ChoiceProcessor.java,82,public List<FilterProcessor> getFilters() {
+camel-core/src/test/java/org/apache/camel/builder/RouteBuilderTest.java,150,List<FilterProcessor> filters = choiceProcessor.getFilters();
+examples/camel-example-osgi/src/main/java/org/apache/camel/example/osgi/MyTransform.java,29,private boolean verbose = true;
+components/camel-csv/src/main/java/org/apache/camel/dataformat/csv/CsvDataFormat.java,63,out.close();
+components/camel-csv/src/main/java/org/apache/camel/dataformat/csv/CsvDataFormat.java,86,in.close();
+camel-core/src/main/java/org/apache/camel/processor/validation/ValidatingProcessor.java,204,return factory.newSchema(getSchemaSource());
+components/camel-script/src/main/java/org/apache/camel/builder/script/ScriptBuilder.java,379,if (engine == null) {
+components/camel-script/src/main/java/org/apache/camel/builder/script/ScriptBuilder.java,466,return engine;
+components/camel-script/src/main/java/org/apache/camel/builder/script/ScriptBuilder.java,445,if (engine == null) {
+components/camel-script/src/main/java/org/apache/camel/builder/script/ScriptBuilder.java,446,engine = createScriptEngine();
+components/camel-script/src/main/java/org/apache/camel/builder/script/ScriptBuilder.java,486,protected synchronized Object evaluateScript(Exchange exchange) {
+components/camel-script/src/main/java/org/apache/camel/builder/script/ScriptBuilder.java,380,"throw new IllegalArgumentException(""No script engine could be created for: "" + getScriptEngineName());"
+components/camel-script/src/main/java/org/apache/camel/builder/script/ScriptLanguage.java,35,"return new ScriptBuilder(language, expression);"
+components/camel-script/src/main/java/org/apache/camel/builder/script/ScriptLanguage.java,39,"return new ScriptBuilder(language, expression);"
+camel-core/src/main/java/org/apache/camel/processor/RedeliveryPolicy.java,47,protected static transient Random randomNumberGenerator;
+camel-core/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java,271,if (in != null) {
+camel-core/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java,272,return new StreamSource(in);
+camel-core/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java,154,return null;
+camel-core/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java,279,if (in != null) {
+camel-core/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java,280,return new StreamSource(in);
+camel-core/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java,203,return null;
+camel-core/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java,303,if (in != null) {
+camel-core/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java,288,return new StreamSource(in);
+camel-core/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java,306,return null;
+camel-core/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java,409,@Converter
+camel-core/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java,418,@Converter
+camel-core/src/main/java/org/apache/camel/converter/jaxp/XmlConverter.java,517,@Converter
+camel-core/src/main/java/org/apache/camel/impl/converter/AnnotationTypeConverterLoader.java,162,new StaticMethodTypeConverter(method));
+camel-core/src/main/java/org/apache/camel/model/dataformat/JaxbDataFormat.java,66,protected void configureDataFormat(DataFormat dataFormat) {
+camel-core/src/main/java/org/apache/camel/model/dataformat/JaxbDataFormat.java,69,"setProperty(dataFormat, ""prettyPrint"", Boolean.TRUE);"
+camel-core/src/main/java/org/apache/camel/model/dataformat/JaxbDataFormat.java,71,"setProperty(dataFormat, ""contextPath"", contextPath);"
+camel-core/src/main/java/org/apache/camel/component/bean/BeanInfo.java,286,if (chosen != null) {
+camel-core/src/main/java/org/apache/camel/component/bean/BeanInfo.java,287,return chosen;
+camel-core/src/main/java/org/apache/camel/component/bean/BeanInfo.java,289,"throw new AmbiguousMethodCallException(exchange, possibles);"
+camel-core/src/main/java/org/apache/camel/processor/Throttler.java,46,this.timePeriodMillis = timePeriodMillis;
+camel-core/src/main/java/org/apache/camel/processor/Throttler.java,69,return timePeriodMillis;
+camel-core/src/main/java/org/apache/camel/processor/Throttler.java,76,this.timePeriodMillis = timePeriodMillis;
+tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/RunMojo.java,376,"Thread bootstrapThread = new Thread(threadGroup, new Runnable() {"
+tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/RunMojo.java,379,Method main = Thread.currentThread().getContextClassLoader().loadClass(mainClass)
+tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/RunMojo.java,380,".getMethod(""main"", new Class[] {String[].class});"
+tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/RunMojo.java,381,if (!main.isAccessible()) {
+tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/RunMojo.java,382,"getLog().debug(""Setting accessibility to true in order to invoke main()."");"
+tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/RunMojo.java,383,main.setAccessible(true);
+tooling/maven/camel-maven-plugin/src/main/java/org/apache/camel/maven/RunMojo.java,385,"main.invoke(main, new Object[] {arguments});"
+components/camel-spring/src/main/java/org/apache/camel/spring/SpringCamelContext.java,58,private EventEndpoint eventEndpoint;
+components/camel-spring/src/main/java/org/apache/camel/spring/SpringCamelContext.java,137,return eventEndpoint;
+components/camel-spring/src/main/java/org/apache/camel/spring/SpringCamelContext.java,141,this.eventEndpoint = eventEndpoint;
+camel-core/src/main/java/org/apache/camel/impl/DefaultMessage.java,19,import java.util.HashMap;
+components/camel-bam/src/main/java/org/apache/camel/bam/processor/JpaBamProcessorSupport.java,144,return list.get(0);
+components/camel-bam/src/main/java/org/apache/camel/bam/processor/JpaBamProcessorSupport.java,123,template.persist(entity);
+components/camel-bam/src/main/java/org/apache/camel/bam/processor/JpaBamProcessorSupport.java,128,template.flush();
+components/camel-bam/src/main/java/org/apache/camel/bam/processor/JpaBamProcessorSupport.java,47,private JpaTemplate template;
+components/camel-bam/src/main/java/org/apache/camel/bam/processor/JpaBamProcessorSupport.java,52,"public JpaBamProcessorSupport(TransactionTemplate transactionTemplate, JpaTemplate template,"
+components/camel-bam/src/main/java/org/apache/camel/bam/processor/JpaBamProcessorSupport.java,60,"public JpaBamProcessorSupport(TransactionTemplate transactionTemplate, JpaTemplate template,"
+components/camel-bam/src/main/java/org/apache/camel/bam/processor/JpaBamProcessorSupport.java,94,public JpaTemplate getTemplate() {
+components/camel-bam/src/main/java/org/apache/camel/bam/processor/JpaBamProcessorSupport.java,95,return template;
+components/camel-bam/src/main/java/org/apache/camel/bam/model/ProcessDefinition.java,67,"definition = template.find(ProcessDefinition.class, id);"
+components/camel-bam/src/main/java/org/apache/camel/bam/model/ProcessDefinition.java,62,Long id = definition.getId();
+components/camel-bam/src/main/java/org/apache/camel/bam/model/ProcessDefinition.java,65,"return findOrCreateProcessDefinition(template, definition.getName());"
+components/camel-bam/src/main/java/org/apache/camel/bam/model/ProcessDefinition.java,78,template.persist(answer);
+components/camel-bam/src/main/java/org/apache/camel/bam/ProcessBuilder.java,162,"answer.setProcessDefinition(ProcessDefinition.getRefreshedProcessDefinition(jpaTemplate, definition));"
+components/camel-bam/src/main/java/org/apache/camel/bam/ProcessBuilder.java,163,jpaTemplate.persist(answer);
+components/camel-bam/src/main/java/org/apache/camel/bam/ProcessBuilder.java,175,jpaTemplate.persist(answer);
+components/camel-bam/src/main/java/org/apache/camel/bam/ProcessBuilder.java,47,private JpaTemplate jpaTemplate;
+components/camel-bam/src/main/java/org/apache/camel/bam/ProcessBuilder.java,55,"protected ProcessBuilder(JpaTemplate jpaTemplate, TransactionTemplate transactionTemplate) {"
+components/camel-bam/src/main/java/org/apache/camel/bam/ProcessBuilder.java,56,"this(jpaTemplate, transactionTemplate, createProcessName());"
+components/camel-bam/src/main/java/org/apache/camel/bam/ProcessBuilder.java,59,"protected ProcessBuilder(JpaTemplate jpaTemplate, TransactionTemplate transactionTemplate, String processName) {"
+components/camel-bam/src/main/java/org/apache/camel/bam/ProcessBuilder.java,60,this.jpaTemplate = jpaTemplate;
+components/camel-bam/src/main/java/org/apache/camel/bam/ProcessBuilder.java,88,"notNull(jpaTemplate, ""jpaTemplate"");"
+components/camel-bam/src/main/java/org/apache/camel/bam/ProcessBuilder.java,94,"return new JpaBamProcessor(getTransactionTemplate(), getJpaTemplate(), activityBuilder.getCorrelationExpression(), activityBuilder.getActivityRules(), getEntityType());"
+components/camel-bam/src/main/java/org/apache/camel/bam/ProcessBuilder.java,107,public JpaTemplate getJpaTemplate() {
+components/camel-bam/src/main/java/org/apache/camel/bam/ProcessBuilder.java,108,return jpaTemplate;
+components/camel-bam/src/main/java/org/apache/camel/bam/processor/ActivityMonitorEngine.java,46,private JpaTemplate template;
+components/camel-bam/src/main/java/org/apache/camel/bam/processor/ActivityMonitorEngine.java,54,"public ActivityMonitorEngine(JpaTemplate template, TransactionTemplate transactionTemplate, ProcessRules rules) {"
+components/camel-bam/src/main/java/org/apache/camel/bam/processor/ActivityMonitorEngine.java,55,this.template = template;
+components/camel-bam/src/main/java/org/apache/camel/bam/processor/JpaBamProcessor.java,47,"super(transactionTemplate, template, correlationKeyExpression, activityRules, entitytype);"
+components/camel-bam/src/test/java/org/apache/camel/bam/BamRouteTest.java,66,"JpaTemplate jpaTemplate = getMandatoryBean(JpaTemplate.class, ""jpaTemplate"");"
+components/camel-bam/src/test/java/org/apache/camel/bam/BamRouteTest.java,70,"return new ProcessBuilder(jpaTemplate, transactionTemplate) {"
+examples/camel-example-bam/src/main/java/org/apache/camel/example/bam/MyActivities.java,35,"public MyActivities(JpaTemplate jpaTemplate, TransactionTemplate transactionTemplate) {"
+examples/camel-example-bam/src/main/java/org/apache/camel/example/bam/MyActivities.java,36,"super(jpaTemplate, transactionTemplate);"
+components/camel-jms/src/test/java/org/apache/camel/component/jms/JmsRouteUsingSpringTest.java,41,applicationContext.close();
+components/camel-spring/src/main/java/org/apache/camel/spring/Main.java,486,applicationContext.close();
+components/camel-spring/src/main/java/org/apache/camel/spring/Main.java,456,postProcessContext();
+components/camel-cxf/src/test/java/org/apache/camel/component/cxf/util/CxfEndpointUtilsWithSpringTest.java,41,if (applicationContext != null) {
+components/camel-cxf/src/test/java/org/apache/camel/component/cxf/util/CxfEndpointUtilsWithSpringTest.java,42,applicationContext.destroy();
+components/camel-spring-integration/src/test/java/org/apache/camel/component/spring/integration/adapter/ConfigurationTest.java,52,context.destroy();
+components/camel-spring/src/test/java/org/apache/camel/spring/ApplicationContextTestSupport.java,43,if (applicationContext != null) {
+components/camel-spring/src/test/java/org/apache/camel/spring/ApplicationContextTestSupport.java,44,applicationContext.destroy();
+components/camel-spring/src/test/java/org/apache/camel/spring/CustomProcessorWithNamespacesTest.java,75,if (applicationContext != null) {
+components/camel-spring/src/test/java/org/apache/camel/spring/CustomProcessorWithNamespacesTest.java,76,applicationContext.destroy();
+components/camel-spring/src/test/java/org/apache/camel/spring/RoutingUsingCamelContextFactoryTest.java,75,if (applicationContext != null) {
+components/camel-spring/src/test/java/org/apache/camel/spring/RoutingUsingCamelContextFactoryTest.java,76,applicationContext.destroy();
+components/camel-spring/src/test/java/org/apache/camel/spring/SpringTestSupport.java,47,if (applicationContext != null) {
+components/camel-spring/src/test/java/org/apache/camel/spring/SpringTestSupport.java,48,applicationContext.destroy();
+components/camel-spring/src/test/java/org/apache/camel/spring/remoting/SpringRemotingRouteTest.java,51,applicationContext.destroy();
+camel-core/src/main/java/org/apache/camel/component/dataset/DataSetComponent.java,23,import org.apache.camel.impl.DefaultComponent;
+camel-core/src/main/java/org/apache/camel/component/direct/DirectComponent.java,23,import org.apache.camel.impl.DefaultComponent;
+camel-core/src/main/java/org/apache/camel/component/log/LogComponent.java,25,import org.apache.camel.impl.DefaultComponent;
+camel-core/src/main/java/org/apache/camel/component/mock/MockComponent.java,24,import org.apache.camel.impl.DefaultComponent;
+components/camel-jpa/src/main/java/org/apache/camel/component/jpa/JpaProducer.java,57,entityManager.flush();
+components/camel-jdbc/src/main/java/org/apache/camel/component/jdbc/JdbcProducer.java,116,data.add(row);
+components/camel-jdbc/src/main/java/org/apache/camel/component/jdbc/JdbcProducer.java,117,rowNumber++;
+components/camel-jpa/src/main/java/org/apache/camel/component/jpa/JpaComponent.java,27,import org.apache.camel.impl.DefaultComponent;
+components/camel-atom/src/main/java/org/apache/camel/component/atom/UpdatedDateFilter.java,51,if (lastUpdate.after(updated)) {
+camel-core/src/main/java/org/apache/camel/impl/DefaultProducerTemplate.java,146,"for (Map.Entry<String, Object> header : headers.entrySet()) {"
+camel-core/src/main/java/org/apache/camel/impl/DefaultProducerTemplate.java,147,"in.setHeader(header.getKey(), header.getValue());"
+components/camel-jpa/src/main/java/org/apache/camel/component/jpa/DeleteHandler.java,35,"void deleteObject(EntityManager entityManager, Object entityBean);"
+components/camel-jpa/src/main/java/org/apache/camel/component/jpa/JpaConsumer.java,75,"getDeleteHandler().deleteObject(entityManager, result);"
+components/camel-jpa/src/main/java/org/apache/camel/component/jpa/JpaConsumer.java,197,"public void deleteObject(EntityManager entityManager, Object entityBean) {"
+components/camel-jpa/src/main/java/org/apache/camel/component/jpa/JpaConsumer.java,205,"public void deleteObject(EntityManager entityManager, Object entityBean) {"
+components/camel-jpa/src/main/java/org/apache/camel/component/jpa/JpaConsumer.java,188,Class<?> entityType = getEndpoint().getEntityType();
+components/camel-jpa/src/main/java/org/apache/camel/component/jpa/JpaConsumer.java,198,"ObjectHelper.invokeMethod(method, entityBean);"
+components/camel-jpa/src/main/java/org/apache/camel/component/jpa/JpaConsumer.java,211,"public void deleteObject(EntityManager entityManager, Object entityBean) {"
+camel-core/src/main/java/org/apache/camel/processor/idempotent/IdempotentConsumer.java,57,"throw new NoMessageIdException(exchange, messageIdExpression);"
+components/camel-jms/src/main/java/org/apache/camel/component/jms/JmsComponent.java,386,"endpoint = new JmsTemporaryTopicEndpoint(uri, this, subject, newConfiguration);"
+components/camel-jms/src/main/java/org/apache/camel/component/jms/JmsComponent.java,388,"endpoint = new JmsEndpoint(uri, this, subject, pubSubDomain, newConfiguration);"
+components/camel-jms/src/main/java/org/apache/camel/component/jms/JmsComponent.java,393,"endpoint = new JmsTemporaryQueueEndpoint(uri, this, subject, newConfiguration, strategy);"
+components/camel-jms/src/main/java/org/apache/camel/component/jms/JmsComponent.java,395,"endpoint = new JmsQueueEndpoint(uri, this, subject, newConfiguration, strategy);"
+components/camel-ftp/src/main/java/org/apache/camel/component/file/remote/RemoteFileConfiguration.java,25,private String username;
+components/camel-spring/src/main/java/org/apache/camel/component/event/EventComponent.java,63,"EventEndpoint answer = new EventEndpoint(uri, this);"
+components/camel-stringtemplate/src/main/java/org/apache/camel/component/stringtemplate/StringTemplateComponent.java,27,public class StringTemplateComponent extends DefaultComponent {
+components/camel-velocity/src/main/java/org/apache/camel/component/velocity/VelocityComponent.java,22,import org.apache.camel.impl.DefaultComponent;
+components/camel-velocity/src/main/java/org/apache/camel/component/velocity/VelocityComponent.java,28,public class VelocityComponent extends DefaultComponent {
+components/camel-stream/src/main/java/org/apache/camel/component/stream/StreamComponent.java,22,import org.apache.camel.impl.DefaultComponent;
+components/camel-stream/src/main/java/org/apache/camel/component/stream/StreamComponent.java,35,"return new StreamEndpoint(uri, this);"
+components/camel-rmi/src/main/java/org/apache/camel/component/rmi/RmiComponent.java,24,import org.apache.camel.impl.DefaultComponent;
+components/camel-rmi/src/main/java/org/apache/camel/component/rmi/RmiComponent.java,34,public RmiComponent(CamelContext context) {
+components/camel-rmi/src/main/java/org/apache/camel/component/rmi/RmiComponent.java,35,super(context);
+components/camel-jing/src/main/java/org/apache/camel/component/validator/jing/JingValidator.java,41,import org.apache.camel.Processor;
+camel-core/src/main/java/org/apache/camel/component/bean/ConstantBeanHolder.java,56,return processor;
+components/camel-xmpp/src/main/java/org/apache/camel/component/xmpp/XmppComponent.java,24,import org.apache.camel.impl.DefaultComponent;
+components/camel-irc/src/main/java/org/apache/camel/component/irc/IrcComponent.java,25,import org.apache.camel.impl.DefaultComponent;
+camel-core/src/main/java/org/apache/camel/model/config/BatchResequencerConfig.java,58,@XmlRootElement
+camel-core/src/main/java/org/apache/camel/model/config/StreamResequencerConfig.java,57,@XmlRootElement
+components/camel-mina/src/main/java/org/apache/camel/component/mina/MinaComponent.java,30,import org.apache.camel.impl.DefaultComponent;
+components/camel-mina/src/main/java/org/apache/camel/component/mina/MinaComponent.java,78,super(context);
+components/camel-ibatis/src/main/java/org/apache/camel/component/ibatis/IBatisComponent.java,26,import org.apache.camel.impl.DefaultComponent;
+components/camel-ibatis/src/main/java/org/apache/camel/component/ibatis/IBatisComponent.java,38,public class IBatisComponent extends DefaultComponent {
+components/camel-spring-integration/src/main/java/org/apache/camel/component/spring/integration/SpringIntegrationComponent.java,21,import org.apache.camel.impl.DefaultComponent;
+components/camel-flatpack/src/main/java/org/apache/camel/component/flatpack/FixedLengthEndpoint.java,66,"return new LoadBalancerConsumer(this, processor, loadBalancer);"
+components/camel-flatpack/src/main/java/org/apache/camel/component/flatpack/FlatpackProducer.java,28,private FixedLengthEndpoint endpoint;
+components/camel-flatpack/src/main/java/org/apache/camel/component/flatpack/FlatpackProducer.java,30,public FlatpackProducer(FixedLengthEndpoint endpoint) {
+components/camel-amqp/src/main/java/org/apache/camel/component/amqp/AMQPComponent.java,40,super(context);
+components/camel-flatpack/src/main/java/org/apache/camel/component/flatpack/FlatpackDataFormat.java,18,package org.apache.camel.component.flatpack;
+components/camel-mail/src/main/java/org/apache/camel/component/mail/MailMessage.java,51,if (mailMessage != null) {
+components/camel-mail/src/main/java/org/apache/camel/component/mail/MailMessage.java,52,"return ""MailMessage: "" + MailUtils.dumpMessage(mailMessage);"
+components/camel-mail/src/main/java/org/apache/camel/component/mail/MailMessage.java,53,} else {
+components/camel-mail/src/main/java/org/apache/camel/component/mail/MailMessage.java,54,"return ""MailMessage: "" + getBody();"
+components/camel-jms/src/main/java/org/apache/camel/component/jms/EndpointMessageListener.java,41,public class EndpointMessageListener implements MessageListener {
+components/camel-jms/src/main/java/org/apache/camel/component/jms/EndpointMessageListener.java,57,public void onMessage(final Message message) {
+components/camel-jms/src/main/java/org/apache/camel/component/jms/JmsMessage.java,51,"public JmsMessage(Message jmsMessage, JmsBinding binding) {"
+components/camel-jms/src/main/java/org/apache/camel/component/jms/JmsPollingConsumer.java,55,return getEndpoint().createExchange(message);
+components/camel-jcr/src/main/java/org/apache/camel/component/jcr/JcrComponent.java,37,"return new JcrEndpoint(uri, this);"
+components/camel-jcr/src/main/java/org/apache/camel/component/jcr/JcrProducer.java,74,return getJcrEndpoint().getRepository().login(getJcrEndpoint().getCredentials());
+camel-core/src/main/java/org/apache/camel/builder/Builder.java,111,"return systemProperty(name, null);"
+camel-core/src/main/java/org/apache/camel/util/EndpointHelper.java,48,consumer.start();
+camel-core/src/main/java/org/apache/camel/util/EndpointHelper.java,60,consumer.stop();
+camel-core/src/main/java/org/apache/camel/util/EndpointHelper.java,62,"LOG.warn(""Failed to stop PollingConsumer: "" + e, e);"
+camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java,78,return a != null && b != null && a.equals(b);
+camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java,70,if (a == b) {
+camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java,71,return true;
+camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java,90,if (a != null && b != null && a.length == b.length) {
+camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java,91,for (int i = 0; i < a.length; i++) {
+camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java,92,if (a[i] != b[i]) {
+camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java,617,return false;
+camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java,86,return true;
+camel-core/src/main/java/org/apache/camel/util/ObjectHelper.java,93,return false;
+camel-core/src/test/java/org/apache/camel/component/dataset/DataSetConsumeTest.java,26,public class DataSetConsumeTest extends ContextTestSupport {
+camel-core/src/test/java/org/apache/camel/issues/DavidSiefertTest.java,36,"result.message(0).header(""sample.name"").equals(""myValue"");"
+camel-core/src/main/java/org/apache/camel/processor/Splitter.java,82,Message in = newExchange.getIn();
+camel-core/src/main/java/org/apache/camel/processor/Splitter.java,83,in.setBody(part);
+components/camel-jpa/src/main/java/org/apache/camel/component/jpa/JpaEndpoint.java,69,"return new JpaProducer(this, getProducerExpression());"
+components/camel-jms/src/main/java/org/apache/camel/component/jms/JmsBinding.java,92,return message;
+components/camel-jms/src/main/java/org/apache/camel/component/jms/JmsBinding.java,90,return createByteArrayFromBytesMessage((BytesMessage)message);
+components/camel-jms/src/main/java/org/apache/camel/component/jms/JmsBinding.java,101,protected byte[] createByteArrayFromBytesMessage(BytesMessage message) throws JMSException {
